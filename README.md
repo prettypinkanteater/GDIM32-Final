@@ -22,3 +22,5 @@ Put your individual final Devlog here.
 
 ## Open-Source Assets
 Cite any open-source assets here. Put them in a LIST, and use correctly formatted LINKS.
+
+- [Sizzle_Frying Pan_Fienup_001.wav](https://gamesounds.xyz/?search=sizzle)
