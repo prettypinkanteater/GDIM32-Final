@@ -333,6 +333,10 @@ PrefabInstance:
       propertyPath: _testingLocation
       value: 
       objectReference: {fileID: 578593132}
+    - target: {fileID: -1284426253625471449, guid: 20fe040d16b5b16438efbff102a29bfb, type: 3}
+      propertyPath: _interactDistance
+      value: 2
+      objectReference: {fileID: 0}
     - target: {fileID: 1501740295032262549, guid: 20fe040d16b5b16438efbff102a29bfb, type: 3}
       propertyPath: m_LocalPosition.x
       value: 0

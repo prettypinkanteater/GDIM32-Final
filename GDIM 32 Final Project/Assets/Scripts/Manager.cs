@@ -9,6 +9,7 @@ public class Manager : MonoBehaviour
 
     [SerializeField] public Transform _testingLocation;
     private Transform _playerLocation;
+
     // Start is called before the first frame update
     void Start()
     {
@@ -18,16 +19,15 @@ public class Manager : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
+        transform.LookAt(_testingLocation.position);
         if (Vector3.Distance(transform.position, _testingLocation.position) > _interactDistance)
-        {
-            transform.LookAt(_testingLocation.position);
+        { 
             transform.Translate(Vector3.forward * _speed * Time.deltaTime);
         }
     }
     private void OnDrawGizmos()
     {
-        Ray ray = new Ray(transform.position, transform.forward);
         Gizmos.color = Color.green;
-        Gizmos.DrawRay(ray);
+        Gizmos.DrawRay(transform.position, transform.forward * _interactDistance);
     }
 }
