@@ -15,11 +15,9 @@ public class Player : MonoBehaviour
     Vector3 velocity;
     Vector2 look;
 
-
-
-
-
-
+    public bool usable;
+    public delegate void UseItem();
+    public event UseItem ItemUsed;
 
     private void Awake()
     {
@@ -46,12 +44,17 @@ public class Player : MonoBehaviour
             switch (colliderTag) 
             {
                 
-                case ("item"):Locator.Instance.ui.showPrompt(); break;
+                case ("item"):Locator.Instance.ui.showPrompt(); usable = true; break;
             }
 
         } else
         {
             Locator.Instance.ui.hidePrompt();
+        }
+
+        if (usable && Input.GetKey(KeyCode.E))
+        {
+            ItemUsed.Invoke();
         }
     }
 

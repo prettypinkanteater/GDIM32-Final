@@ -6,7 +6,7 @@ public abstract class Item : MonoBehaviour
 {
     void Start()
     {
-        // pick up event
+        Locator.Instance.player.ItemUsed += PickUp;
     }
 
     // Update is called once per frame
@@ -23,6 +23,6 @@ public abstract class Item : MonoBehaviour
 
     void PutDown()
     {
-
+        transform.parent = null;
     }
 }
