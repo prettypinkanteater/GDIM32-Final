@@ -20,8 +20,13 @@ public class UI : MonoBehaviour
     }
     
 
-    void showPrompt()
+    public void showPrompt()
     {
         prompt.SetActive(true);
+    }
+
+    public void hidePrompt()
+    {
+        prompt.SetActive(false);
     }
 }
