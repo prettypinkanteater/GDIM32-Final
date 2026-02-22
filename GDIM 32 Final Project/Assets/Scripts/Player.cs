@@ -28,9 +28,20 @@ public class Player : MonoBehaviour
         updateGravity();
         updateMovement();
         updateLook();
+
+        RaycastHit hit;
+        
+        if (Physics.SphereCast(transform.position + Vector3.forward, 3f, transform.forward, out hit, 2))
+        {
+            Debug.Log(hit.transform.gameObject.name);
+        }
     }
 
-
+    private void OnDrawGizmos()
+    {
+        Gizmos.color = Color.red;
+        Gizmos.DrawWireSphere(transform.position + transform.forward * 3f, 3f);
+    }
 
 
 
