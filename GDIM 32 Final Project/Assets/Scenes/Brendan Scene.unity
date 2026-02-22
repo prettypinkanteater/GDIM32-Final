@@ -822,6 +822,7 @@ MonoBehaviour:
   movementSpeed: 5
   mass: 1
   cameraTransform: {fileID: 562333897}
+  usable: 0
 --- !u!143 &1243393654
 CharacterController:
   m_ObjectHideFlags: 0
