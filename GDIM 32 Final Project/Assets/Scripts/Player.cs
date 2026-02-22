@@ -8,10 +8,16 @@ public class Player : MonoBehaviour
     [SerializeField] float movementSpeed = 5f;
     [SerializeField] float mass = 1f;
     [SerializeField] Transform cameraTransform;
+    private float castRadius = 2;
+    private float castDistance = 2;
 
     CharacterController controller;
     Vector3 velocity;
     Vector2 look;
+
+    public bool usable;
+    public delegate void UseItem();
+    public event UseItem ItemUsed;
 
     private void Awake()
     {
@@ -31,16 +37,31 @@ public class Player : MonoBehaviour
 
         RaycastHit hit;
         
-        if (Physics.SphereCast(transform.position + Vector3.forward, 2f, transform.forward, out hit, 2))
+        if (Physics.SphereCast(transform.position, 1, transform.forward, out hit, castDistance))
         {
-            Debug.Log(hit.transform.gameObject.name);
+            string colliderTag = hit.collider.gameObject.tag;
+            
+            switch (colliderTag) 
+            {
+                
+                case ("item"):Locator.Instance.ui.showPrompt(); usable = true; break;
+            }
+
+        } else
+        {
+            Locator.Instance.ui.hidePrompt();
+        }
+
+        if (usable && Input.GetKey(KeyCode.E))
+        {
+            ItemUsed.Invoke();
         }
     }
 
     private void OnDrawGizmos()
     {
         Gizmos.color = Color.red;
-        Gizmos.DrawWireSphere(transform.position + transform.forward * 3f, 2f);
+        Gizmos.DrawWireSphere(transform.position + transform.forward * castDistance, castRadius-1);
     }
 
 
