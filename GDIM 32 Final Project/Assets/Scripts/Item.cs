@@ -6,7 +6,7 @@ public abstract class Item : MonoBehaviour
 {
     void Start()
     {
-        Locator.Instance.player.ItemUsed += PickUp;
+    
     }
 
     // Update is called once per frame
@@ -15,13 +15,13 @@ public abstract class Item : MonoBehaviour
         
     }
 
-    void PickUp()
+    protected void PickUp()
     {
         transform.parent = Locator.Instance.player.transform;
-        transform.localPosition = new Vector3(2, 2, 1);
+        transform.localPosition = new Vector3(1, 0, 1);
     }
 
-    void PutDown()
+    protected void PutDown()
     {
         transform.parent = null;
     }

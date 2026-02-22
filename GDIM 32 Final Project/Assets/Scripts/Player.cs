@@ -52,7 +52,7 @@ public class Player : MonoBehaviour
             Locator.Instance.ui.hidePrompt();
         }
 
-        if (usable && Input.GetKey(KeyCode.E))
+        if (usable == true && Input.GetKey(KeyCode.E))
         {
             ItemUsed.Invoke();
         }
