@@ -31,7 +31,7 @@ public class Player : MonoBehaviour
 
         RaycastHit hit;
         
-        if (Physics.SphereCast(transform.position + Vector3.forward, 3f, transform.forward, out hit, 2))
+        if (Physics.SphereCast(transform.position + Vector3.forward, 2f, transform.forward, out hit, 2))
         {
             Debug.Log(hit.transform.gameObject.name);
         }
@@ -40,7 +40,7 @@ public class Player : MonoBehaviour
     private void OnDrawGizmos()
     {
         Gizmos.color = Color.red;
-        Gizmos.DrawWireSphere(transform.position + transform.forward * 3f, 3f);
+        Gizmos.DrawWireSphere(transform.position + transform.forward * 3f, 2f);
     }
 
 
