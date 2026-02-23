@@ -6,7 +6,7 @@ using UnityEngine.UIElements;
 public class Utensil : Item
 {
     bool chopable;
-
+    bool chopping;
     
     void Start()
     {
@@ -19,11 +19,13 @@ public class Utensil : Item
         {
             GetComponent<Animator>().ResetTrigger("Stop");
             GetComponent<Animator>().SetTrigger("Use");
+            chopping = true;
         }
         else
         {
             GetComponent<Animator>().ResetTrigger("Use");
             GetComponent<Animator>().SetTrigger("Stop");
+            chopping = false;
         }
     }
 

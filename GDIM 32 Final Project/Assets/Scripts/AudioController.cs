@@ -4,7 +4,12 @@ using UnityEngine;
 
 public class AudioController : MonoBehaviour
 {
-    // Start is called before the first frame update
+    [SerializeField] AudioSource _smack;
+    [SerializeField] AudioSource _yay;
+    [SerializeField] AudioSource _sadViolin;
+    [SerializeField] AudioSource _sizzle;
+    [SerializeField] AudioSource _knifeChop;
+
     void Start()
     {
         
