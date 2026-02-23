@@ -15,7 +15,7 @@ public abstract class Item : MonoBehaviour
         
     }
 
-    protected void PickUp()
+    protected virtual void PickUp()
     {
         transform.parent = Locator.Instance.player.transform;
         transform.localPosition = new Vector3(1, 0, 1);
