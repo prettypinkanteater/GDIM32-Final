@@ -19,6 +19,7 @@ public abstract class Item : MonoBehaviour
     {
         transform.parent = Locator.Instance.player.transform;
         transform.localPosition = new Vector3(1, 0, 1);
+        GetComponent<BoxCollider>().enabled = false;
     }
 
     protected void PutDown()

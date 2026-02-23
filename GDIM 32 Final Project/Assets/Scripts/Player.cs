@@ -50,6 +50,7 @@ public class Player : MonoBehaviour
         } else
         {
             Locator.Instance.ui.hidePrompt();
+            usable = false;
         }
 
         if (usable == true && Input.GetKey(KeyCode.E))
