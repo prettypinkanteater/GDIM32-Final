@@ -25,4 +25,6 @@ public class Ingredient : Item
         hasIngredient = true;
 
     }
+
+    //add putdown method override
 }
