@@ -1,5 +1,6 @@
 using System.Collections;
 using System.Collections.Generic;
+using Unity.VisualScripting;
 using UnityEngine;
 using UnityEngine.UIElements;
 
@@ -7,10 +8,12 @@ public class Utensil : Item
 {
     bool chopable;
     bool chopping;
+    Vector3 rotation;
     
     void Start()
     {
         Locator.Instance.player.ItemUsed += PickUp;
+        rotation = new Vector3(15.981f, 80.121f, -7.329f);
     }
 
     void Update()
@@ -32,7 +35,6 @@ public class Utensil : Item
     protected override void PickUp()
     {
         base.PickUp();
-        transform.rotation = Locator.Instance.player.transform.rotation;
         chopable = true;
     }
 }
