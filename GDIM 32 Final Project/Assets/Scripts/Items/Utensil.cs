@@ -36,4 +36,6 @@ public class Utensil : Item
         base.PickUp();
         chopable = true;
     }
+
+    //override base putdown method so that game object dies
 }

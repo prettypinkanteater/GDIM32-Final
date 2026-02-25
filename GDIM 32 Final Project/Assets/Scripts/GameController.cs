@@ -4,6 +4,15 @@ using UnityEngine;
 
 public class GameController : MonoBehaviour
 {
+    public bool hasIngredient;
+    public bool placedIngredient;
+    public bool hasItem;
+
+
+
+
+
+
     // Start is called before the first frame update
     void Start()
     {

@@ -45,6 +45,7 @@ public class Player : MonoBehaviour
             {
                 
                 case ("item"):Locator.Instance.ui.showPrompt(); usable = true; break;
+                //add appliance case with conditions from gameController
             }
 
         } else
