@@ -19,7 +19,7 @@ public abstract class Item : MonoBehaviour
     protected virtual void PickUp()
     {
         transform.parent = Locator.Instance.player.transform;
-
+        transform.localPosition = new Vector3(1, 0, 2);
         GetComponent<BoxCollider>().enabled = false;
     }
 

@@ -13,7 +13,6 @@ public class Utensil : Item
     void Start()
     {
         Locator.Instance.player.ItemUsed += PickUp;
-        rotation = new Vector3(15.981f, 80.121f, -7.329f);
     }
 
     void Update()
