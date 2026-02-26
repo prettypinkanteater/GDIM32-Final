@@ -71,7 +71,6 @@ public class Player : MonoBehaviour
                         promptOn = true;
                     }
                     break;
-                //add appliance case with conditions from gameController
             }
 
         } else

@@ -35,6 +35,7 @@ public class Utensil : Item
     {
         if(Locator.Instance.gameController.placedIngredient == true)
         {
+            Locator.Instance.ui.hidePrompt();
             base.PickUp();
             GetComponent<Animator>().SetTrigger("Position");
             chopable = true;
@@ -43,5 +44,10 @@ public class Utensil : Item
         
     }
 
+    protected override void PutDown()
+    {
+        Locator.Instance.ui.hidePrompt();
+
+    }
     //override base putdown method so that game object dies
 }
