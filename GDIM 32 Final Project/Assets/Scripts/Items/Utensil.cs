@@ -34,6 +34,7 @@ public class Utensil : Item
     protected override void PickUp()
     {
         base.PickUp();
+        GetComponent<Animator>().SetTrigger("Position");
         chopable = true;
     }
 
