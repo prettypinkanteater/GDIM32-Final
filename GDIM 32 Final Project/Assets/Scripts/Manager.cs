@@ -6,6 +6,7 @@ public class Manager : MonoBehaviour
 {
     [SerializeField] private int _speed;
     [SerializeField] private int _interactDistance;
+    [SerializeField] private Animator _animator;
     private Transform _playerLocation;
 
     // Start is called before the first frame update
@@ -21,6 +22,11 @@ public class Manager : MonoBehaviour
         if (Vector3.Distance(transform.position, _playerLocation.position) > _interactDistance)
         { 
             transform.Translate(Vector3.forward * _speed * Time.deltaTime);
+            _animator.SetBool("Swimming", true);
+        }
+        else
+        {
+            _animator.SetBool("Swimming", false);
         }
     }
     private void OnDrawGizmos()

@@ -284,6 +284,11 @@ MeshFilter:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 34476572}
   m_Mesh: {fileID: 10202, guid: 0000000000000000e000000000000000, type: 0}
+--- !u!95 &81363039 stripped
+Animator:
+  m_CorrespondingSourceObject: {fileID: -2089895215841497455, guid: a8669287c183ed648a182d6420368d4f, type: 3}
+  m_PrefabInstance: {fileID: 6658042352344440881}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1001 &139784212
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -529,6 +534,53 @@ MeshFilter:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 214792795}
   m_Mesh: {fileID: 10202, guid: 0000000000000000e000000000000000, type: 0}
+--- !u!1 &372549728
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 372549730}
+  - component: {fileID: 372549729}
+  m_Layer: 0
+  m_Name: Game Controller
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!114 &372549729
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 372549728}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: f8f2e72e15dbf9147ac74c250ecbf75b, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  hasIngredient: 0
+  placedIngredient: 0
+  hasItem: 0
+--- !u!4 &372549730
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 372549728}
+  serializedVersion: 2
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 110.444496, y: -90.25501, z: -394.1875}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 0}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &553977299
 GameObject:
   m_ObjectHideFlags: 0
@@ -1792,6 +1844,10 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 2425501057440333482, guid: a8669287c183ed648a182d6420368d4f, type: 3}
+      propertyPath: _animator
+      value: 
+      objectReference: {fileID: 81363039}
     - target: {fileID: 8519108209456421105, guid: a8669287c183ed648a182d6420368d4f, type: 3}
       propertyPath: m_Name
       value: Manager
@@ -1859,3 +1915,4 @@ SceneRoots:
   - {fileID: 2761883}
   - {fileID: 1369923262}
   - {fileID: 139784212}
+  - {fileID: 372549730}
