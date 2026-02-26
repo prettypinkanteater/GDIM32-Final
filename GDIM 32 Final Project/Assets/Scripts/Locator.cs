@@ -7,6 +7,8 @@ public class Locator : MonoBehaviour
     public static Locator Instance { get; private set; }
     public Player player { get; private set; }
     public UI ui { get; private set; }
+
+    public GameController gameController { get; private set; }
     // change player class name as needed, eg class is actually not named player lol
     private void Awake()
     {
@@ -22,6 +24,9 @@ public class Locator : MonoBehaviour
 
         GameObject uiGameObject = GameObject.Find("UI");
         ui = uiGameObject.GetComponent<UI>();
+
+        GameObject controllerObject = GameObject.Find("GameController");
+        gameController = controllerObject.GetComponent<GameController>();
 
     }
 
