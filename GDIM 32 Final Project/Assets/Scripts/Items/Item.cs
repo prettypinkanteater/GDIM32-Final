@@ -26,5 +26,6 @@ public abstract class Item : MonoBehaviour
     protected virtual void PutDown()
     {
         transform.parent = null;
+        Locator.Instance.ui.hidePrompt();
     }
 }
