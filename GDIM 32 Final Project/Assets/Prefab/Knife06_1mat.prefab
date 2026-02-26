@@ -22,15 +22,15 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: -8679921383154817045, guid: 4930bb94ca493894399d7d0018b5d440, type: 3}
       propertyPath: m_LocalPosition.x
-      value: 5.4564524
+      value: 0.99
       objectReference: {fileID: 0}
     - target: {fileID: -8679921383154817045, guid: 4930bb94ca493894399d7d0018b5d440, type: 3}
       propertyPath: m_LocalPosition.y
-      value: 0.8153679
+      value: 3.502213
       objectReference: {fileID: 0}
     - target: {fileID: -8679921383154817045, guid: 4930bb94ca493894399d7d0018b5d440, type: 3}
       propertyPath: m_LocalPosition.z
-      value: -0.081794694
+      value: -6.168
       objectReference: {fileID: 0}
     - target: {fileID: -8679921383154817045, guid: 4930bb94ca493894399d7d0018b5d440, type: 3}
       propertyPath: m_LocalRotation.w
@@ -69,8 +69,12 @@ PrefabInstance:
       value: Knife06_1mat
       objectReference: {fileID: 0}
     - target: {fileID: 919132149155446097, guid: 4930bb94ca493894399d7d0018b5d440, type: 3}
+      propertyPath: m_Layer
+      value: 6
+      objectReference: {fileID: 0}
+    - target: {fileID: 919132149155446097, guid: 4930bb94ca493894399d7d0018b5d440, type: 3}
       propertyPath: m_TagString
-      value: item
+      value: utensil
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
