@@ -23,7 +23,7 @@ public abstract class Item : MonoBehaviour
         GetComponent<BoxCollider>().enabled = false;
     }
 
-    protected void PutDown()
+    protected virtual void PutDown()
     {
         transform.parent = null;
     }

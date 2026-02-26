@@ -26,5 +26,10 @@ public class Ingredient : Item
 
     }
 
+    protected override void PutDown()
+    {
+
+    }
+
     //add putdown method override
 }
