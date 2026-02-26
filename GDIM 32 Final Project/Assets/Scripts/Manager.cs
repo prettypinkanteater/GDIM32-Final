@@ -23,9 +23,11 @@ public class Manager : MonoBehaviour
         { 
             transform.Translate(Vector3.forward * _speed * Time.deltaTime);
             _animator.SetBool("Swimming", true);
+            Debug.Log(_animator.GetBool("Swimming"));
         }
         else
         {
+            
             _animator.SetBool("Swimming", false);
         }
     }
