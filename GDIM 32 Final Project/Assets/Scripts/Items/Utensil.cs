@@ -33,10 +33,14 @@ public class Utensil : Item
 
     protected override void PickUp()
     {
-        base.PickUp();
-        GetComponent<Animator>().SetTrigger("Position");
-        chopable = true;
-        Locator.Instance.gameController.hasItem = true;
+        if(Locator.Instance.gameController.placedIngredient == true)
+        {
+            base.PickUp();
+            GetComponent<Animator>().SetTrigger("Position");
+            chopable = true;
+            Locator.Instance.gameController.hasItem = true;
+        }
+        
     }
 
     //override base putdown method so that game object dies
