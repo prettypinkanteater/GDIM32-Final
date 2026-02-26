@@ -4,12 +4,11 @@ using UnityEngine;
 
 public class Ingredient : Item
 {
-
-    private bool hasIngredient;
     // Start is called before the first frame update
     void Start()
     {
-        
+        Locator.Instance.player.putDownEvent += PutDown;
+        Locator.Instance.player.ItemUsed += PickUp;
     }
 
     // Update is called once per frame
@@ -20,15 +19,22 @@ public class Ingredient : Item
 
     protected override void PickUp()
     {
-        base.PickUp();
-        transform.rotation = Locator.Instance.player.transform.rotation;
-        hasIngredient = true;
-
+        if(Locator.Instance.gameController.hasItem == false && Locator.Instance.gameController.placedIngredient == false)
+        {
+            base.PickUp();
+            Locator.Instance.gameController.hasIngredient = true;
+        }
     }
 
     protected override void PutDown()
     {
-
+        if(Locator.Instance.gameController.hasIngredient == true) 
+        {
+            base.PutDown();
+            transform.SetParent(Locator.Instance.player.lookingAt.transform);
+            Locator.Instance.gameController.placedIngredient = true;
+            Locator.Instance.gameController.hasIngredient = false;
+        }
     }
 
     //add putdown method override

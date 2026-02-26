@@ -11,13 +11,18 @@ public class Player : MonoBehaviour
     private float castRadius = 2;
     private float castDistance = 2;
 
+    public GameObject lookingAt;
+    private bool promptOn;
+
     CharacterController controller;
     Vector3 velocity;
     Vector2 look;
 
-    public bool usable;
     public delegate void UseItem();
     public event UseItem ItemUsed;
+
+    public delegate void drop();
+    public event drop putDownEvent;
 
     private void Awake()
     {
@@ -40,15 +45,30 @@ public class Player : MonoBehaviour
         if (Physics.SphereCast(transform.position, 1, transform.forward, out hit, castDistance))
         {
             string colliderTag = hit.collider.gameObject.tag;
+            lookingAt = hit.collider.gameObject;
             
             switch (colliderTag) 
             {
                 
-                case ("item"):Locator.Instance.ui.showPrompt(); usable = true; break;
-                case ("appliance"):
+                case ("utensil"):
                     if (Locator.Instance.gameController.placedIngredient)
                     {
                         Locator.Instance.ui.showPrompt();
+                        promptOn = true;
+                    }
+                    break;
+                case ("appliance"):
+                    if (Locator.Instance.gameController.hasIngredient)
+                    {
+                        Locator.Instance.ui.showPrompt();
+                        promptOn = true;
+                    }
+                    break;
+                case ("ingredient"):
+                    if(Locator.Instance.gameController.hasIngredient == false && Locator.Instance.gameController.placedIngredient == false && Locator.Instance.gameController.hasItem == false)
+                    {
+                        Locator.Instance.ui.showPrompt();
+                        promptOn = true;
                     }
                     break;
                 //add appliance case with conditions from gameController
@@ -57,12 +77,19 @@ public class Player : MonoBehaviour
         } else
         {
             Locator.Instance.ui.hidePrompt();
-            usable = false;
+            promptOn = false;
         }
 
-        if (usable == true && Input.GetKey(KeyCode.E))
+        if (Input.GetKeyDown(KeyCode.E) && promptOn)
         {
-            ItemUsed.Invoke();
+            if(Locator.Instance.gameController.hasIngredient)
+            {
+                putDownEvent.Invoke();
+            } else
+            {
+                ItemUsed.Invoke();
+            }
+                
         }
     }
 

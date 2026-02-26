@@ -4,9 +4,9 @@ using UnityEngine;
 
 public class GameController : MonoBehaviour
 {
-    public bool hasIngredient;
-    public bool placedIngredient;
-    public bool hasItem;
+    public bool hasIngredient = false;
+    public bool placedIngredient = false;
+    public bool hasItem = false;
 
 
 
