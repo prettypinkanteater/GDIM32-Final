@@ -13,7 +13,15 @@ public class Appliance : Item
     // Update is called once per frame
     void Update()
     {
-        
+        if (Locator.Instance.gameController.placedIngredient)
+        {
+            GetComponent<Collider>().enabled = false;
+        }
+
+        if (Locator.Instance.gameController.hasItem)
+        {
+            GetComponent<Collider>().enabled = true;
+        }
     }
 
     protected override void PickUp()

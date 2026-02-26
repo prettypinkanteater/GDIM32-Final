@@ -13,6 +13,7 @@ public class Player : MonoBehaviour
 
     public GameObject lookingAt;
     private bool promptOn;
+    string colliderTag;
 
     CharacterController controller;
     Vector3 velocity;
@@ -23,6 +24,8 @@ public class Player : MonoBehaviour
 
     public delegate void drop();
     public event drop putDownEvent;
+
+
 
     private void Awake()
     {
@@ -44,8 +47,8 @@ public class Player : MonoBehaviour
         
         if (Physics.SphereCast(transform.position, 1, transform.forward, out hit, castDistance))
         {
-            string colliderTag = hit.collider.gameObject.tag;
-            lookingAt = hit.collider.gameObject;
+            colliderTag = hit.collider.gameObject.tag;
+   
             
             switch (colliderTag) 
             {
@@ -62,6 +65,7 @@ public class Player : MonoBehaviour
                     {
                         Locator.Instance.ui.showPrompt();
                         promptOn = true;
+                        lookingAt = hit.collider.gameObject;
                     }
                     break;
                 case ("ingredient"):
@@ -74,7 +78,7 @@ public class Player : MonoBehaviour
                 //add appliance case with conditions from gameController
             }
 
-        } else
+        } else if (colliderTag != "appliance" || colliderTag != "utensil" || colliderTag != "ingredient")
         {
             Locator.Instance.ui.hidePrompt();
             promptOn = false;
