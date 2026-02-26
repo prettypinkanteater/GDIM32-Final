@@ -45,6 +45,12 @@ public class Player : MonoBehaviour
             {
                 
                 case ("item"):Locator.Instance.ui.showPrompt(); usable = true; break;
+                case ("appliance"):
+                    if (Locator.Instance.gameController.placedIngredient)
+                    {
+                        Locator.Instance.ui.showPrompt();
+                    }
+                    break;
                 //add appliance case with conditions from gameController
             }
 
