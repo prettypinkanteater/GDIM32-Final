@@ -4,8 +4,6 @@ using UnityEngine;
 
 public class Ingredient : Item
 {
-
-    private bool hasIngredient;
     // Start is called before the first frame update
     void Start()
     {
@@ -20,15 +18,19 @@ public class Ingredient : Item
 
     protected override void PickUp()
     {
-        base.PickUp();
-        transform.rotation = Locator.Instance.player.transform.rotation;
-        hasIngredient = true;
-
+        if(Locator.Instance.gameController.hasItem == false)
+        {
+            base.PickUp();
+            Locator.Instance.gameController.hasIngredient = true;
+        }
     }
 
     protected override void PutDown()
     {
+        if(Locator.Instance.gameController.hasIngredient == true) 
+        {
 
+        }
     }
 
     //add putdown method override

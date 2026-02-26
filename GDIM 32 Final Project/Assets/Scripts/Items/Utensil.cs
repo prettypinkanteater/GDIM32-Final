@@ -36,6 +36,7 @@ public class Utensil : Item
         base.PickUp();
         GetComponent<Animator>().SetTrigger("Position");
         chopable = true;
+        Locator.Instance.gameController.hasItem = true;
     }
 
     //override base putdown method so that game object dies
