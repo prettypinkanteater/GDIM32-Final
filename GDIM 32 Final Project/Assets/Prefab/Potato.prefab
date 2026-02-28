@@ -14,7 +14,7 @@ GameObject:
   - component: {fileID: 5396296520932433922}
   - component: {fileID: 5453928586303072819}
   m_Layer: 6
-  m_Name: Vege-Potato
+  m_Name: Potato
   m_TagString: ingredient
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
