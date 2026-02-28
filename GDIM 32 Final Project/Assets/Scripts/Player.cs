@@ -70,6 +70,7 @@ public class Player : MonoBehaviour
                         Locator.Instance.ui.showPrompt();
                         promptOn = true;
                     }
+                    // if(
                     break;
             }
 
