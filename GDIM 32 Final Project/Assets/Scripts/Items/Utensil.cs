@@ -49,5 +49,6 @@ public class Utensil : Item
         Locator.Instance.ui.hidePrompt();
 
     }
+
     //override base putdown method so that game object dies
 }
