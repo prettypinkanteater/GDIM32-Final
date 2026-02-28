@@ -1410,7 +1410,7 @@ GameObject:
   - component: {fileID: 845787745}
   - component: {fileID: 845787744}
   m_Layer: 0
-  m_Name: Underwater Ambienc
+  m_Name: Underwater Ambience
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -1428,13 +1428,13 @@ AudioSource:
   OutputAudioMixerGroup: {fileID: 0}
   m_audioClip: {fileID: 8300000, guid: 45f9dca11e99a9b4f93940ee3215b933, type: 3}
   m_PlayOnAwake: 1
-  m_Volume: 0.803
+  m_Volume: 0.898
   m_Pitch: 1
   Loop: 1
   Mute: 0
   Spatialize: 0
   SpatializePostEffects: 0
-  Priority: 56
+  Priority: 31
   DopplerLevel: 1
   MinDistance: 1
   MaxDistance: 500
@@ -3799,7 +3799,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 2102653138669675329, guid: ed0b146d583b28344a3d46ca08ace871, type: 3}
       propertyPath: m_LocalPosition.z
-      value: 2.46
+      value: 2.128
       objectReference: {fileID: 0}
     - target: {fileID: 2102653138669675329, guid: ed0b146d583b28344a3d46ca08ace871, type: 3}
       propertyPath: m_LocalRotation.w

@@ -33,7 +33,6 @@ public class Ingredient : Item
             Locator.Instance.gameController.hasIngredient = false;
             GetComponent<Collider>().enabled = false;
             base.PutDown();
-            transform.SetParent(Locator.Instance.player.lookingAt.transform.GetChild(0));
             transform.position = Locator.Instance.player.lookingAt.transform.position;
             transform.localPosition += new Vector3(0, 0.01f, 0);
             Locator.Instance.gameController.placedIngredient = true;
