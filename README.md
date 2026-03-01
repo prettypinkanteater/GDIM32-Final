@@ -27,11 +27,30 @@ work w/ group
 This is relevant to our feature becaues With the if statement, we can 
 use an else statement to hide the prompt if the sphere-cast doesn't detect anything.
 
-### Team Member Audrey Hu
+### Team Member: Audrey Hu
+
+I wrote the Item parent abstract class containing the PickUp() and PutDown() methods. I also primarily wrote the Utensil and 
+Ingredient child classes that contain polymorphic unique additions to the parent class’s PickUp() and PutDown() methods. For 
+example, the potato gameObject with the ingredient script attached would have its position parented to the cutting board when 
+put down while the knife gameObject with the utensil script attached would not do this. I also created the Locator class with 
+the player reference before the other controller script references(s) were added. In terms of things built in Unity, I set up 
+the knife’s gameObject, animation controller, and the cutting animation clip. I also implemented audio (audio listeners and 
+sources) for the background music required for this stage and to prepare for the next stage involving sound effects.
+
+The Proposal has been significantly helpful because of our level of detail. The break-down has not been helpful as i
+t is literally a visual reflection of what our proposal describes and I do not prefer that format. The Proposal on the other 
+hand, with its sequential and distinctly separated order, is more intuitive and logically organized as a blueprint for building 
+(i.e. item -> item actions). My team then used Trello to divide and assign the tasks that would align with this blueprint. The 
+clarity of our Proposal definitely helped us identify and simplify the tasks easily. Afterwards, and because I became familiar 
+with our game’s mechanics and content, I did not need to look at the Proposal frequently. The only time I did reference it 
+actively was while trying to download the exact sound effects planned for early on in the build process.
+
+
+### Team Member: Brenden Johnston
 Put your individual check-in Devlog here.
-### Team Member Brenden Johnston
-Put your individual check-in Devlog here.
-### Team Member Nolan Burns
+
+
+### Team Member: Nolan Burns
 Put your individual check-in Devlog here.
 
 
