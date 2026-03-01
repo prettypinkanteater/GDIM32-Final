@@ -68,5 +68,16 @@ Put your individual final Devlog here.
 
 ## Open-Source Assets
 Cite any open-source assets here. Put them in a LIST, and use correctly formatted LINKS.
+(potentially get rid of this ^^ ?)
 
+### Audio
 - [Sizzle_Frying Pan_Fienup_001.wav](https://gamesounds.xyz/?search=sizzle)
+- [PM_LB_SOURCE_PUNCH_SMACK_LETTUCE_WITHCONTACT](https://gamesounds.xyz/?search=smack)
+- [Children saying Yay - Praise and Worship Jesus](https://pixabay.com/sound-effects/people-children-saying-yay-praise-and-worship-jesus-299607/)
+- [Sad Violin](https://www.myinstants.com/en/instant/sad-violin-the-meme-one/)
+- [Knife Cut Veggies Foley 4](https://pixabay.com/sound-effects/household-knife-cut-veggies-foley-4-211705/)
+- [Underwater Ambience.wav](https://pixabay.com/sound-effects/nature-underwater-ambiencewav-14428/)
+- [Spring in my step copyright free music for YouTube](https://pixabay.com/music/happy-childrens-tunes-spring-in-my-step-copyright-free-music-for-youtube-320726/)
+
+### Models
+- [Kitchen Knife](https://sketchfab.com/3d-models/kitchen-knife-4c75aae7dfa74b919b61a321242de7f4)
