@@ -42,8 +42,22 @@ with our game’s mechanics and content, I did not need to look at the Proposal fr
 actively was while trying to download the exact sound effects planned for early on in the build process.
 
 
-### Team Member: Brenden Johnston
-Put your individual check-in Devlog here.
+### Team Member: Brendan Johnston
+
+I created the UI script as well as set up the canvas with the “E to interact text”. Along with this I set up the player class, 
+player movement, and the first person camera. Using this and a spherecast we all had a hand in creating, I set up the code for a 
+showprompt() and hideprompt() method in the UI script to use when the player is looking at an object. I also created the gameController 
+class and object and identified the required booleans to be able to only pick up certain items based on quest progress. Then I 
+created the framework for using those booleans within the switch statement in the spherecast if statement to only showPrompt() 
+on ingredients, utensils, or appliances based on what has already been done to ensure the correct order in the quest. I created 
+the system for the object you are holding to be rendered over everything else using a second camera on the player so that those 
+items don’t clip through objects in the space. 
+
+Our proposal was highly detailed which made it very easy to understand what our concept was and what features we wanted in the project. 
+However, the breakdown has not been very useful. I have never particularly liked or used the breakdowns we’ve made in the past and this 
+time is no different. The proposal was laid out brilliantly in order for us to create a concrete idea then move on to other systems 
+like Trello once everything was set in stone. 
+
 
 
 ### Team Member: Nolan Burns
@@ -74,4 +88,4 @@ Put your individual final Devlog here.
 - [Spring in My Step Background Music](https://pixabay.com/music/happy-childrens-tunes-spring-in-my-step-copyright-free-music-for-youtube-320726/)
 
 ### Models
-- [Kitchen Knife Model](https://sketchfab.com/3d-models/kitchen-knife-4c75aae7dfa74b919b61a321242de7f4)
+- [Kitchen Knife Model](https://assetstore.unity.com/packages/3d/props/weapons/low-poly-stylized-knife-pack-299272)
