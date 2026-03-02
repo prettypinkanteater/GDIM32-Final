@@ -10,7 +10,7 @@ with. Otherwise, all items within view regardless of distance would simultaneous
 lack of gameplay clarity. 
 
 Sphere-casting was implemented because it returns information about the object it hit via a RaycastHit variable within the 
-specified radius/area surrounding an origin as defined in its parameters. It also has a direcion and max distance of projection.
+specified radius/area surrounding an origin as defined in its parameters. It also has a direction and max distance of projection.
 In this way, the radius of the sphere-cast can identify if the distance between the player's view, as it is directionally in front of them,
 and an interactable object is the required distance for the player to be prompted to interact. 
 
@@ -22,10 +22,6 @@ only, counters or other scene elements will not trigger the prompt. Other additi
 quest progress, like whether or not an ingredient has been placed in order to pick up a utensil to operate on it. If the conditions
 for a case are met, then the method showing the interaction prompt UI is called. 
 
-work w/ group 
-(mention promptOn bool?)
-This is relevant to our feature becaues With the if statement, we can 
-use an else statement to hide the prompt if the sphere-cast doesn't detect anything.
 
 ### Team Member: Audrey Hu
 
@@ -67,8 +63,6 @@ Put your individual final Devlog here.
 Put your individual final Devlog here.
 
 ## Open-Source Assets
-Cite any open-source assets here. Put them in a LIST, and use correctly formatted LINKS.
-(potentially get rid of this ^^ ?)
 
 ### Audio
 - [Sizzle_Frying Pan_Fienup_001.wav](https://gamesounds.xyz/?search=sizzle)
