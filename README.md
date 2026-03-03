@@ -61,7 +61,20 @@ like Trello once everything was set in stone.
 
 
 ### Team Member: Nolan Burns
-Put your individual check-in Devlog here.
+I sourced and implemented most of the assets present in the scene, including the restaurant, pufferfish manager, and the various appliances. 
+I was responsible for decorating it and added the various sources of lighting and the skybox. This meant I also created and tuned most of the colliders. 
+I created the manager GameObject and his Manager class, utilizing the Locator singleton to reference the player’s location. 
+I also implemented his animations, though most of the animation work was eventually scrapped in favor of a more effective method. 
+I also created the goals UI element and updated it through the Utensil and Ingredient classes using the Locator singleton. 
+I used the architecture concept of the Model-View-Controller pattern with the ItemUsed event within the Utensil child class to implement cutting the manager. 
+
+The proposal has been relatively useful, especially for keeping track of what we need to accomplish and how to tackle certain aspects. 
+I found it sufficiently detailed to where we have yet to address any significant additional details. 
+The breakdown was moderately helpful to make because it forced us to think of all the GameObjects we would be creating and what they would have, but it lacks the detail and structure to assist with scripting. 
+Our architecture plans seemed great when we first made them, but it has been hard to adhere to the Model-View-Controller pattern with events and decoupling. 
+As we progress onto more challenging tasks we may have to revisit how we use the architecture or rework some of our previously written code to align with it better. 
+We have used Trello to keep track of our progress and remind ourselves of the tasks we need to accomplish. We also used a Google document with a list of potential and used assets to make it easier to locate them later on. 
+
 
 
 ## Final Submission
@@ -79,13 +92,22 @@ Put your individual final Devlog here.
 ## Open-Source Assets
 
 ### Audio
-- [Fry Cooking Sizzle Sound Effect](https://gamesounds.xyz/?search=sizzle)
-- [Item Assembly/Use Sound Effect](https://gamesounds.xyz/?search=smack)
-- [Yay Sound Effect](https://pixabay.com/sound-effects/people-children-saying-yay-praise-and-worship-jesus-299607/)
-- [Sad Violin](https://www.myinstants.com/en/instant/sad-violin-the-meme-one/)
-- [Knife Cutting Sound Effect](https://pixabay.com/sound-effects/household-knife-cut-veggies-foley-4-211705/)
-- [Underwater Ambience Background Music](https://pixabay.com/sound-effects/nature-underwater-ambiencewav-14428/)
-- [Spring in My Step Background Music](https://pixabay.com/music/happy-childrens-tunes-spring-in-my-step-copyright-free-music-for-youtube-320726/)
+- [Sizzle Frying Pan](https://gamesounds.xyz/?search=sizzle) - fry cooking sizzle sound effect
+- [Punch Smack Lettuce](https://gamesounds.xyz/?search=smack) - item assembly/use sound effect
+- [Children saying Yay - Praise and Worship Jesus](https://pixabay.com/sound-effects/people-children-saying-yay-praise-and-worship-jesus-299607/) - yay sound effect
+- [Sad Violin (the meme one)](https://www.myinstants.com/en/instant/sad-violin-the-meme-one/) - sad violin sound effect
+- [Knife Cut Veggies Foley 4](https://pixabay.com/sound-effects/household-knife-cut-veggies-foley-4-211705/) - knife cutting sound effect
+- [Underwater Ambience](https://pixabay.com/sound-effects/nature-underwater-ambiencewav-14428/) - underwater ambience background music
+- [Spring in My Step Background Music](https://pixabay.com/music/happy-childrens-tunes-spring-in-my-step-copyright-free-music-for-youtube-320726/) - spring in my step background music
 
 ### Models
-- [Kitchen Knife Model](https://assetstore.unity.com/packages/3d/props/weapons/low-poly-stylized-knife-pack-299272)
+- [Low Poly Stylized Knife Pack](https://assetstore.unity.com/packages/3d/props/weapons/low-poly-stylized-knife-pack-299272) - knife model
+- [Cash Register](https://sketchfab.com/3d-models/cash-register-87562962d47e48b28cc1b874fa46a47f) - cash register model
+- [USA Diner in 3 Times (new, old, destructed)](https://sketchfab.com/3d-models/usa-diner-in-3-times-new-old-destructed-1872c78a7eab4efd9b209a54c83754b3) - diner model
+- [Pandazole - Kitchen Food low poly pack](https://assetstore.unity.com/packages/3d/props/food/pandazole-kitchen-food-low-poly-pack-204525) - low poly food and appliance models
+- [Fugu](https://sketchfab.com/3d-models/fugu-3a60acfbd68243c8a9afadc179afc92b) - pufferfish model
+- [Casual Vegetable Pack](https://assetstore.unity.com/packages/3d/props/food/casual-vegetable-pack-created-with-fastmesh-asset-293783) - low poly vegetable and fruit models
+- [Low Poly Food Pack](https://opengameart.org/content/low-poly-food-pack) - burger model
+- [Toony Kitchen & Ingredients Model](https://assetstore.unity.com/packages/3d/props/toony-kitchen-ingredients-model-free-301805) - bun model
+- [Diner Lamp](https://sketchfab.com/3d-models/diner-lamp-9f0d6acab78e4a84904e4f8ba573118e) - hanging lamp model
+- [Ceiling Light Round](https://sketchfab.com/3d-models/ceiling-light-round-5508e18e61e84346b8d51ed73e0f5411) - ceiling light model

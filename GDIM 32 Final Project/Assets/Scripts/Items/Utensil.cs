@@ -54,7 +54,6 @@ public class Utensil : Item
 
     }
 
-    //Poorly implemented - we should try to use events instead
     protected void CutManager()
     {
         if (chopable == true)

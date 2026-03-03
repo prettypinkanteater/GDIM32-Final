@@ -37,7 +37,6 @@ public class Player : MonoBehaviour
 
     void Update()
     {
-        updateGravity();
         updateMovement();
         updateLook();
 
@@ -106,16 +105,7 @@ public class Player : MonoBehaviour
         Gizmos.DrawWireSphere(transform.position + transform.forward * castDistance, castRadius-1);
     }
 
-
-
-
-    void updateGravity()
-    {
-        Vector3 gravity = Physics.gravity * mass * Time.deltaTime;
-        velocity.y = controller.isGrounded ? -1f : velocity.y + gravity.y;
-    }
-
-    void updateMovement()
+        void updateMovement()
     {
         float x = Input.GetAxis("Horizontal");
         float y = Input.GetAxis("Vertical");
