@@ -23,11 +23,13 @@ public class Manager : MonoBehaviour
         { 
             transform.Translate(Vector3.forward * _speed * Time.deltaTime);
             _animator.SetBool("Swimming", true);
+            _animator.speed = .8f;
         }
         else
         {
             
-            _animator.SetBool("Swimming", false);
+            //_animator.SetBool("Swimming", false);
+            _animator.speed = 0.5f;
         }
     }
     private void OnDrawGizmos()

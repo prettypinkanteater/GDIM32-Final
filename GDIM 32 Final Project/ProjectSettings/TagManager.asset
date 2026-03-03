@@ -8,6 +8,7 @@ TagManager:
   - appliance
   - utensil
   - ingredient
+  - manager
   layers:
   - Default
   - TransparentFX

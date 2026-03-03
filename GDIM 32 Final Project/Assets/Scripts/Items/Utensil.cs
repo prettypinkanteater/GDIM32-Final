@@ -2,22 +2,26 @@ using System.Collections;
 using System.Collections.Generic;
 using Unity.VisualScripting;
 using UnityEngine;
+using UnityEngine.SceneManagement;
 using UnityEngine.UIElements;
 
 public class Utensil : Item
 {
     bool chopable;
     bool chopping;
+    bool cutManager;
     Vector3 rotation;
-    
+
     void Start()
     {
+        Locator.Instance.player.ItemUsed += CutManager;
         Locator.Instance.player.ItemUsed += PickUp;
+        
     }
 
     void Update()
     {
-        if(chopable == true && Input.GetKey(KeyCode.Mouse0))
+        if(chopable == true && (Input.GetKey(KeyCode.Mouse0) || Input.GetKeyDown(KeyCode.E)))
         {
             GetComponent<Animator>().ResetTrigger("Stop");
             GetComponent<Animator>().SetTrigger("Use");
@@ -33,7 +37,7 @@ public class Utensil : Item
 
     protected override void PickUp()
     {
-        if(Locator.Instance.gameController.placedIngredient == true)
+        if(Locator.Instance.gameController.placedIngredient == true && chopable != true)
         {
             Locator.Instance.ui.hidePrompt();
             base.PickUp();
@@ -48,6 +52,26 @@ public class Utensil : Item
     {
         Locator.Instance.ui.hidePrompt();
 
+    }
+
+    //Poorly implemented - we should try to use events instead
+    protected void CutManager()
+    {
+        if (chopable == true)
+        {  
+            cutManager = true;
+
+            //For updating UI - should probably be done via event
+            Locator.Instance.ui.goals.text = "<#880808>Goals: \n<s>- Prepare potato for cutting </s> \n<s>- Don't get fired</s>";
+        }
+    }
+    //This is called from an animation event at the end of Chop
+    protected void EndScene()
+    {
+        if (cutManager) {
+            SceneManager.LoadScene("Main");
+        }
+        
     }
 
     //override base putdown method so that game object dies

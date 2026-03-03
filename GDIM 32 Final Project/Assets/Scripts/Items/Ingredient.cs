@@ -36,6 +36,9 @@ public class Ingredient : Item
             transform.position = Locator.Instance.player.lookingAt.transform.position;
             transform.localPosition += new Vector3(0, 0.01f, 0);
             Locator.Instance.gameController.placedIngredient = true;
+
+            //For updating UI - should probably be done via event
+            Locator.Instance.ui.goals.text = "Goals: \n<s>- Prepare potato for cutting </s> \n- Don't get fired";
         }
     }
 

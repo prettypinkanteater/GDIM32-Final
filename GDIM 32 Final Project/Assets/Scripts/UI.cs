@@ -8,6 +8,7 @@ public class UI : MonoBehaviour
     // Start is called before the first frame update
 
     [SerializeField] GameObject prompt;
+    [SerializeField] public TMP_Text goals;
     void Start()
     {
         

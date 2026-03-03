@@ -24,6 +24,7 @@ public class Player : MonoBehaviour
     public delegate void drop();
     public event drop putDownEvent;
 
+
     private void Awake()
     {
         controller = GetComponent<CharacterController>();
@@ -71,6 +72,13 @@ public class Player : MonoBehaviour
                         promptOn = true;
                     }
                     break;
+                case ("manager"):
+                    if (Locator.Instance.gameController.hasItem == true)
+                    {
+                        Locator.Instance.ui.showPrompt();
+                        promptOn = true;
+                    }
+                    break;
             }
 
         } else
@@ -103,16 +111,16 @@ public class Player : MonoBehaviour
 
     void updateGravity()
     {
-        var gravity = Physics.gravity * mass * Time.deltaTime;
+        Vector3 gravity = Physics.gravity * mass * Time.deltaTime;
         velocity.y = controller.isGrounded ? -1f : velocity.y + gravity.y;
     }
 
     void updateMovement()
     {
-        var x = Input.GetAxis("Horizontal");
-        var y = Input.GetAxis("Vertical");
+        float x = Input.GetAxis("Horizontal");
+        float y = Input.GetAxis("Vertical");
 
-        var input = new Vector3();
+        Vector3 input = new Vector3();
         input += transform.forward * y;
         input += transform.right * x;
         input = Vector3.ClampMagnitude(input, 1f);
