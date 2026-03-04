@@ -9,7 +9,11 @@ MonoBehaviour:
   m_GameObject: {fileID: 0}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: d52495346c1cfd74489c0204e688cbfd, type: 3}
-  m_Name: DialogueTest
+  m_Script: {fileID: 11500000, guid: 01036c510b19f8f4286c27243d0388e4, type: 3}
+  m_Name: NiceReplyResponse
   m_EditorClassIdentifier: 
-  phrase: 
+  _lines:
+  - ... There is a new order.
+  - Make the fries.
+  _playerReplyOptions: []
+  _npcReplies: []
