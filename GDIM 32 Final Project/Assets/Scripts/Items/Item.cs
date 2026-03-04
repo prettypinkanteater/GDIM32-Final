@@ -29,5 +29,7 @@ public abstract class Item : MonoBehaviour
     {
         transform.parent = null;
         Locator.Instance.ui.hidePrompt();
+        Locator.Instance.player.mainCamera.cullingMask = LayerMask.GetMask("Default", "TransparentFX", "Ignore Raycast", "Water", "UI", "Item");
+        Locator.Instance.player.secondCamera.enabled = false;
     }
 }
