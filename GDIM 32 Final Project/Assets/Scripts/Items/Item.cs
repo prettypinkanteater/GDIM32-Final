@@ -21,6 +21,8 @@ public abstract class Item : MonoBehaviour
         transform.parent = Locator.Instance.player.transform;
         transform.localPosition = new Vector3(1, 0, 2);
         GetComponent<BoxCollider>().enabled = false;
+        Locator.Instance.player.mainCamera.cullingMask = LayerMask.GetMask("Default", "TransparentFX", "Ignore Raycast", "Water", "UI");
+        Locator.Instance.player.secondCamera.enabled = true;
     }
 
     protected virtual void PutDown()

@@ -8,8 +8,10 @@ public class Player : MonoBehaviour
     [SerializeField] float movementSpeed = 5f;
     [SerializeField] float mass = 1f;
     [SerializeField] Transform cameraTransform;
-    private float castRadius = 2;
-    private float castDistance = 2;
+    [SerializeField] private float castRadius = 2;
+    [SerializeField] private float castDistance = 2;
+    [SerializeField] public Camera mainCamera;
+    [SerializeField] public Camera secondCamera;
 
     public GameObject lookingAt;
     private bool promptOn;
@@ -42,7 +44,7 @@ public class Player : MonoBehaviour
 
         RaycastHit hit;
         
-        if (Physics.SphereCast(transform.position, 1, transform.forward, out hit, castDistance))
+        if (Physics.SphereCast(transform.localPosition, castRadius, transform.forward, out hit, castDistance, LayerMask.GetMask("Item")))
         {
             string colliderTag = hit.collider.gameObject.tag;
             lookingAt = hit.collider.gameObject;
@@ -102,10 +104,11 @@ public class Player : MonoBehaviour
     private void OnDrawGizmos()
     {
         Gizmos.color = Color.red;
-        Gizmos.DrawWireSphere(transform.position + transform.forward * castDistance, castRadius-1);
+        Gizmos.DrawWireSphere(transform.localPosition + transform.forward * castDistance, castRadius);
+        //Physics.SphereCast(transform.position, castRadius, transform.forward, out hit, castDistance))
     }
 
-        void updateMovement()
+    void updateMovement()
     {
         float x = Input.GetAxis("Horizontal");
         float y = Input.GetAxis("Vertical");
