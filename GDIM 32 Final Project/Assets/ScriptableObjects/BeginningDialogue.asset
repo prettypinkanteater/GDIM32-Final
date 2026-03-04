@@ -13,7 +13,7 @@ MonoBehaviour:
   m_Name: BeginningDialogue
   m_EditorClassIdentifier: 
   _lines:
-  - Alright loser, your shift started 30 seconds ago!
+  - Alright loser, your shift started 30 seconds ago. I'm docking your pay.
   - Have you already forgotten your job?
   _playerReplyOptions:
   - I'm sorry, I'll get started right away
