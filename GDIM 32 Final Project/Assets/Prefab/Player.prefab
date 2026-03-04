@@ -50,6 +50,8 @@ MonoBehaviour:
   movementSpeed: 8
   mass: 1
   cameraTransform: {fileID: 8606981918933370369}
+  castRadius: 1
+  castDistance: 1
   mainCamera: {fileID: 6569331142538026785}
   secondCamera: {fileID: 103131133892202675}
   lookingAt: {fileID: 0}
@@ -227,7 +229,7 @@ Camera:
     y: 0
     width: 1
     height: 1
-  near clip plane: 0.3
+  near clip plane: 0.01
   far clip plane: 60
   field of view: 60
   orthographic: 0
