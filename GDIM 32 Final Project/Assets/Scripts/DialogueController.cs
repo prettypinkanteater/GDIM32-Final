@@ -1,4 +1,4 @@
-/*
+
 using TMPro;
 
 using UnityEngine;
@@ -7,7 +7,7 @@ using UnityEngine.Assertions;
 
 public class DialogueController : MonoBehaviour
 {
-    //[SerializeField] private DialogueUI _dialogue;
+    [SerializeField] private DialogueUI _dialogueUI;
     [SerializeField] private DialogueNode _dialogueStartNode;
 
     private DialogueNode _currentNode;
@@ -22,7 +22,6 @@ public class DialogueController : MonoBehaviour
 
     private void Update()
     {
-
             if (!_waitingForPlayerResponse && Input.GetKeyDown(KeyCode.E))
             {
                 AdvanceDialogue();
@@ -31,7 +30,6 @@ public class DialogueController : MonoBehaviour
             {
                 //
             }
-    
     }
 
     private void AdvanceDialogue()
@@ -41,14 +39,15 @@ public class DialogueController : MonoBehaviour
         if (_currentLine < _currentNode._lines.Length)
         {
             // if we still have NPC lines left, keep playing NPC lines
-            _dialogue.ShowDialogue(_currentNode._lines[_currentLine]);
+            _dialogueUI.ShowDialogue(_currentNode._lines[_currentLine]);
             _currentLine++;
         }
         else if (_currentNode._playerReplyOptions != null && _currentNode._playerReplyOptions.Length > 0)
         {
+            Debug.Log("Waiting for player");
             // show player dialogue options, if there are any
             _waitingForPlayerResponse = true;
-            _dialogue.ShowPlayerOptions(_currentNode._playerReplyOptions);
+            _dialogueUI.ShowPlayerOptions(_currentNode._playerReplyOptions);
         }
         else
         {
@@ -61,10 +60,9 @@ public class DialogueController : MonoBehaviour
     {
         _runningDialogue = false;
         _waitingForPlayerResponse = false;
-        _currentNode = _dialogueStartNode;
+        //_currentNode = _dialogueStartNode;
         _currentLine = 0;
-        _dialogue.HideDialogue();
-        _thoughtBubble.gameObject.SetActive(false);
+        _dialogueUI.HideDialogue();
     }
 
     public void SelectedOption(int option)
@@ -76,4 +74,3 @@ public class DialogueController : MonoBehaviour
         AdvanceDialogue();
     }
 }
-*/

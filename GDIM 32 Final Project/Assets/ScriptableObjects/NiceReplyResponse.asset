@@ -13,7 +13,6 @@ MonoBehaviour:
   m_Name: NiceReplyResponse
   m_EditorClassIdentifier: 
   _lines:
-  - ... There is a new order.
-  - Make the fries.
+  - You better.
   _playerReplyOptions: []
   _npcReplies: []

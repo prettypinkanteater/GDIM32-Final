@@ -4,6 +4,8 @@ using UnityEngine;
 
 public class GameController : MonoBehaviour
 {
+    public bool inDialogue = false;
+    
     public bool hasIngredient = false;
     public bool placedIngredient = false;
     public bool hasItem = false;

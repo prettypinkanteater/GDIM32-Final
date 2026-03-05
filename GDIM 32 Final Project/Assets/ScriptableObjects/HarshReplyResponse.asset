@@ -13,6 +13,7 @@ MonoBehaviour:
   m_Name: HarshReplyResponse
   m_EditorClassIdentifier: 
   _lines:
-  - You better.
+  - ... There is a new order.
+  - Make the fries.
   _playerReplyOptions: []
   _npcReplies: []

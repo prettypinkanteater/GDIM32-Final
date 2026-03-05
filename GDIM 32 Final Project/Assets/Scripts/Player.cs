@@ -39,8 +39,12 @@ public class Player : MonoBehaviour
 
     void Update()
     {
-        updateMovement();
-        updateLook();
+        //Makes it so the player can only move and look while not in dialogue
+        if (!Locator.Instance.gameController.inDialogue) {
+            updateMovement();
+            updateLook();
+        }
+        
 
         RaycastHit hit;
         
