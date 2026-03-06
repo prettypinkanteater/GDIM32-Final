@@ -21,7 +21,7 @@ public abstract class Item : MonoBehaviour
         transform.parent = Locator.Instance.player.transform;
         transform.localPosition = new Vector3(1, 0, 2);
         GetComponent<BoxCollider>().enabled = false;
-        Locator.Instance.player.mainCamera.cullingMask = LayerMask.GetMask("Default", "TransparentFX", "Ignore Raycast", "Water", "UI");
+        Locator.Instance.player.mainCamera.cullingMask = LayerMask.GetMask("Default", "TransparentFX", "Ignore Raycast", "Water", "UI", "Manager");
         Locator.Instance.player.secondCamera.enabled = true;
     }
 
@@ -29,7 +29,7 @@ public abstract class Item : MonoBehaviour
     {
         transform.parent = null;
         Locator.Instance.ui.hidePrompt();
-        Locator.Instance.player.mainCamera.cullingMask = LayerMask.GetMask("Default", "TransparentFX", "Ignore Raycast", "Water", "UI", "Item");
+        Locator.Instance.player.mainCamera.cullingMask = LayerMask.GetMask("Default", "TransparentFX", "Ignore Raycast", "Water", "UI", "Item", "Manager");
         Locator.Instance.player.secondCamera.enabled = false;
     }
 }

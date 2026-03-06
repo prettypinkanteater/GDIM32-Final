@@ -52,7 +52,7 @@ public class Player : MonoBehaviour
 
         RaycastHit hit;
         
-        if (Physics.SphereCast(transform.localPosition, castRadius, transform.forward, out hit, castDistance, LayerMask.GetMask("Item")))
+        if (Physics.SphereCast(transform.localPosition, castRadius, transform.forward, out hit, castDistance, LayerMask.GetMask("Item", "Manager")) && !Locator.Instance.gameController.inDialogue)
         {
             string colliderTag = hit.collider.gameObject.tag;
             lookingAt = hit.collider.gameObject;
@@ -86,16 +86,24 @@ public class Player : MonoBehaviour
                     }
                     break;
                 case ("manager"):
+                    
                     if (Locator.Instance.gameController.hasItem == true)
                     {
-                        Locator.Instance.ui.showPrompt();
-                        promptOn = true;
+                        /*
+                        Locator.Instance.ui.showPrompt2();
+                        prompt2on = true;
+                        */
                     }
-                    break;
+                    else
+                    {
+                        Locator.Instance.ui.showPrompt(); 
+                    }
+                        break;
             }
 
         } else
         {
+            lookingAt = null;
             Locator.Instance.ui.hidePrompt();
             promptOn = false;
             Locator.Instance.ui.hidePrompt2();
