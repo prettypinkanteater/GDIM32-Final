@@ -86,19 +86,17 @@ public class Player : MonoBehaviour
                     }
                     break;
                 case ("manager"):
-                    
-                    if (Locator.Instance.gameController.hasItem == true)
+
+                    /* if (Locator.Instance.gameController.hasItem == true)
                     {
-                        /*
+                        
                         Locator.Instance.ui.showPrompt2();
                         prompt2on = true;
-                        */
-                    }
-                    else
-                    {
-                        Locator.Instance.ui.showPrompt(); 
-                    }
-                        break;
+                        
+                    } */
+                    
+                    Locator.Instance.ui.showDialoguePrompt(); 
+                    break;
             }
 
         } else
@@ -108,6 +106,7 @@ public class Player : MonoBehaviour
             promptOn = false;
             Locator.Instance.ui.hidePrompt2();
             prompt2on = false;
+            Locator.Instance.ui.hideDialoguePrompt();
         }
 
         if (Input.GetKeyDown(KeyCode.E) && promptOn)

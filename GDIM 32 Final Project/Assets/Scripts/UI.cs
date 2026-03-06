@@ -9,6 +9,7 @@ public class UI : MonoBehaviour
 
     [SerializeField] GameObject prompt;
     [SerializeField] GameObject prompt2;
+    [SerializeField] GameObject dialoguePrompt;
     [SerializeField] public TMP_Text goals;
     void Start()
     {
@@ -30,6 +31,10 @@ public class UI : MonoBehaviour
     {
         prompt2.SetActive(true);
     }
+    public void showDialoguePrompt()
+    {
+        dialoguePrompt.SetActive(true);
+    }
 
     public void hidePrompt()
     {
@@ -39,5 +44,9 @@ public class UI : MonoBehaviour
     public void hidePrompt2()
     {
         prompt2.SetActive(false);
+    }
+    public void hideDialoguePrompt()
+    {
+        dialoguePrompt.SetActive(false);
     }
 }
