@@ -1,5 +1,6 @@
 using System.Collections;
 using System.Collections.Generic;
+using System;
 using UnityEngine;
 
 public class Player : MonoBehaviour
@@ -14,7 +15,7 @@ public class Player : MonoBehaviour
     [SerializeField] public Camera secondCamera;
 
     public GameObject lookingAt;
-    private bool promptOn;
+    [SerializeField] private bool promptOn;
     private bool prompt2on;
 
     CharacterController controller;
@@ -44,81 +45,107 @@ public class Player : MonoBehaviour
     void Update()
     {
         //Makes it so the player can only move and look while not in dialogue
-        if (!Locator.Instance.gameController.inDialogue) {
+        if (!Locator.Instance.gameController.inDialogue)
+        {
             updateMovement();
             updateLook();
         }
-        
 
-        RaycastHit hit;
-        
-        if (Physics.SphereCast(transform.localPosition, castRadius, transform.forward, out hit, castDistance, LayerMask.GetMask("Item", "Manager")) && !Locator.Instance.gameController.inDialogue)
+
+        RaycastHit[] rayHit = Physics.SphereCastAll(transform.localPosition + (transform.forward * 2) + Vector3.down, castRadius, transform.forward, castDistance, LayerMask.GetMask("Item", "Manager")); ;
+        // Old: if (Physics.SphereCast(transform.localPosition, castRadius, transform.forward, out hit, castDistance, LayerMask.GetMask("Item", "Manager")))
+        if (rayHit.Length == 0)
         {
-            string colliderTag = hit.collider.gameObject.tag;
-            lookingAt = hit.collider.gameObject;
-            
-            switch (colliderTag) 
-            {
-                
-                case ("utensil"):
-                    if (Locator.Instance.gameController.placedIngredient)
-                    {
-                        Locator.Instance.ui.showPrompt();
-                        promptOn = true;
-                    }
-                    break;
-                case ("appliance"):
-                    if ((Locator.Instance.gameController.hasIngredient))
-                    {
-                        Locator.Instance.ui.showPrompt();
-                        promptOn = true;
-                    } else if((Locator.Instance.gameController.hasItem && Locator.Instance.gameController.placedIngredient))
-                    {
-                        Locator.Instance.ui.showPrompt2();
-                        prompt2on = true;
-                    }
-                        break;
-                case ("ingredient"):
-                    if(Locator.Instance.gameController.hasIngredient == false && Locator.Instance.gameController.placedIngredient == false && Locator.Instance.gameController.hasItem == false)
-                    {
-                        Locator.Instance.ui.showPrompt();
-                        promptOn = true;
-                    }
-                    break;
-                case ("manager"):
-
-                    /* if (Locator.Instance.gameController.hasItem == true)
-                    {
-                        
-                        Locator.Instance.ui.showPrompt2();
-                        prompt2on = true;
-                        
-                    } */
-                    
-                    Locator.Instance.ui.showDialoguePrompt(); 
-                    break;
-            }
-
-        } else
-        {
-            lookingAt = null;
             Locator.Instance.ui.hidePrompt();
             promptOn = false;
             Locator.Instance.ui.hidePrompt2();
             prompt2on = false;
             Locator.Instance.ui.hideDialoguePrompt();
         }
+        foreach (RaycastHit collider in rayHit)
+        {
+            //Debug.Log(collider.collider.gameObject.tag);
+            if (collider.collider != null)
+            {
+                string colliderTag = collider.collider.gameObject.tag;
+                lookingAt = collider.collider.gameObject;
+                //Array.Clear(rayHit, 0, rayHit.Length);
+                switch (colliderTag)
+                {
+
+                    case ("appliance"):
+                        if ((Locator.Instance.gameController.hasIngredient))
+                        {
+                            Locator.Instance.ui.showPrompt();
+                            promptOn = true;
+
+                        }
+                        else if ((Locator.Instance.gameController.hasItem && Locator.Instance.gameController.placedIngredient))
+                        {
+                            Locator.Instance.ui.showPrompt2();
+                            prompt2on = true;
+
+                        }
+                        Locator.Instance.ui.hideDialoguePrompt();
+                        break;
+                    case ("utensil"):
+                        if (Locator.Instance.gameController.placedIngredient)
+                        {
+                            Locator.Instance.ui.showPrompt();
+                            promptOn = true;
+
+                        }
+                        Locator.Instance.ui.hideDialoguePrompt();
+                        break;
+                    
+                    case ("ingredient"):
+                        if (Locator.Instance.gameController.hasIngredient == false && Locator.Instance.gameController.placedIngredient == false && Locator.Instance.gameController.hasItem == false)
+                        {
+                            Locator.Instance.ui.showPrompt();
+                            promptOn = true;
+
+                        }
+                        Locator.Instance.ui.hideDialoguePrompt();
+                        break;
+                    case ("manager"):
+                        RaycastHit hit;
+                        if (Physics.Raycast(transform.localPosition, transform.forward, out hit, 15, LayerMask.GetMask("Manager")) && !Locator.Instance.gameController.inDialogue)
+                        {
+                            Locator.Instance.ui.showDialoguePrompt();
+                            Locator.Instance.ui.hidePrompt();
+                        }
+                        else
+                        {
+                            Locator.Instance.ui.hideDialoguePrompt();
+                        }
+                        
+
+                        /* Saving for stab implementation - probably only on click?
+                        if (Locator.Instance.gameController.hasItem == true)
+                        {
+                            Locator.Instance.ui.showPrompt();
+                            promptOn = true;
+                        }
+                        */
+
+                        //promptOn = true;
+
+                        break;
+                }
+            }
+        }
 
         if (Input.GetKeyDown(KeyCode.E) && promptOn)
         {
-            if(Locator.Instance.gameController.hasIngredient)
+            if (Locator.Instance.gameController.hasIngredient)
             {
                 putDownEvent.Invoke();
-            } else
+            }
+            else
             {
                 ItemUsed.Invoke();
             }
-                
+
         }
         if (Input.GetMouseButtonDown(0) && prompt2on)
         {
@@ -130,8 +157,9 @@ public class Player : MonoBehaviour
     private void OnDrawGizmos()
     {
         Gizmos.color = Color.red;
-        Gizmos.DrawWireSphere(transform.localPosition + transform.forward * castDistance, castRadius);
-        //Physics.SphereCast(transform.position, castRadius, transform.forward, out hit, castDistance))
+        Gizmos.DrawWireSphere(transform.localPosition + (transform.forward * 2 * castDistance) + Vector3.down, castRadius);
+        Gizmos.color = Color.blue;
+        Gizmos.DrawRay(transform.localPosition, transform.forward * 15);
     }
 
     void updateMovement()

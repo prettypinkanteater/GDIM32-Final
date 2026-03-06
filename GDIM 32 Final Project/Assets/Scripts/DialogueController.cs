@@ -43,6 +43,7 @@ public class DialogueController : MonoBehaviour
     {
         _runningDialogue = true;
         Locator.Instance.ui.hidePrompt();
+        Locator.Instance.ui.hideDialoguePrompt();
 
         if (_currentLine < _currentNode._lines.Length)
         {

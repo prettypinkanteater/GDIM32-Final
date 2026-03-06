@@ -31,7 +31,7 @@ public class Ingredient : Item
 
     protected override void PutDown()
     {
-        if(Locator.Instance.gameController.hasIngredient == true) 
+        if(Locator.Instance.gameController.hasIngredient == true && Locator.Instance.player.lookingAt.tag == "appliance") 
         {
             Locator.Instance.gameController.hasIngredient = false;
             GetComponent<Collider>().enabled = false;

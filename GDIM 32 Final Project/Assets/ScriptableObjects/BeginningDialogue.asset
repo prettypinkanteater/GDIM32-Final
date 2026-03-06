@@ -19,5 +19,5 @@ MonoBehaviour:
   - I'm sorry, I'll get started right away
   - Did your new wife leave you again?
   _npcReplies:
-  - {fileID: 11400000, guid: 66018e4a8db849f4f9966f24a9336200, type: 2}
   - {fileID: 11400000, guid: 6b233d60f5d5a3c44a412d1ed734ea7c, type: 2}
+  - {fileID: 11400000, guid: 66018e4a8db849f4f9966f24a9336200, type: 2}
