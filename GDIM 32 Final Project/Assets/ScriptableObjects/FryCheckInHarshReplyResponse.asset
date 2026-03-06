@@ -10,12 +10,13 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 01036c510b19f8f4286c27243d0388e4, type: 3}
-  m_Name: HarshReplyResponse
+  m_Name: FryCheckInHarshReplyResponse
   m_EditorClassIdentifier: 
   _lines:
-  - ... There is a new order.
-  - Make the fries.
+  - "\u2026 "
+  - Get back to work.
   _playerReplyOptions:
-  - Testing
+  - Get back to working on your marriage.
+  - Ok.
   _npcReplies:
-  - {fileID: 11400000, guid: e4ecde18005229b4581a61c0145310f6, type: 2}
+  - {fileID: 11400000, guid: 2edc4da43c04cd54790acab0190c2015, type: 2}

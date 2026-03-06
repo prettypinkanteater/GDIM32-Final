@@ -10,12 +10,13 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 01036c510b19f8f4286c27243d0388e4, type: 3}
-  m_Name: HarshReplyResponse
+  m_Name: FryCheckIn
   m_EditorClassIdentifier: 
   _lines:
-  - ... There is a new order.
-  - Make the fries.
+  - "You still haven\u2019t finished making the fries?  "
   _playerReplyOptions:
-  - Testing
+  - No, sorry.
+  - "You still haven\u2019t made your wife happy? "
   _npcReplies:
-  - {fileID: 11400000, guid: e4ecde18005229b4581a61c0145310f6, type: 2}
+  - {fileID: 11400000, guid: 89380ef84e009fa4e98c00ce121ead5e, type: 2}
+  - {fileID: 11400000, guid: 09b010ff95af67748aff054aa699ef93, type: 2}

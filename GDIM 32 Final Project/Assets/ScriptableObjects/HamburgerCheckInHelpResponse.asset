@@ -1,0 +1,24 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 01036c510b19f8f4286c27243d0388e4, type: 3}
+  m_Name: HamburgerCheckInHelpResponse
+  m_EditorClassIdentifier: 
+  _lines:
+  - "You\u2019re really the smartest fish in the school."
+  - "*under his breath* C\u2019est tr\xE8s facile, poisson stupide."
+  - All meats are in the fridge.
+  - 'Did you really graduate? '
+  - The grill is where you cook it, Fryday.
+  - 'You must know what a plate looks like by now. '
+  - Cook it, place it there, and little Timmy will finish the rest.
+  _playerReplyOptions: []
+  _npcReplies: []
