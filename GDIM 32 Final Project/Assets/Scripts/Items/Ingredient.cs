@@ -4,11 +4,14 @@ using UnityEngine;
 
 public class Ingredient : Item
 {
+    [SerializeField] private GameObject newModel;
+
     // Start is called before the first frame update
     void Start()
     {
         Locator.Instance.player.putDownEvent += PutDown;
         Locator.Instance.player.ItemUsed += PickUp;
+        Locator.Instance.player.Chop += changeModel;
     }
 
     // Update is called once per frame
@@ -42,5 +45,9 @@ public class Ingredient : Item
         }
     }
 
-    //add putdown method override
+    protected void changeModel()
+    {
+        Instantiate(newModel, this.gameObject.transform.position + new Vector3(0,0.05f, 0), this.gameObject.transform.rotation);
+        Destroy(this.gameObject);
+    }
 }

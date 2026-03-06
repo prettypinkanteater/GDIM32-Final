@@ -15,6 +15,7 @@ public class Player : MonoBehaviour
 
     public GameObject lookingAt;
     private bool promptOn;
+    private bool prompt2on;
 
     CharacterController controller;
     Vector3 velocity;
@@ -25,6 +26,9 @@ public class Player : MonoBehaviour
 
     public delegate void drop();
     public event drop putDownEvent;
+
+    public delegate void chop();
+    public event chop Chop;
 
 
     private void Awake()
@@ -64,12 +68,16 @@ public class Player : MonoBehaviour
                     }
                     break;
                 case ("appliance"):
-                    if (Locator.Instance.gameController.hasIngredient)
+                    if ((Locator.Instance.gameController.hasIngredient))
                     {
                         Locator.Instance.ui.showPrompt();
                         promptOn = true;
+                    } else if((Locator.Instance.gameController.hasItem && Locator.Instance.gameController.placedIngredient))
+                    {
+                        Locator.Instance.ui.showPrompt2();
+                        prompt2on = true;
                     }
-                    break;
+                        break;
                 case ("ingredient"):
                     if(Locator.Instance.gameController.hasIngredient == false && Locator.Instance.gameController.placedIngredient == false && Locator.Instance.gameController.hasItem == false)
                     {
@@ -90,6 +98,8 @@ public class Player : MonoBehaviour
         {
             Locator.Instance.ui.hidePrompt();
             promptOn = false;
+            Locator.Instance.ui.hidePrompt2();
+            prompt2on = false;
         }
 
         if (Input.GetKeyDown(KeyCode.E) && promptOn)
@@ -102,6 +112,11 @@ public class Player : MonoBehaviour
                 ItemUsed.Invoke();
             }
                 
+        }
+        if (Input.GetMouseButtonDown(0) && prompt2on)
+        {
+            Debug.Log("chop");
+            Chop.Invoke();
         }
     }
 

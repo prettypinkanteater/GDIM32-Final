@@ -16,6 +16,7 @@ public class Utensil : Item
     {
         Locator.Instance.player.ItemUsed += CutManager;
         Locator.Instance.player.ItemUsed += PickUp;
+        Locator.Instance.player.Chop += PutDown;
         
     }
 
@@ -51,6 +52,8 @@ public class Utensil : Item
     protected override void PutDown()
     {
         Locator.Instance.ui.hidePrompt();
+        Destroy(this.gameObject);
+        Locator.Instance.gameController.hasItem = false;
 
     }
 

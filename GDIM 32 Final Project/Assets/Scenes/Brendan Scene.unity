@@ -1413,6 +1413,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   prompt: {fileID: 2036875252}
+  prompt2: {fileID: 0}
+  goals: {fileID: 0}
 --- !u!1001 &1862953711
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -1782,63 +1784,6 @@ PrefabInstance:
       addedObject: {fileID: 1050358681}
     m_AddedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 961ec2e082a37c946ae0f4f077954fe3, type: 3}
---- !u!1001 &7006414142020304415
-PrefabInstance:
-  m_ObjectHideFlags: 0
-  serializedVersion: 2
-  m_Modification:
-    serializedVersion: 3
-    m_TransformParent: {fileID: 0}
-    m_Modifications:
-    - target: {fileID: 3043410819131480349, guid: c7e4cd1a82cefa54198000c293594fca, type: 3}
-      propertyPath: m_LocalPosition.x
-      value: -3.788
-      objectReference: {fileID: 0}
-    - target: {fileID: 3043410819131480349, guid: c7e4cd1a82cefa54198000c293594fca, type: 3}
-      propertyPath: m_LocalPosition.y
-      value: 3.4135861
-      objectReference: {fileID: 0}
-    - target: {fileID: 3043410819131480349, guid: c7e4cd1a82cefa54198000c293594fca, type: 3}
-      propertyPath: m_LocalPosition.z
-      value: -5.906
-      objectReference: {fileID: 0}
-    - target: {fileID: 3043410819131480349, guid: c7e4cd1a82cefa54198000c293594fca, type: 3}
-      propertyPath: m_LocalRotation.w
-      value: 0.6691605
-      objectReference: {fileID: 0}
-    - target: {fileID: 3043410819131480349, guid: c7e4cd1a82cefa54198000c293594fca, type: 3}
-      propertyPath: m_LocalRotation.x
-      value: -0
-      objectReference: {fileID: 0}
-    - target: {fileID: 3043410819131480349, guid: c7e4cd1a82cefa54198000c293594fca, type: 3}
-      propertyPath: m_LocalRotation.y
-      value: 0.7431179
-      objectReference: {fileID: 0}
-    - target: {fileID: 3043410819131480349, guid: c7e4cd1a82cefa54198000c293594fca, type: 3}
-      propertyPath: m_LocalRotation.z
-      value: -0
-      objectReference: {fileID: 0}
-    - target: {fileID: 3043410819131480349, guid: c7e4cd1a82cefa54198000c293594fca, type: 3}
-      propertyPath: m_LocalEulerAnglesHint.x
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 3043410819131480349, guid: c7e4cd1a82cefa54198000c293594fca, type: 3}
-      propertyPath: m_LocalEulerAnglesHint.y
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 3043410819131480349, guid: c7e4cd1a82cefa54198000c293594fca, type: 3}
-      propertyPath: m_LocalEulerAnglesHint.z
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 3343919096583203774, guid: c7e4cd1a82cefa54198000c293594fca, type: 3}
-      propertyPath: m_Name
-      value: Raw Fries
-      objectReference: {fileID: 0}
-    m_RemovedComponents: []
-    m_RemovedGameObjects: []
-    m_AddedGameObjects: []
-    m_AddedComponents: []
-  m_SourcePrefab: {fileID: 100100000, guid: c7e4cd1a82cefa54198000c293594fca, type: 3}
 --- !u!1001 &7998898049769855207
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -1853,7 +1798,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 2102653138669675329, guid: ed0b146d583b28344a3d46ca08ace871, type: 3}
       propertyPath: m_LocalPosition.y
-      value: 3.82
+      value: 3.38
       objectReference: {fileID: 0}
     - target: {fileID: 2102653138669675329, guid: ed0b146d583b28344a3d46ca08ace871, type: 3}
       propertyPath: m_LocalPosition.z
@@ -1918,4 +1863,3 @@ SceneRoots:
   - {fileID: 1862953711}
   - {fileID: 1072229062}
   - {fileID: 7998898049769855207}
-  - {fileID: 7006414142020304415}
