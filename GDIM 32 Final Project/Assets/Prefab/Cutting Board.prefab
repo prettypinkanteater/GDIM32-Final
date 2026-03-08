@@ -11,7 +11,7 @@ GameObject:
   - component: {fileID: 2102653138669675329}
   - component: {fileID: 14892199166587792}
   - component: {fileID: 4360451269539929513}
-  m_Layer: 6
+  m_Layer: 8
   m_Name: Cutting Board
   m_TagString: appliance
   m_Icon: {fileID: 0}
@@ -65,7 +65,7 @@ BoxCollider:
   m_ProvidesContacts: 0
   m_Enabled: 1
   serializedVersion: 3
-  m_Size: {x: 0.38, y: 0.3, z: 0.66789883}
+  m_Size: {x: 0.3, y: 0.1, z: 0.34}
   m_Center: {x: 0.008930755, y: 0, z: -0.013850785}
 --- !u!1001 &7805979082953660288
 PrefabInstance:
@@ -137,7 +137,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 919132149155446097, guid: f98eff440ecc0a1489fa332256aa63ba, type: 3}
       propertyPath: m_Layer
-      value: 6
+      value: 8
       objectReference: {fileID: 0}
     - target: {fileID: 919132149155446097, guid: f98eff440ecc0a1489fa332256aa63ba, type: 3}
       propertyPath: m_TagString
