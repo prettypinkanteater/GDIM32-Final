@@ -10,14 +10,16 @@ public class GameController : MonoBehaviour
     public bool placedIngredient = false;
     public bool hasItem = false;
 
+    public bool rawPotato = true;
     public bool cutPotato = false;
-    public bool fryInProgress = false;
+    public bool fryInProgress = true;
     public bool fryDone = false;
 
     public bool burgerInProgress = false;
     public bool burgerDone = false;
 
-    
+    private delegate void TimerFinished();
+    private event TimerFinished FoodDone;
 
     // Start is called before the first frame update
     void Start()
