@@ -44,6 +44,8 @@ public class Ingredient : Item
             transform.localPosition += new Vector3(0, 0.01f, 0);
             Locator.Instance.gameController.placedIngredient = true;
 
+            
+
             //For updating UI - should probably be done via event
             Locator.Instance.ui.goals.text = "Goals: \n<s>- Prepare potato for cutting </s> \n- Don't get fired";
 
@@ -56,5 +58,11 @@ public class Ingredient : Item
     {
         Instantiate(newModel, this.gameObject.transform.position + new Vector3(0,0.05f, 0), this.gameObject.transform.rotation);
         Destroy(this.gameObject);
+
+        if (Locator.Instance.gameController.fryInProgress)
+        {
+            Locator.Instance.gameController.cutPotato = true;
+        }
+
     }
 }
