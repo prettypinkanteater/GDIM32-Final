@@ -35,4 +35,9 @@ public class AudioController : MonoBehaviour
     {
         _smack.Play();
     }
+
+    private void TimmySound()
+    {
+        _sadViolin.Play();
+    }
 }
