@@ -16,12 +16,8 @@ public class GameController : MonoBehaviour
 
     public bool burgerInProgress = false;
     public bool burgerDone = false;
+
     
-
-
-
-
-
 
     // Start is called before the first frame update
     void Start()
@@ -33,5 +29,10 @@ public class GameController : MonoBehaviour
     void Update()
     {
         
+    }
+
+    void FryQuestDone()
+    {
+        fryDone = true;
     }
 }
