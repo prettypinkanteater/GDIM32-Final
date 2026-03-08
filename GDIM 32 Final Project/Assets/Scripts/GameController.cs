@@ -10,6 +10,14 @@ public class GameController : MonoBehaviour
     public bool placedIngredient = false;
     public bool hasItem = false;
 
+    public bool cutPotato = false;
+    public bool fryInProgress = false;
+    public bool fryDone = false;
+
+    public bool burgerInProgress = false;
+    public bool burgerDone = false;
+    
+
 
 
 
