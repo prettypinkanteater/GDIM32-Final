@@ -26,9 +26,9 @@ public class Appliance : Item
         {
             _cookingTimer -= Time.deltaTime;
         }
-        if (Locator.Instance.gameController.cutPotato)         
+        if (Locator.Instance.gameController.cutPotato && this.gameObject.name == "Cutting Board")         
         {
-            GetComponent<Collider>().enabled = true;
+            GetComponent<Collider>().enabled = false;
         }
 
     }

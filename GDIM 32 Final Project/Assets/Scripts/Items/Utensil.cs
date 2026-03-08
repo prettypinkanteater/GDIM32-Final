@@ -56,11 +56,12 @@ public class Utensil : Item
     protected override void PutDown()
     {
         Locator.Instance.ui.hidePrompt();
-        Destroy(this.gameObject);
         Locator.Instance.gameController.hasItem = false;
 
         Locator.Instance.player.mainCamera.cullingMask = LayerMask.GetMask("Default", "TransparentFX", "Ignore Raycast", "Water", "UI", "Manager", "Ingredient", "Utensil", "Appliance");
         Locator.Instance.player.secondCamera.enabled = false;
+        Destroy(this.gameObject);
+        
 
     }
 

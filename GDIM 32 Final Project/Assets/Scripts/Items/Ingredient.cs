@@ -4,7 +4,9 @@ using UnityEngine;
 
 public class Ingredient : Item
 {
-    [SerializeField] private GameObject newModel;
+    //[SerializeField] private GameObject newModel;
+    [SerializeField] private GameObject potato;
+    [SerializeField] private GameObject cut;
 
     // Start is called before the first frame update
     void Start()
@@ -17,7 +19,11 @@ public class Ingredient : Item
     // Update is called once per frame
     void Update()
     {
-       
+       if(Locator.Instance.gameController.cutPotato)
+        {
+            potato.SetActive(false);
+            cut.SetActive(true);
+        }
     }
 
     protected override void PickUp()
@@ -38,10 +44,18 @@ public class Ingredient : Item
         if(Locator.Instance.gameController.hasIngredient == true && Locator.Instance.player.lookingAt.tag == "appliance") 
         {
             Locator.Instance.gameController.hasIngredient = false;
-            GetComponent<Collider>().enabled = false;
+            //GetComponent<Collider>().enabled = false;
             base.PutDown();
-            transform.position = Locator.Instance.player.lookingAt.transform.position;
-            transform.localPosition += new Vector3(0, 0.01f, 0);
+
+            if(Locator.Instance.gameController.cutPotato)
+            {
+                transform.position = new Vector3(263.392f, 3.082f, -10.92f);
+            } else
+            {
+                transform.localPosition = Locator.Instance.player.lookingAt.transform.GetChild(0).position;
+                transform.localPosition += new Vector3(0, 0.01f, 0);
+            }
+                
             Locator.Instance.gameController.placedIngredient = true;
 
             
@@ -56,13 +70,17 @@ public class Ingredient : Item
 
     protected void changeModel()
     {
-        Instantiate(newModel, this.gameObject.transform.position + new Vector3(0,0.05f, 0), this.gameObject.transform.rotation);
-        Destroy(this.gameObject);
-
+        Locator.Instance.ui.hidePrompt2();
         if (Locator.Instance.gameController.fryInProgress)
         {
             Locator.Instance.gameController.cutPotato = true;
+            Locator.Instance.gameController.rawPotato = false;
+            Locator.Instance.gameController.placedIngredient = false;
         }
+
+        //Destroy(this.gameObject);
+        this.gameObject.GetComponent<Collider>().enabled = true;
+        
 
     }
 }

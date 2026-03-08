@@ -11,7 +11,7 @@ GameObject:
   - component: {fileID: 1919572545826736863}
   - component: {fileID: 7397121444431386103}
   - component: {fileID: 5929082294941863527}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: Prop_Frier_p03
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -94,7 +94,7 @@ GameObject:
   - component: {fileID: 4648406511950137351}
   - component: {fileID: 2766347300013152386}
   - component: {fileID: 2509870789636897210}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: Prop_Frier_p02
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -177,7 +177,7 @@ GameObject:
   - component: {fileID: 2776161357637404532}
   - component: {fileID: 3896247705382242083}
   - component: {fileID: 6929783481115682586}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: Prop_Frier_p04
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -261,9 +261,9 @@ GameObject:
   - component: {fileID: 8336609193953823534}
   - component: {fileID: 6076871769234309092}
   - component: {fileID: 2712115251489921090}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: Prop_Frier
-  m_TagString: Untagged
+  m_TagString: appliance
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -276,10 +276,10 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 5716649975524417073}
   serializedVersion: 2
-  m_LocalRotation: {x: 0, y: -0, z: -0, w: 1}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: -0, y: 0, z: 0}
-  m_LocalScale: {x: 1, y: 1, z: 1}
-  m_ConstrainProportionsScale: 0
+  m_LocalScale: {x: 3, y: 3, z: 3}
+  m_ConstrainProportionsScale: 1
   m_Children:
   - {fileID: 4648406511950137351}
   - {fileID: 1919572545826736863}
@@ -355,5 +355,5 @@ BoxCollider:
   m_ProvidesContacts: 0
   m_Enabled: 1
   serializedVersion: 3
-  m_Size: {x: 0.9, y: 1.364271, z: 0.7670989}
-  m_Center: {x: 0, y: 0.6754152, z: -0.016450599}
+  m_Size: {x: 0.9, y: 2.3, z: 0.7670989}
+  m_Center: {x: 0, y: 1.07, z: -0.016450599}
