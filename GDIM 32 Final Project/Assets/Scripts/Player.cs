@@ -52,7 +52,7 @@ public class Player : MonoBehaviour
         }
 
 
-        RaycastHit[] rayHit = Physics.SphereCastAll(transform.localPosition + (transform.forward * 2) + Vector3.down, castRadius, transform.forward, castDistance, LayerMask.GetMask("Item", "Manager")); ;
+        RaycastHit[] rayHit = Physics.SphereCastAll(transform.localPosition + (transform.forward * 2) + Vector3.down, castRadius, transform.forward, castDistance, LayerMask.GetMask("Ingredient", "Manager", "Utensil", "Appliance")); ;
         // Old: if (Physics.SphereCast(transform.localPosition, castRadius, transform.forward, out hit, castDistance, LayerMask.GetMask("Item", "Manager")))
         if (rayHit.Length == 0)
         {
