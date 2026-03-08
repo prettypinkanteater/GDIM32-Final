@@ -7,6 +7,7 @@ public class Ingredient : Item
     //[SerializeField] private GameObject newModel;
     [SerializeField] private GameObject potato;
     [SerializeField] private GameObject cut;
+    [SerializeField] private GameObject cooked;
 
     // Start is called before the first frame update
     void Start()
@@ -23,6 +24,13 @@ public class Ingredient : Item
         {
             potato.SetActive(false);
             cut.SetActive(true);
+            cooked.SetActive(false);
+        }
+        if (Locator.Instance.gameController.fryCOOKED)
+        {
+            potato.SetActive(false);
+            cut.SetActive(false);
+            cooked.SetActive(true);
         }
     }
 
@@ -49,7 +57,7 @@ public class Ingredient : Item
 
             if(Locator.Instance.gameController.cutPotato)
             {
-                transform.position = new Vector3(263.392f, 3.082f, -10.92f);
+                transform.position = new Vector3(262.77f, 3.082f, -10.92f);
             } else
             {
                 transform.localPosition = Locator.Instance.player.lookingAt.transform.GetChild(0).position;

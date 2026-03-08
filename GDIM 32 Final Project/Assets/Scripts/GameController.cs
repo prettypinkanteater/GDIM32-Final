@@ -13,10 +13,13 @@ public class GameController : MonoBehaviour
     public bool rawPotato = true;
     public bool cutPotato = false;
     public bool fryInProgress = true;
+    public bool fryCOOKED = false;
     public bool fryDone = false;
 
     public bool burgerInProgress = false;
     public bool burgerDone = false;
+
+    
 
     private delegate void TimerFinished();
     private event TimerFinished FoodDone;
@@ -36,5 +39,10 @@ public class GameController : MonoBehaviour
     void FryQuestDone()
     {
         fryDone = true;
+    }
+
+    public void ResetBooleans()
+    {
+        placedIngredient = true;
     }
 }
