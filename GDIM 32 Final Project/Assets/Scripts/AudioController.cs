@@ -20,4 +20,19 @@ public class AudioController : MonoBehaviour
     {
         
     }
+
+    private void ChopSound()
+    {
+        _knifeChop.Play();
+    }
+
+    private void SizzleSound()
+    {
+        _sizzle.Play();
+    }
+
+    private void SmackSound()
+    {
+        _smack.Play();
+    }
 }
