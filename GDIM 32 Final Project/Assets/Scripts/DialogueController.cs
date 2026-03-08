@@ -22,13 +22,9 @@ public class DialogueController : MonoBehaviour
 
     private void Update()
     {
-            if (!_waitingForPlayerResponse && Input.GetKeyDown(KeyCode.E) && (Locator.Instance.player.lookingAt != null || Locator.Instance.gameController.inDialogue))
+            if (!_waitingForPlayerResponse && Input.GetKeyDown(KeyCode.E))
             {
-                if (Locator.Instance.gameController.inDialogue)
-                {
-                AdvanceDialogue();
-                }
-                else if (Locator.Instance.player.lookingAt.gameObject.tag == "manager")
+                if (Locator.Instance.gameController.inDialogue || Locator.Instance.player.dialoguePromptOn)
                 {
                 AdvanceDialogue();
                 }
