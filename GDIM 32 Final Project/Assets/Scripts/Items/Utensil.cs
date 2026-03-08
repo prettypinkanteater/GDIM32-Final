@@ -66,6 +66,7 @@ public class Utensil : Item
 
     protected void CutManager()
     {
+        /*
         if (chopable == true)
         {  
             cutManager = true;
@@ -73,14 +74,16 @@ public class Utensil : Item
             //For updating UI - should probably be done via event
             Locator.Instance.ui.goals.text = "<#880808>Goals: \n<s>- Prepare potato for cutting </s> \n<s>- Don't get fired</s>";
         }
+        */
     }
     //This is called from an animation event at the end of Chop
     protected void EndScene()
     {
+        /*
         if (cutManager) {
             SceneManager.LoadScene("Main");
         }
-        
+        */
     }
 
     //override base putdown method so that game object dies

@@ -114,6 +114,8 @@ public class Player : MonoBehaviour
                             Locator.Instance.ui.showDialoguePrompt();
                             Locator.Instance.ui.hidePrompt();
                             Locator.Instance.ui.hidePrompt2();
+                            promptOn = false;
+                            prompt2on = false;
                         }
                         else
                         {
