@@ -46,7 +46,7 @@ public class Utensil : Item
             chopable = true;
             Locator.Instance.gameController.hasItem = true;
 
-            Locator.Instance.player.mainCamera.cullingMask = LayerMask.GetMask("Default", "TransparentFX", "Ignore Raycast", "Water", "UI", "Manager", "Ingredient");
+            Locator.Instance.player.mainCamera.cullingMask = LayerMask.GetMask("Default", "TransparentFX", "Ignore Raycast", "Water", "UI", "Manager", "Ingredient", "Appliance");
             Locator.Instance.player.secondCamera.cullingMask = LayerMask.GetMask("Utensil");
             Locator.Instance.player.secondCamera.enabled = true;
         }
@@ -59,7 +59,7 @@ public class Utensil : Item
         Destroy(this.gameObject);
         Locator.Instance.gameController.hasItem = false;
 
-        Locator.Instance.player.mainCamera.cullingMask = LayerMask.GetMask("Default", "TransparentFX", "Ignore Raycast", "Water", "UI", "Manager", "Ingredient", "Utensil");
+        Locator.Instance.player.mainCamera.cullingMask = LayerMask.GetMask("Default", "TransparentFX", "Ignore Raycast", "Water", "UI", "Manager", "Ingredient", "Utensil", "Appliance");
         Locator.Instance.player.secondCamera.enabled = false;
 
     }
