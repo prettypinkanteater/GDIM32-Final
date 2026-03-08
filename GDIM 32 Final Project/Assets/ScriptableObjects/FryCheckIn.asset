@@ -17,6 +17,8 @@ MonoBehaviour:
   _playerReplyOptions:
   - No, sorry.
   - "You still haven\u2019t made your wife happy? "
+  - Get out of my way.
   _npcReplies:
   - {fileID: 11400000, guid: 89380ef84e009fa4e98c00ce121ead5e, type: 2}
   - {fileID: 11400000, guid: 09b010ff95af67748aff054aa699ef93, type: 2}
+  - {fileID: 11400000, guid: c2896ed93993f584bb0b68afb998a559, type: 2}

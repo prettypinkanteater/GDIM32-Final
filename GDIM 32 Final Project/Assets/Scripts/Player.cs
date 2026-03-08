@@ -15,8 +15,9 @@ public class Player : MonoBehaviour
     [SerializeField] public Camera secondCamera;
 
     public GameObject lookingAt;
-    [SerializeField] private bool promptOn;
-    private bool prompt2on;
+    [SerializeField]  private bool promptOn;
+    [SerializeField]  private bool prompt2on;
+    [SerializeField]  public bool dialoguePromptOn;
 
     CharacterController controller;
     Vector3 velocity;
@@ -61,82 +62,90 @@ public class Player : MonoBehaviour
             Locator.Instance.ui.hidePrompt2();
             prompt2on = false;
             Locator.Instance.ui.hideDialoguePrompt();
+            dialoguePromptOn = false;
         }
-        foreach (RaycastHit collider in rayHit)
-        {
-            //Debug.Log(collider.collider.gameObject.tag);
-            if (collider.collider != null)
+            foreach (RaycastHit collider in rayHit)
             {
-                string colliderTag = collider.collider.gameObject.tag;
-                lookingAt = collider.collider.gameObject;
-                //Array.Clear(rayHit, 0, rayHit.Length);
-                switch (colliderTag)
+                Locator.Instance.ui.hidePrompt();
+                promptOn = false;
+                Locator.Instance.ui.hidePrompt2();
+                prompt2on = false;
+                Locator.Instance.ui.hideDialoguePrompt();
+                dialoguePromptOn = false;
+
+            if (collider.collider != null)
                 {
+                    string colliderTag = collider.collider.gameObject.tag;
+                    lookingAt = collider.collider.gameObject;
 
-                    case ("appliance"):
-                        if ((Locator.Instance.gameController.hasIngredient))
-                        {
-                            Locator.Instance.ui.showPrompt();
-                            promptOn = true;
+                    switch (colliderTag)
+                    {
 
-                        }
-                        else if ((Locator.Instance.gameController.hasItem && Locator.Instance.gameController.placedIngredient))
-                        {
-                            Locator.Instance.ui.showPrompt2();
-                            prompt2on = true;
+                        case ("appliance"):
+                            if ((Locator.Instance.gameController.hasIngredient))
+                            {
+                                Locator.Instance.ui.showPrompt();
+                                promptOn = true;
 
-                        }
-                        Locator.Instance.ui.hideDialoguePrompt();
-                        break;
-                    case ("utensil"):
-                        if (Locator.Instance.gameController.placedIngredient)
-                        {
-                            Locator.Instance.ui.showPrompt();
-                            promptOn = true;
+                            }
+                            else if ((Locator.Instance.gameController.hasItem && Locator.Instance.gameController.placedIngredient))
+                            {
+                                Locator.Instance.ui.showPrompt2();
+                                prompt2on = true;
 
-                        }
-                        Locator.Instance.ui.hideDialoguePrompt();
-                        break;
-                    
-                    case ("ingredient"):
-                        if (Locator.Instance.gameController.hasIngredient == false && Locator.Instance.gameController.placedIngredient == false && Locator.Instance.gameController.hasItem == false)
-                        {
-                            Locator.Instance.ui.showPrompt();
-                            promptOn = true;
-
-                        }
-                        Locator.Instance.ui.hideDialoguePrompt();
-                        break;
-                    case ("manager"):
-                        RaycastHit hit;
-                        if (Physics.Raycast(transform.localPosition, transform.forward, out hit, 15, LayerMask.GetMask("Manager")) && !Locator.Instance.gameController.inDialogue)
-                        {
-                            Locator.Instance.ui.showDialoguePrompt();
-                            Locator.Instance.ui.hidePrompt();
-                            Locator.Instance.ui.hidePrompt2();
-                            promptOn = false;
-                            prompt2on = false;
-                        }
-                        else
-                        {
+                            }
                             Locator.Instance.ui.hideDialoguePrompt();
-                        }
-                        
+                            break;
+                        case ("utensil"):
+                            if (Locator.Instance.gameController.placedIngredient)
+                            {
+                                Locator.Instance.ui.showPrompt();
+                                promptOn = true;
 
-                        /* Saving for stab implementation - probably only on click?
-                        if (Locator.Instance.gameController.hasItem == true)
-                        {
-                            Locator.Instance.ui.showPrompt();
-                            promptOn = true;
-                        }
-                        */
+                            }
+                            Locator.Instance.ui.hideDialoguePrompt();
+                            break;
 
-                        //promptOn = true;
+                        case ("ingredient"):
+                            if (Locator.Instance.gameController.hasIngredient == false && Locator.Instance.gameController.placedIngredient == false && Locator.Instance.gameController.hasItem == false)
+                            {
+                                Locator.Instance.ui.showPrompt();
+                                promptOn = true;
 
-                        break;
+                            }
+                            Locator.Instance.ui.hideDialoguePrompt();
+                            break;
+                        case ("manager"):
+                            RaycastHit hit;
+                            if (Physics.Raycast(transform.localPosition, transform.forward, out hit, 15, LayerMask.GetMask("Manager")) && !Locator.Instance.gameController.inDialogue)
+                            {
+                                Locator.Instance.ui.showDialoguePrompt();
+                                Locator.Instance.ui.hidePrompt();
+                                Locator.Instance.ui.hidePrompt2();
+                                dialoguePromptOn = true;
+                                promptOn = false;
+                                prompt2on = false;
+                            }
+                            else
+                            {
+                                Locator.Instance.ui.hideDialoguePrompt();
+                            }
+
+
+                            /* Saving for stab implementation - probably only on click?
+                            if (Locator.Instance.gameController.hasItem == true)
+                            {
+                                Locator.Instance.ui.showPrompt();
+                                promptOn = true;
+                            }
+                            */
+
+                            //promptOn = true;
+
+                            break;
+                    }
                 }
             }
-        }
 
         if (Input.GetKeyDown(KeyCode.E) && promptOn)
         {

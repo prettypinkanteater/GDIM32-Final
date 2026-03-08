@@ -22,7 +22,7 @@ public class Utensil : Item
 
     void Update()
     {
-        if(chopable == true && (Input.GetKey(KeyCode.Mouse0) || Input.GetKeyDown(KeyCode.E)))
+        if(chopable == true && Input.GetKey(KeyCode.Mouse0))
         {
             GetComponent<Animator>().ResetTrigger("Stop");
             GetComponent<Animator>().SetTrigger("Use");
