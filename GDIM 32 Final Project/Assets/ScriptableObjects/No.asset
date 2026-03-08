@@ -12,6 +12,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 01036c510b19f8f4286c27243d0388e4, type: 3}
   m_Name: No
   m_EditorClassIdentifier: 
-  _lines: []
+  _lines:
+  - No.
   _playerReplyOptions: []
   _npcReplies: []
