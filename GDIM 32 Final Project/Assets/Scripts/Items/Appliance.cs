@@ -10,13 +10,13 @@ public class Appliance : Item
     
 
     [SerializeField] Canvas _timerCanvas;
-    private TextMeshProUGUI _timerText;
+    private TMP_Text _timerText;
 
     // Start is called before the first frame update
     void Start()
     {
         _cookingTimer = _cookingTime;
-        _timerText = _timerCanvas.GetComponent<TextMeshProUGUI>();
+        _timerText = _timerCanvas.GetComponentInChildren<TMP_Text>();
     }
 
     // Update is called once per frame
