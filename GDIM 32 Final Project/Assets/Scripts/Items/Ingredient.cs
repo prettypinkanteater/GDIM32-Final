@@ -20,6 +20,10 @@ public class Ingredient : Item
     // Update is called once per frame
     void Update()
     {
+        if (Locator.Instance.gameController.fryCOOKED)
+        {
+            changeModel();
+        }
        if(Locator.Instance.gameController.cutPotato)
         {
             potato.SetActive(false);

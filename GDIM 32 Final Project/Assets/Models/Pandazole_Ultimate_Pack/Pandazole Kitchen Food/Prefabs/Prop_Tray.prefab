@@ -105,8 +105,8 @@ BoxCollider:
   m_ProvidesContacts: 0
   m_Enabled: 1
   serializedVersion: 3
-  m_Size: {x: 0.3376708, y: 0.0113522345, z: 0.24273254}
-  m_Center: {x: 0, y: 0.0056761173, z: 0}
+  m_Size: {x: 0.3376708, y: 0.07018862, z: 0.3434587}
+  m_Center: {x: 0, y: 0.03509431, z: 0.05036309}
 --- !u!114 &1604703314580001615
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -119,7 +119,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: fe16505f19b8429498f5681c514d85c4, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _timerCanvas: {fileID: 0}
+  _timerCanvas: {fileID: 7226299238635059456}
 --- !u!1 &7330839318196206149
 GameObject:
   m_ObjectHideFlags: 0
