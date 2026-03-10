@@ -1274,6 +1274,7 @@ MonoBehaviour:
   rawPotato: 1
   cutPotato: 0
   fryInProgress: 0
+  fryCOOKED: 0
   fryDone: 0
   burgerInProgress: 0
   burgerDone: 0
@@ -6384,7 +6385,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 8519108209456421105, guid: a8669287c183ed648a182d6420368d4f, type: 3}
       propertyPath: m_IsActive
-      value: 0
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 8519108209456421105, guid: a8669287c183ed648a182d6420368d4f, type: 3}
       propertyPath: m_TagString
