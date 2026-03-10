@@ -46,7 +46,7 @@ public class Appliance : Item
         }
         if (this.gameObject.name == "Frier" && Locator.Instance.gameController.fryCOOKED)
         {
-            GetComponent<Collider>().enabled = false;
+            gameObject.tag = "Untagged";
         }
 
     }
@@ -68,7 +68,6 @@ public class Appliance : Item
 
     private void FriesDone()
     {
-        Locator.Instance.gameController.cutPotato = false;
         Locator.Instance.gameController.fryCOOKED = true;
         _timerText.enabled = false;
         Locator.Instance.gameController.ResetPickup();

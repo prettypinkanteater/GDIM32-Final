@@ -59,7 +59,11 @@ public class Ingredient : Item
             {
                 if (Locator.Instance.gameController.fryCOOKED)
                 {
-                    transform.position = new Vector3(271.005f, 4.183f, -10.77f);
+                    transform.position = new Vector3(270.45f, 4.195f, -10.77f);
+                    this.gameObject.tag = "Untagged";
+                    transform.GetChild(0).gameObject.tag = "Untagged";
+                    Locator.Instance.gameController.ResetPickup();
+
                 }
                 else
                 {
