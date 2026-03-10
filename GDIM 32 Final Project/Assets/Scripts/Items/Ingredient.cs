@@ -57,8 +57,16 @@ public class Ingredient : Item
 
             if(Locator.Instance.gameController.cutPotato)
             {
-                transform.position = new Vector3(262.77f, 3.082f, -10.92f);
-            } else
+                if (Locator.Instance.gameController.fryCOOKED)
+                {
+                    transform.position = new Vector3(271.005f, 4.183f, -10.77f);
+                }
+                else
+                {
+                    transform.position = new Vector3(262.77f, 3.082f, -10.92f);
+                }
+            } 
+            else
             {
                 transform.localPosition = Locator.Instance.player.lookingAt.transform.GetChild(0).position;
                 transform.localPosition += new Vector3(0, 0.01f, 0);

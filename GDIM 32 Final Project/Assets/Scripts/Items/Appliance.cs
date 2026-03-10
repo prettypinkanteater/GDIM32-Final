@@ -23,11 +23,11 @@ public class Appliance : Item
     void Update()
     {
 
-        if (_cookingTimer <= 0f && Locator.Instance.gameController.placedIngredient)
+        if (_cookingTimer <= 0f && Locator.Instance.gameController.placedIngredient
+            && Locator.Instance.gameController.fryInProgress)
         {
-           Locator.Instance.gameController.fryCOOKED = true;
-            _timerText.enabled = false;
-           Locator.Instance.gameController.ResetPickup();
+            FriesDone();
+            TimmyReady();
 
         }
 
@@ -40,7 +40,11 @@ public class Appliance : Item
             int _cookingTimerInt = (int)_cookingTimer;
             _timerText.text = _cookingTimerInt.ToString();
         }
-        if (Locator.Instance.gameController.cutPotato && this.gameObject.name == "Cutting Board")         
+        if (this.gameObject.name == "Cutting Board" && Locator.Instance.gameController.cutPotato)         
+        {
+            GetComponent<Collider>().enabled = false;
+        }
+        if (this.gameObject.name == "Frier" && Locator.Instance.gameController.fryCOOKED)
         {
             GetComponent<Collider>().enabled = false;
         }
@@ -57,11 +61,17 @@ public class Appliance : Item
         
     }
 
-    private void Done()
+    private void TimmyReady()
     {
-        if(gameObject.name == "Timmy Tray")
-        {
-            gameObject.tag = "appliance";
-        }
+        GameObject.Find("Timmy Tray").tag = "appliance";
     }
+
+    private void FriesDone()
+    {
+        Locator.Instance.gameController.cutPotato = false;
+        Locator.Instance.gameController.fryCOOKED = true;
+        _timerText.enabled = false;
+        Locator.Instance.gameController.ResetPickup();
+    }
+
 }
