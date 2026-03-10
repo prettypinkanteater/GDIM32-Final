@@ -36,9 +36,10 @@ public class GameController : MonoBehaviour
         
     }
 
-    void FryQuestDone()
+    public void FryQuestDone()
     {
         fryDone = true;
+        fryInProgress = false;
     }
 
     public void ResetPickup()

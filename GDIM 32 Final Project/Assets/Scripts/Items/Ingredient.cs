@@ -23,6 +23,8 @@ public class Ingredient : Item
         if (Locator.Instance.gameController.fryCOOKED)
         {
             changeModel();
+            Locator.Instance.gameController.FryQuestDone();
+            Locator.Instance.gameController.burgerInProgress = true;
         }
        if(Locator.Instance.gameController.cutPotato)
         {
