@@ -82,11 +82,6 @@ public class Ingredient : Item
                 
             Locator.Instance.gameController.placedIngredient = true;
 
-            
-
-            //For updating UI - should probably be done via event
-            Locator.Instance.ui.goals.text = "Goals: \n<s>- Prepare potato for cutting </s> \n- Don't get fired";
-
             Locator.Instance.player.mainCamera.cullingMask = LayerMask.GetMask("Default", "TransparentFX", "Ignore Raycast", "Water", "UI", "Manager", "Ingredient", "Utensil", "Appliance");
             Locator.Instance.player.secondCamera.enabled = false;
         }

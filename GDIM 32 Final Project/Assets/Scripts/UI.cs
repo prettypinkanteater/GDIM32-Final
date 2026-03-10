@@ -19,9 +19,11 @@ public class UI : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        
+        ////For updating UI - should probably be done via event
+        //Locator.Instance.ui.goals.text = "Goals: \n<s>- Prepare potato for cutting </s> \n- Don't get fired";
+
     }
-    
+
 
     public void showPrompt()
     {
