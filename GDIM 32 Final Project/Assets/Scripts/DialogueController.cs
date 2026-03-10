@@ -9,6 +9,7 @@ public class DialogueController : MonoBehaviour
 {
     [SerializeField] private DialogueUI _dialogueUI;
     [SerializeField] private DialogueNode _dialogueStartNode;
+    [SerializeField] private DialogueNode _fryCheckInNode;
 
     private DialogueNode _currentNode;
     private int _currentLine = 0;
@@ -68,6 +69,11 @@ public class DialogueController : MonoBehaviour
         //_currentNode = _dialogueStartNode;
         _currentLine = 0;
         _dialogueUI.HideDialogue();
+
+        if (Locator.Instance.gameController.fryInProgress)
+        {
+            _currentNode = _fryCheckInNode;
+        }
     }
 
     public void SelectedOption(int option)

@@ -15,7 +15,5 @@ MonoBehaviour:
   _lines:
   - ... There is a new order.
   - Make the fries.
-  _playerReplyOptions:
-  - Testing
-  _npcReplies:
-  - {fileID: 11400000, guid: e4ecde18005229b4581a61c0145310f6, type: 2}
+  _playerReplyOptions: []
+  _npcReplies: []
