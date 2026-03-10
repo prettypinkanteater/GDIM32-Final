@@ -56,4 +56,12 @@ public class Appliance : Item
     {
         
     }
+
+    private void Done()
+    {
+        if(gameObject.name == "Timmy Tray")
+        {
+            gameObject.tag = "appliance";
+        }
+    }
 }
