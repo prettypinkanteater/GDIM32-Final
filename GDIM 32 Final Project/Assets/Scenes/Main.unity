@@ -4743,6 +4743,23 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 7251864734465275783, guid: 92d385d2b37a6214b9588f77686772eb, type: 3}
+      propertyPath: m_text
+      value: 'Goals:
+
+        - Talk to the manager
+
+        - Make the fries
+
+        -
+        Give Timmy the fries
+
+'
+      objectReference: {fileID: 0}
+    - target: {fileID: 7251864734465275783, guid: 92d385d2b37a6214b9588f77686772eb, type: 3}
+      propertyPath: m_fontSize
+      value: 24
+      objectReference: {fileID: 0}
     - target: {fileID: 8469300414605441115, guid: 92d385d2b37a6214b9588f77686772eb, type: 3}
       propertyPath: m_IsActive
       value: 0

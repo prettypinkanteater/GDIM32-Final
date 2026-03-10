@@ -20,7 +20,11 @@ public class UI : MonoBehaviour
     void Update()
     {
         ////For updating UI - should probably be done via event
-        //Locator.Instance.ui.goals.text = "Goals: \n<s>- Prepare potato for cutting </s> \n- Don't get fired";
+        //if (Locator.Instance.gameController.fryInProgress)
+        //{
+            //goals.text = "Goals: \n<s>- Prepare potato for cutting </s> \n- Don't get fired";
+        //}
+        
 
     }
 
