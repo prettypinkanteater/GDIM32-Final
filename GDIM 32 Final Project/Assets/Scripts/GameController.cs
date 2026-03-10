@@ -41,8 +41,11 @@ public class GameController : MonoBehaviour
         fryDone = true;
     }
 
-    public void ResetBooleans()
+    public void ResetPickup()
     {
-        placedIngredient = true;
+        placedIngredient = false;
+        hasIngredient = false;
+        hasItem = false;
+        
     }
 }

@@ -27,7 +27,7 @@ public class Appliance : Item
         {
            Locator.Instance.gameController.fryCOOKED = true;
             _timerText.enabled = false;
-           Locator.Instance.gameController.ResetBooleans();
+           Locator.Instance.gameController.ResetPickup();
 
         }
 
