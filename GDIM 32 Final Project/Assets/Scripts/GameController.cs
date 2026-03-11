@@ -40,6 +40,7 @@ public class GameController : MonoBehaviour
     {
         fryDone = true;
         fryInProgress = false;
+        GameObject.Find("Patty").SetActive(true);
         // Call UI update event 
     }
 
