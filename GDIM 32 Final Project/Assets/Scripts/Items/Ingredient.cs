@@ -9,6 +9,8 @@ public class Ingredient : Item
     [SerializeField] private GameObject cut;
     [SerializeField] private GameObject cooked;
 
+    public GameObject fakeFries;
+
     // Start is called before the first frame update
     void Start()
     {
@@ -75,10 +77,13 @@ public class Ingredient : Item
                     this.gameObject.tag = "Untagged";
                     transform.GetChild(0).gameObject.tag = "Untagged";
                     transform.GetChild(2).gameObject.layer = 0;
-                    Locator.Instance.gameController.ResetPickup();
 
+                    fakeFries.SetActive(true);
+                    cooked.SetActive(false);
+
+                    Locator.Instance.gameController.ResetPickup();
                     Locator.Instance.gameController.FryQuestDone();
-                    
+                    //gameObject.GetComponent<Ingredient>().enabled = false;
 
                 }
                 else
