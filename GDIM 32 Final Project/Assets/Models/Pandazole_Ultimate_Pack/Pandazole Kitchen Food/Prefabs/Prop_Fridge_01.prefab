@@ -11,6 +11,7 @@ GameObject:
   - component: {fileID: 2528827318085688139}
   - component: {fileID: 1149886728857256004}
   - component: {fileID: 3779512847077539233}
+  - component: {fileID: 2524298903748686118}
   m_Layer: 0
   m_Name: Prop_Fridge_01_p02
   m_TagString: Untagged
@@ -26,7 +27,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 3288771619126639498}
   serializedVersion: 2
-  m_LocalRotation: {x: 0, y: -0, z: -0, w: 1}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 0.8017273, y: 1.0559366, z: 0.38788605}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
@@ -83,6 +84,27 @@ MeshRenderer:
   m_SortingLayer: 0
   m_SortingOrder: 0
   m_AdditionalVertexStreams: {fileID: 0}
+--- !u!95 &2524298903748686118
+Animator:
+  serializedVersion: 5
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3288771619126639498}
+  m_Enabled: 1
+  m_Avatar: {fileID: 0}
+  m_Controller: {fileID: 9100000, guid: acc71b6f540283e49b6786520067b3bf, type: 2}
+  m_CullingMode: 0
+  m_UpdateMode: 0
+  m_ApplyRootMotion: 0
+  m_LinearVelocityBlending: 0
+  m_StabilizeFeet: 0
+  m_WarningMessage: 
+  m_HasTransformHierarchy: 1
+  m_AllowConstantClipSamplingOptimization: 1
+  m_KeepAnimatorStateOnDisable: 0
+  m_WriteDefaultValuesOnDisable: 0
 --- !u!1 &4539018100729812022
 GameObject:
   m_ObjectHideFlags: 0
@@ -95,6 +117,7 @@ GameObject:
   - component: {fileID: 151398147739795753}
   - component: {fileID: 2737388789423814115}
   - component: {fileID: 5543348175604144905}
+  - component: {fileID: 6093258888442876141}
   m_Layer: 0
   m_Name: Prop_Fridge_01
   m_TagString: Untagged
@@ -190,6 +213,20 @@ BoxCollider:
   serializedVersion: 3
   m_Size: {x: 1.6098872, y: 2.3331351, z: 0.8816388}
   m_Center: {x: 0, y: 1.1451898, z: 0.023258686}
+--- !u!114 &6093258888442876141
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4539018100729812022}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: c668ce55050a9c44d80bd56a09666292, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  leftAnimatorController: {fileID: 2524298903748686118}
+  rightAnimatorController: {fileID: 2354116428807228139}
 --- !u!1 &5988913363976242216
 GameObject:
   m_ObjectHideFlags: 0
@@ -201,6 +238,7 @@ GameObject:
   - component: {fileID: 4748484575694087339}
   - component: {fileID: 7963455418030392722}
   - component: {fileID: 6187022704808073299}
+  - component: {fileID: 2354116428807228139}
   m_Layer: 0
   m_Name: Prop_Fridge_01_p03
   m_TagString: Untagged
@@ -216,7 +254,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 5988913363976242216}
   serializedVersion: 2
-  m_LocalRotation: {x: 0, y: -0, z: -0, w: 1}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: -0.8017273, y: 1.0559366, z: 0.38788605}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
@@ -273,3 +311,24 @@ MeshRenderer:
   m_SortingLayer: 0
   m_SortingOrder: 0
   m_AdditionalVertexStreams: {fileID: 0}
+--- !u!95 &2354116428807228139
+Animator:
+  serializedVersion: 5
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5988913363976242216}
+  m_Enabled: 1
+  m_Avatar: {fileID: 0}
+  m_Controller: {fileID: 9100000, guid: f89df3e73355f8448a86590d0a1c747c, type: 2}
+  m_CullingMode: 0
+  m_UpdateMode: 0
+  m_ApplyRootMotion: 0
+  m_LinearVelocityBlending: 0
+  m_StabilizeFeet: 0
+  m_WarningMessage: 
+  m_HasTransformHierarchy: 1
+  m_AllowConstantClipSamplingOptimization: 1
+  m_KeepAnimatorStateOnDisable: 0
+  m_WriteDefaultValuesOnDisable: 0
