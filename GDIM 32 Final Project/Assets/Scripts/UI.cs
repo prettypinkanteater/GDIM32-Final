@@ -11,9 +11,11 @@ public class UI : MonoBehaviour
     [SerializeField] GameObject prompt2;
     [SerializeField] GameObject dialoguePrompt;
     [SerializeField] public TMP_Text goals;
+
     void Start()
     {
-        
+        Locator.Instance.gameController.FryDone += FriesGoalsDone;
+        Locator.Instance.dialogueController.StartFryQuest += StartGoalDone;
     }
 
     // Update is called once per frame
@@ -28,6 +30,14 @@ public class UI : MonoBehaviour
 
     }
 
+    void FriesGoalsDone()
+    {
+        goals.text = "Goals: \n - Talk to the manager";
+    }
+    void StartGoalDone()
+    {
+        goals.text = "Goals: \n - Make the fries \n - Give Timmy the fries \n - (Optional) Talk to the manager for help";
+    }
 
     public void showPrompt()
     {

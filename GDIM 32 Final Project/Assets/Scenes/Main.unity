@@ -4159,7 +4159,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 919132149155446097, guid: 96f7d97c63091ca45bd5f023ce575b93, type: 3}
       propertyPath: m_IsActive
-      value: 0
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 919132149155446097, guid: 96f7d97c63091ca45bd5f023ce575b93, type: 3}
       propertyPath: m_TagString
@@ -4863,16 +4863,12 @@ PrefabInstance:
 
         - Talk to the manager
 
-        - Make the fries
-
-        -
-        Give Timmy the fries
 
 '
       objectReference: {fileID: 0}
     - target: {fileID: 7251864734465275783, guid: 92d385d2b37a6214b9588f77686772eb, type: 3}
       propertyPath: m_fontSize
-      value: 24
+      value: 26.65
       objectReference: {fileID: 0}
     - target: {fileID: 8469300414605441115, guid: 92d385d2b37a6214b9588f77686772eb, type: 3}
       propertyPath: m_IsActive
@@ -5894,7 +5890,7 @@ BoxCollider:
   m_LayerOverridePriority: 0
   m_IsTrigger: 0
   m_ProvidesContacts: 0
-  m_Enabled: 1
+  m_Enabled: 0
   serializedVersion: 3
   m_Size: {x: 0.014254666, y: 0.014254663, z: 0.0033636868}
   m_Center: {x: 0, y: 0, z: 0}
@@ -5905,14 +5901,14 @@ MonoBehaviour:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1534656209}
-  m_Enabled: 1
+  m_Enabled: 0
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: f02679a6aeaa24b45a5541adbacae58f, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  potato: {fileID: 0}
-  cut: {fileID: 0}
-  cooked: {fileID: 0}
+  potato: {fileID: 919132149155446097, guid: 96f7d97c63091ca45bd5f023ce575b93, type: 3}
+  cut: {fileID: 919132149155446097, guid: c9ff13cca1143204daae62c9642a288d, type: 3}
+  cooked: {fileID: 919132149155446097, guid: c32732540b3f5b64fa0b789fa76eae44, type: 3}
 --- !u!1001 &1538152670
 PrefabInstance:
   m_ObjectHideFlags: 0

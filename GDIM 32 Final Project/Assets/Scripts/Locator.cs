@@ -13,6 +13,8 @@ public class Locator : MonoBehaviour
     public AudioController audioController { get; private set; }
 
     public GameController gameController { get; private set; }
+
+    public DialogueController dialogueController { get; private set; }
     // change player class name as needed, eg class is actually not named player lol
     private void Awake()
     {
@@ -31,6 +33,9 @@ public class Locator : MonoBehaviour
 
         GameObject controllerObject = GameObject.Find("GameController");
         gameController = controllerObject.GetComponent<GameController>();
+
+        GameObject dialogueControllerObject = GameObject.Find("Dialogue Controller");
+        dialogueController = dialogueControllerObject.GetComponent<DialogueController>();
 
         // GameObject audioControllerObject = GameObject.Find("AudioController");
         // _audio = audioControllerObject.GetComponent
