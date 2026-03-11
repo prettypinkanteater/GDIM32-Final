@@ -23,16 +23,19 @@ public class DialogueController : MonoBehaviour
 
     private void Update()
     {
-            if (!_waitingForPlayerResponse && Input.GetKeyDown(KeyCode.E))
+            if (!_waitingForPlayerResponse && (Input.GetKeyDown(KeyCode.Space) || Input.GetKeyDown(KeyCode.Mouse0)))
+            {
+                if (_runningDialogue)
+                {
+                    AdvanceDialogue();
+                }
+            }
+            else if (!_runningDialogue && Input.GetKeyDown(KeyCode.E))
             {
                 if (Locator.Instance.gameController.inDialogue || Locator.Instance.player.dialoguePromptOn)
                 {
                 AdvanceDialogue();
                 }
-            }
-            else if (!_runningDialogue)
-            {
-                //
             }
     }
 
