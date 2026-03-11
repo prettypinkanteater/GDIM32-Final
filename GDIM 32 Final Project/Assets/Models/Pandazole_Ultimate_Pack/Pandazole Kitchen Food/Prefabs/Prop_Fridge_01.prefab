@@ -11,7 +11,7 @@ GameObject:
   - component: {fileID: 2528827318085688139}
   - component: {fileID: 1149886728857256004}
   - component: {fileID: 3779512847077539233}
-  - component: {fileID: 2524298903748686118}
+  - component: {fileID: 8397772614106900006}
   m_Layer: 0
   m_Name: Prop_Fridge_01_p02
   m_TagString: Untagged
@@ -84,7 +84,7 @@ MeshRenderer:
   m_SortingLayer: 0
   m_SortingOrder: 0
   m_AdditionalVertexStreams: {fileID: 0}
---- !u!95 &2524298903748686118
+--- !u!95 &8397772614106900006
 Animator:
   serializedVersion: 5
   m_ObjectHideFlags: 0
@@ -117,7 +117,7 @@ GameObject:
   - component: {fileID: 151398147739795753}
   - component: {fileID: 2737388789423814115}
   - component: {fileID: 5543348175604144905}
-  - component: {fileID: 6093258888442876141}
+  - component: {fileID: 7634364495402187122}
   m_Layer: 0
   m_Name: Prop_Fridge_01
   m_TagString: Untagged
@@ -213,7 +213,7 @@ BoxCollider:
   serializedVersion: 3
   m_Size: {x: 1.6098872, y: 2.3331351, z: 0.8816388}
   m_Center: {x: 0, y: 1.1451898, z: 0.023258686}
---- !u!114 &6093258888442876141
+--- !u!114 &7634364495402187122
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -225,8 +225,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: c668ce55050a9c44d80bd56a09666292, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  leftAnimatorController: {fileID: 2524298903748686118}
-  rightAnimatorController: {fileID: 2354116428807228139}
+  leftAnimatorController: {fileID: 8397772614106900006}
+  rightAnimatorController: {fileID: 8964110409000012475}
 --- !u!1 &5988913363976242216
 GameObject:
   m_ObjectHideFlags: 0
@@ -238,7 +238,7 @@ GameObject:
   - component: {fileID: 4748484575694087339}
   - component: {fileID: 7963455418030392722}
   - component: {fileID: 6187022704808073299}
-  - component: {fileID: 2354116428807228139}
+  - component: {fileID: 8964110409000012475}
   m_Layer: 0
   m_Name: Prop_Fridge_01_p03
   m_TagString: Untagged
@@ -311,7 +311,7 @@ MeshRenderer:
   m_SortingLayer: 0
   m_SortingOrder: 0
   m_AdditionalVertexStreams: {fileID: 0}
---- !u!95 &2354116428807228139
+--- !u!95 &8964110409000012475
 Animator:
   serializedVersion: 5
   m_ObjectHideFlags: 0
