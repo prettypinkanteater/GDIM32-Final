@@ -23,8 +23,8 @@ public class Ingredient : Item
         if (Locator.Instance.gameController.fryCOOKED)
         {
             changeModel();
-            Locator.Instance.gameController.FryQuestDone();
-            Locator.Instance.gameController.burgerInProgress = true;
+            //Locator.Instance.gameController.FryQuestDone();
+            //Locator.Instance.gameController.burgerInProgress = true;
         }
        if(Locator.Instance.gameController.cutPotato)
         {
@@ -50,6 +50,12 @@ public class Ingredient : Item
             Locator.Instance.player.mainCamera.cullingMask = LayerMask.GetMask("Default", "TransparentFX", "Ignore Raycast", "Water", "UI", "Manager", "Utensil", "Appliance");
             Locator.Instance.player.secondCamera.cullingMask = LayerMask.GetMask("Ingredient");
             Locator.Instance.player.secondCamera.enabled = true;
+
+            if(Locator.Instance.gameController.fryCOOKED)
+            {
+                this.gameObject.tag = "Untagged";
+                this.gameObject.layer = 0;
+            }
         }
     }
 
@@ -69,6 +75,9 @@ public class Ingredient : Item
                     this.gameObject.tag = "Untagged";
                     transform.GetChild(0).gameObject.tag = "Untagged";
                     Locator.Instance.gameController.ResetPickup();
+
+                    Locator.Instance.gameController.FryQuestDone();
+                    Locator.Instance.gameController.burgerInProgress = true;
 
                 }
                 else
