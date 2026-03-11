@@ -74,10 +74,11 @@ public class Ingredient : Item
                     transform.position = new Vector3(270.45f, 4.195f, -10.77f);
                     this.gameObject.tag = "Untagged";
                     transform.GetChild(0).gameObject.tag = "Untagged";
+                    transform.GetChild(2).gameObject.layer = 0;
                     Locator.Instance.gameController.ResetPickup();
 
                     Locator.Instance.gameController.FryQuestDone();
-                    Locator.Instance.gameController.burgerInProgress = true;
+                    
 
                 }
                 else

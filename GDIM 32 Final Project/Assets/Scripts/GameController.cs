@@ -43,6 +43,7 @@ public class GameController : MonoBehaviour
     {
         fryDone = true;
         fryInProgress = false;
+        burgerInProgress = true;
         GameObject.Find("Patty").layer = 6;
         GameObject.Find("Patty").GetComponent<Ingredient>().enabled = true;
         FryDone.Invoke();
