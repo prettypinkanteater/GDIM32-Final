@@ -43,7 +43,7 @@ public class GameController : MonoBehaviour
     {
         fryDone = true;
         fryInProgress = false;
-        GameObject.Find("Patty").GetComponent<Collider>().enabled = true;
+        GameObject.Find("Patty").layer = 6;
         GameObject.Find("Patty").GetComponent<Ingredient>().enabled = true;
         FryDone.Invoke();
         // Call UI update event 
