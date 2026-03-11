@@ -70,8 +70,10 @@ public class DialogueController : MonoBehaviour
         _currentLine = 0;
         _dialogueUI.HideDialogue();
 
-        if (Locator.Instance.gameController.fryInProgress)
+        if (!Locator.Instance.gameController.fryInProgress)
         {
+            Locator.Instance.gameController.fryInProgress = true;
+            //UI Event goes here
             _currentNode = _fryCheckInNode;
         }
     }

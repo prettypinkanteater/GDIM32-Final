@@ -12,7 +12,7 @@ public class GameController : MonoBehaviour
 
     public bool rawPotato = true;
     public bool cutPotato = false;
-    public bool fryInProgress = true;
+    public bool fryInProgress = false;
     public bool fryCOOKED = false;
     public bool fryDone = false;
 
@@ -27,7 +27,7 @@ public class GameController : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-        fryInProgress = true;
+
     }
 
     // Update is called once per frame
@@ -40,6 +40,7 @@ public class GameController : MonoBehaviour
     {
         fryDone = true;
         fryInProgress = false;
+        // Call UI update event 
     }
 
     public void ResetPickup()

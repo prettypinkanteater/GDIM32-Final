@@ -109,9 +109,11 @@ public class Player : MonoBehaviour
                         case ("ingredient"):
                             if (Locator.Instance.gameController.hasIngredient == false && Locator.Instance.gameController.placedIngredient == false && Locator.Instance.gameController.hasItem == false)
                             {
+                                if (Locator.Instance.gameController.fryInProgress /* || burgerinprogress */)
+                                {
                                 Locator.Instance.ui.showPrompt();
                                 promptOn = true;
-
+                                }
                             }
                             Locator.Instance.ui.hideDialoguePrompt();
                             break;
