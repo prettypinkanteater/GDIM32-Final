@@ -44,6 +44,10 @@ public class GameController : MonoBehaviour
         fryDone = true;
         fryInProgress = false;
         burgerInProgress = true;
+
+        Locator.Instance.player.mainCamera.cullingMask = LayerMask.GetMask("Default", "TransparentFX", "Ignore Raycast", "Water", "UI", "Manager", "Ingredient", "Utensil", "Appliance");
+        Locator.Instance.player.secondCamera.enabled = false;
+
         GameObject.Find("Patty").layer = 6;
         GameObject.Find("Patty").GetComponent<Ingredient>().enabled = true;
         FryDone.Invoke();
