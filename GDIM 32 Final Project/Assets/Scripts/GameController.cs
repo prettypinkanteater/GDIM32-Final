@@ -24,6 +24,9 @@ public class GameController : MonoBehaviour
     private delegate void TimerFinished();
     private event TimerFinished FoodDone;
 
+    public delegate void QuestOneDone();
+    public event QuestOneDone FryDone;
+
     // Start is called before the first frame update
     void Start()
     {
@@ -40,7 +43,9 @@ public class GameController : MonoBehaviour
     {
         fryDone = true;
         fryInProgress = false;
-        GameObject.Find("Patty").SetActive(true);
+        GameObject.Find("Patty").GetComponent<Collider>().enabled = true;
+        GameObject.Find("Patty").GetComponent<Ingredient>().enabled = true;
+        FryDone.Invoke();
         // Call UI update event 
     }
 

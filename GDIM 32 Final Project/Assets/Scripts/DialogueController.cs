@@ -16,6 +16,9 @@ public class DialogueController : MonoBehaviour
     private bool _runningDialogue;
     private bool _waitingForPlayerResponse;
 
+    public delegate void TalkedToManager();
+    public event TalkedToManager StartFryQuest;
+
     private void Start()
     {
         _currentNode = _dialogueStartNode;
@@ -76,7 +79,7 @@ public class DialogueController : MonoBehaviour
         if (!Locator.Instance.gameController.fryInProgress)
         {
             Locator.Instance.gameController.fryInProgress = true;
-            //UI Event goes here
+            StartFryQuest.Invoke();
             _currentNode = _fryCheckInNode;
         }
     }
