@@ -10,13 +10,12 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 01036c510b19f8f4286c27243d0388e4, type: 3}
-  m_Name: FryComplete
+  m_Name: BurgerComplete
   m_EditorClassIdentifier: 
   _lines:
-  - "It\u2019s only fries, nothing to celebrate."
-  - Have you forgotten how to read?
-  - Your order ticket, Fryday.
+  - Wow. You did it.
+  - Now give it to the customer.
   _playerReplyOptions:
-  - 'Got it. '
+  - Ok.
   _npcReplies:
   - {fileID: 11400000, guid: 3e8ee8ad3bbe2c34d9b8d4f4dac64e0c, type: 2}

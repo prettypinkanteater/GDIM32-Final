@@ -10,14 +10,23 @@ public class DialogueController : MonoBehaviour
     [SerializeField] private DialogueUI _dialogueUI;
     [SerializeField] private DialogueNode _dialogueStartNode;
     [SerializeField] private DialogueNode _fryCheckInNode;
+    [SerializeField] private DialogueNode _burgerCheckInNode;
+    [SerializeField] private DialogueNode _fryCompleteNode;
+    [SerializeField] private DialogueNode _burgerCompleteNode;
 
-    private DialogueNode _currentNode;
-    private int _currentLine = 0;
-    private bool _runningDialogue;
-    private bool _waitingForPlayerResponse;
+    [SerializeField] private DialogueNode _currentNode;
+    [SerializeField] private int _currentLine = 0;
+    [SerializeField] private bool _runningDialogue;
+    [SerializeField] private bool _waitingForPlayerResponse;
 
     public delegate void TalkedToManager();
     public event TalkedToManager StartFryQuest;
+
+    public delegate void TalkedToManager2();
+    public event TalkedToManager2 StartBurgerQuest;
+
+    public delegate void TalkedToManager3();
+    public event TalkedToManager3 EndBurgerQuest;
 
     private void Start()
     {
@@ -26,17 +35,22 @@ public class DialogueController : MonoBehaviour
 
     private void Update()
     {
-            if (!_waitingForPlayerResponse && (Input.GetKeyDown(KeyCode.Space) || Input.GetKeyDown(KeyCode.Mouse0)))
+            if (!_waitingForPlayerResponse && _runningDialogue && ((Input.GetKeyDown(KeyCode.Space) || Input.GetKeyDown(KeyCode.Mouse0))))
             {
-                if (_runningDialogue)
-                {
                     AdvanceDialogue();
-                }
             }
             else if (!_runningDialogue && Input.GetKeyDown(KeyCode.E))
             {
                 if (Locator.Instance.gameController.inDialogue || Locator.Instance.player.dialoguePromptOn)
                 {
+                    if (!Locator.Instance.gameController.burgerInProgress && Locator.Instance.gameController.fryDone)
+                    {
+                        _currentNode = _fryCompleteNode;
+                    }
+                    if (Locator.Instance.gameController.burgerDone)
+                    {
+                        _currentNode = _burgerCompleteNode;
+                    }
                 AdvanceDialogue();
                 }
             }
@@ -72,7 +86,6 @@ public class DialogueController : MonoBehaviour
     {
         _runningDialogue = false;
         _waitingForPlayerResponse = false;
-        //_currentNode = _dialogueStartNode;
         _currentLine = 0;
         _dialogueUI.HideDialogue();
 
@@ -81,6 +94,16 @@ public class DialogueController : MonoBehaviour
             Locator.Instance.gameController.fryInProgress = true;
             StartFryQuest.Invoke();
             _currentNode = _fryCheckInNode;
+        }
+        else if (!Locator.Instance.gameController.burgerInProgress && Locator.Instance.gameController.fryDone)
+        {
+            Locator.Instance.gameController.burgerInProgress = true;
+            StartBurgerQuest.Invoke(); 
+            _currentNode = _burgerCheckInNode;
+        }
+        else if (Locator.Instance.gameController.burgerDone)
+        {
+            EndBurgerQuest.Invoke();
         }
     }
 

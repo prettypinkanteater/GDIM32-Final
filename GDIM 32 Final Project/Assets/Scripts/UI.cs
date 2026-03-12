@@ -16,6 +16,8 @@ public class UI : MonoBehaviour
     {
         Locator.Instance.gameController.FryDone += FriesGoalsDone;
         Locator.Instance.dialogueController.StartFryQuest += StartGoalDone;
+        Locator.Instance.dialogueController.StartBurgerQuest += ShowBurgerGoals;
+        Locator.Instance.dialogueController.EndBurgerQuest += ShowEndGoals;
     }
 
     // Update is called once per frame
@@ -30,13 +32,22 @@ public class UI : MonoBehaviour
 
     }
 
+    
+    void StartGoalDone()
+    {
+        goals.text = "Goals: \n - Make the fries \n - Give Timmy the fries \n - (Optional) Talk to the manager for help";
+    }
     void FriesGoalsDone()
     {
         goals.text = "Goals: \n - Talk to the manager";
     }
-    void StartGoalDone()
+    void ShowBurgerGoals()
     {
-        goals.text = "Goals: \n - Make the fries \n - Give Timmy the fries \n - (Optional) Talk to the manager for help";
+        goals.text = "Goals: \n - Grill the patty \n - Give Timmy the patty \n - (Optional) Talk to the manager for help";
+    }
+    void ShowEndGoals()
+    {
+        goals.text = "Goals: \n - Give the tray to the customer";
     }
 
     public void showPrompt()
