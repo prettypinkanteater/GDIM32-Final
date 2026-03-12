@@ -154,10 +154,12 @@ public class Player : MonoBehaviour
         {
             if (Locator.Instance.gameController.hasIngredient)
             {
+                Debug.Log("Put Down event");
                 putDownEvent.Invoke();
             }
             else
             {
+                Debug.Log("Pick up event");
                 ItemUsed.Invoke();
             }
 

@@ -12,6 +12,9 @@ public class Utensil : Item
     bool cutManager;
     Vector3 rotation;
 
+    [SerializeField] GameObject knife;
+    [SerializeField] GameObject spat;
+
     void Start()
     {
         Locator.Instance.player.ItemUsed += CutManager;
@@ -60,7 +63,10 @@ public class Utensil : Item
 
         Locator.Instance.player.mainCamera.cullingMask = LayerMask.GetMask("Default", "TransparentFX", "Ignore Raycast", "Water", "UI", "Manager", "Ingredient", "Utensil", "Appliance");
         Locator.Instance.player.secondCamera.enabled = false;
-        Destroy(this.gameObject);
+        transform.parent = null;
+        knife.SetActive(false);
+        transform.position = new Vector3(258.284f, 4.622559f, -8.625f);
+        spat.SetActive(true);
         
 
     }

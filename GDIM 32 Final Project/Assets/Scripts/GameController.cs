@@ -21,8 +21,8 @@ public class GameController : MonoBehaviour
 
     
 
-    private delegate void TimerFinished();
-    private event TimerFinished FoodDone;
+    //private delegate void TimerFinished();
+    //private event TimerFinished FoodDone;
 
     public delegate void QuestOneDone();
     public event QuestOneDone FryDone;
@@ -45,15 +45,18 @@ public class GameController : MonoBehaviour
         fryInProgress = false;
         fryCOOKED = false;
         cutPotato = false;
+        placedIngredient = false;
         burgerInProgress = true;
 
         Locator.Instance.player.mainCamera.cullingMask = LayerMask.GetMask("Default", "TransparentFX", "Ignore Raycast", "Water", "UI", "Manager", "Ingredient", "Utensil", "Appliance");
         Locator.Instance.player.secondCamera.enabled = false;
 
-        //Destroy(GameObject.Find("FryStates").GetComponent<Ingredient>());
+        //GameObject.Find("FryStates").GetComponent<Ingredient>().enabled = false;
 
-        GameObject.Find("Patty").layer = 6;
-        GameObject.Find("Patty").GetComponent<Ingredient>().enabled = true;
+        GameObject.Find("Timmy Tray").tag = "Untagged";
+
+        //GameObject.Find("Patty").layer = 6;
+        //GameObject.Find("Patty").GetComponent<Ingredient>().enabled = true;
         FryDone.Invoke();
         
         // Call UI update event 

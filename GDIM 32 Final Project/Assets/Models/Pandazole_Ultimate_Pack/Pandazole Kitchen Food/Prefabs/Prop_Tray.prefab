@@ -119,6 +119,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: fe16505f19b8429498f5681c514d85c4, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  _cookingTimer: 0
+  _cookingTime: 10
   _timerCanvas: {fileID: 7226299238635059456}
 --- !u!1 &7330839318196206149
 GameObject:
