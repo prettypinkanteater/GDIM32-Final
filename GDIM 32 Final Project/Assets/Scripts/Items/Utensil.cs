@@ -45,7 +45,14 @@ public class Utensil : Item
         {
             Locator.Instance.ui.hidePrompt();
             base.PickUp();
-            GetComponent<Animator>().SetTrigger("Position");
+            if(Locator.Instance.gameController.burgerInProgress == true)
+            {
+                GetComponent<Animator>().SetTrigger("SpatPosition");
+            }
+            else
+            {
+                GetComponent<Animator>().SetTrigger("Position");
+            }
             chopable = true;
             Locator.Instance.gameController.hasItem = true;
 
