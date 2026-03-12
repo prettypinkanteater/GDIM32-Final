@@ -14,7 +14,7 @@ GameObject:
   - component: {fileID: 5815473578692096133}
   - component: {fileID: 666696272269433314}
   - component: {fileID: 8411363496471324509}
-  m_Layer: 6
+  m_Layer: 9
   m_Name: Spatula
   m_TagString: utensil
   m_Icon: {fileID: 0}
@@ -29,7 +29,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 8094638959744956917}
   serializedVersion: 2
-  m_LocalRotation: {x: 0, y: -0, z: -0, w: 1}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 254.898, y: 4.799, z: 3.042}
   m_LocalScale: {x: 4, y: 4, z: 4}
   m_ConstrainProportionsScale: 0

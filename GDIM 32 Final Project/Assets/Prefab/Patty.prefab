@@ -51,6 +51,7 @@ MonoBehaviour:
   potato: {fileID: 4948064722031845613}
   cut: {fileID: 6508141914370589120}
   cooked: {fileID: 1901955372697159872}
+  fakeFries: {fileID: 0}
 --- !u!65 &8923160486174657048
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -135,6 +136,10 @@ PrefabInstance:
     - target: {fileID: 919132149155446097, guid: 178a1b5a39b372a4aa918344cf9c3f7d, type: 3}
       propertyPath: m_Name
       value: Cheeseburger
+      objectReference: {fileID: 0}
+    - target: {fileID: 919132149155446097, guid: 178a1b5a39b372a4aa918344cf9c3f7d, type: 3}
+      propertyPath: m_Layer
+      value: 6
       objectReference: {fileID: 0}
     - target: {fileID: 919132149155446097, guid: 178a1b5a39b372a4aa918344cf9c3f7d, type: 3}
       propertyPath: m_IsActive
@@ -229,7 +234,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 919132149155446097, guid: 96f7d97c63091ca45bd5f023ce575b93, type: 3}
       propertyPath: m_Layer
-      value: 0
+      value: 6
       objectReference: {fileID: 0}
     - target: {fileID: 919132149155446097, guid: 96f7d97c63091ca45bd5f023ce575b93, type: 3}
       propertyPath: m_IsActive
@@ -321,6 +326,10 @@ PrefabInstance:
     - target: {fileID: 919132149155446097, guid: c9ff13cca1143204daae62c9642a288d, type: 3}
       propertyPath: m_Name
       value: Cooked Patty
+      objectReference: {fileID: 0}
+    - target: {fileID: 919132149155446097, guid: c9ff13cca1143204daae62c9642a288d, type: 3}
+      propertyPath: m_Layer
+      value: 6
       objectReference: {fileID: 0}
     - target: {fileID: 919132149155446097, guid: c9ff13cca1143204daae62c9642a288d, type: 3}
       propertyPath: m_IsActive

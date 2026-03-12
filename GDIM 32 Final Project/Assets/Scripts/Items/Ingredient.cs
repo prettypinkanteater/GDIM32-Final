@@ -9,6 +9,11 @@ public class Ingredient : Item
     [SerializeField] private GameObject cut;
     [SerializeField] private GameObject cooked;
 
+    [SerializeField] private GameObject rawPatty;
+    [SerializeField] private GameObject cookedPatty;
+    [SerializeField] private GameObject burger;
+
+
     public GameObject fakeFries;
 
     // Start is called before the first frame update
@@ -55,8 +60,8 @@ public class Ingredient : Item
 
             if(Locator.Instance.gameController.fryCOOKED)
             {
-                this.gameObject.tag = "Untagged";
-                this.gameObject.layer = 0;
+                //this.gameObject.tag = "Untagged";
+                //this.gameObject.layer = 0;
             }
         }
     }
@@ -68,18 +73,32 @@ public class Ingredient : Item
             Locator.Instance.gameController.hasIngredient = false;
             //GetComponent<Collider>().enabled = false;
             base.PutDown();
-
+            Locator.Instance.gameController.placedIngredient = true;
             if(Locator.Instance.gameController.cutPotato)
             {
                 if (Locator.Instance.gameController.fryCOOKED)
                 {
+                    if (Locator.Instance.gameController.burgerInProgress)
+                    {
+                        this.gameObject.layer = 0;
+                    }
                     transform.position = new Vector3(270.45f, 4.195f, -10.77f);
-                    this.gameObject.tag = "Untagged";
-                    transform.GetChild(0).gameObject.tag = "Untagged";
-                    transform.GetChild(2).gameObject.layer = 0;
+                    //this.gameObject.tag = "Untagged";
+                    //transform.GetChild(0).gameObject.tag = "Untagged";
+                    //transform.GetChild(2).gameObject.layer = 0;
 
                     fakeFries.SetActive(true);
                     cooked.SetActive(false);
+
+                    potato = rawPatty;
+                    cut = burger;
+                    cooked = cookedPatty;
+
+                    transform.position = new Vector3(245.123f, 3.836f, -11.07f);
+                    potato.transform.position = new Vector3(245.123f, 3.836f, -11.07f);
+                    cut.transform.position = new Vector3(245.123f, 3.836f, -11.07f);
+                    cooked.transform.position = new Vector3(245.123f, 3.836f, -11.07f);
+                    potato.SetActive(true);
 
                     Locator.Instance.gameController.ResetPickup();
                     Locator.Instance.gameController.FryQuestDone();
@@ -93,15 +112,22 @@ public class Ingredient : Item
             } 
             else
             {
-                transform.localPosition = Locator.Instance.player.lookingAt.transform.GetChild(0).position;
-                transform.localPosition += new Vector3(0, 0.01f, 0);
-            }
+                base.PutDown();
                 
-            Locator.Instance.gameController.placedIngredient = true;
-
+                this.transform.localPosition = Locator.Instance.player.lookingAt.transform.GetChild(0).position;
+                this.transform.localPosition += new Vector3(0, 0.01f, 0);
+            }
+            
+            
+            
             Locator.Instance.player.mainCamera.cullingMask = LayerMask.GetMask("Default", "TransparentFX", "Ignore Raycast", "Water", "UI", "Manager", "Ingredient", "Utensil", "Appliance");
             Locator.Instance.player.secondCamera.enabled = false;
         }
+        /*if (Locator.Instance.gameController.burgerInProgress && Locator.Instance.gameController.hasIngredient)
+        {
+            GameObject.Find("Food_French Fries").transform.SetParent(GameObject.Find("Griller").transform);
+
+        }*/
     }
 
     protected void changeModel()

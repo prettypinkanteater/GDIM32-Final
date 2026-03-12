@@ -5,8 +5,8 @@ using UnityEngine;
 
 public class Appliance : Item
 {
-    private float _cookingTimer;
-    private float _cookingTime = 10.0f;
+    [SerializeField] private float _cookingTimer;
+    [SerializeField] private float _cookingTime = 10.0f;
     
 
     [SerializeField] Canvas _timerCanvas;
@@ -23,22 +23,47 @@ public class Appliance : Item
     void Update()
     {
 
-        if (_cookingTimer <= 0f && Locator.Instance.gameController.placedIngredient
-            && Locator.Instance.gameController.fryInProgress)
+        //if(Locator.Instance.gameController.burgerInProgress && this.gameObject.name == "Griller")
+        //{
+            //_timerCanvas.enabled = true;
+        //}
+        
+        if (_cookingTimer <= 0f && Locator.Instance.gameController.placedIngredient)
         {
-            FriesDone();
+            
+            //_cookingTimer = _cookingTime;
+            if (Locator.Instance.gameController.burgerInProgress)
+            {
+                //_cookingTimer = _cookingTime;
+                //changeCanvas();
+               
+                burgerDone();
+                
+            }
+            if(Locator.Instance.gameController.fryInProgress)
+            {
+                FriesDone();
+                changeCanvas();
+                //_cookingTimer = _cookingTime;
+            }
+            
             TimmyReady();
 
         }
 
-        if (this.gameObject.name == "Frier" &&
-            Locator.Instance.gameController.placedIngredient &&
-            Locator.Instance.gameController.fryInProgress && 
-            Locator.Instance.gameController.cutPotato)
+        if ((this.gameObject.name == "Frier" || this.gameObject.name == "Griller") &&
+            ((Locator.Instance.gameController.placedIngredient && Locator.Instance.gameController.fryInProgress && Locator.Instance.gameController.cutPotato) || 
+            (Locator.Instance.gameController.placedIngredient && Locator.Instance.gameController.burgerInProgress)))
         {
+            if(Locator.Instance.gameController.burgerInProgress)
+            {
+                _timerText.enabled = true;
+            }
             _cookingTimer -= Time.deltaTime;
             int _cookingTimerInt = (int)_cookingTimer;
-            _timerText.text = _cookingTimerInt.ToString();
+
+                this._timerText.text = _cookingTimerInt.ToString();
+            
         }
         if (this.gameObject.name == "Cutting Board" && Locator.Instance.gameController.cutPotato)         
         {
@@ -47,6 +72,10 @@ public class Appliance : Item
         if (this.gameObject.name == "Frier" && Locator.Instance.gameController.fryCOOKED)
         {
             gameObject.tag = "Untagged";
+        }
+        if(this.gameObject.name == "Griller" && Locator.Instance.gameController.hasIngredient && Locator.Instance.gameController.burgerInProgress)
+        {
+            this.gameObject.layer = 8;
         }
 
     }
@@ -61,6 +90,12 @@ public class Appliance : Item
         
     }
 
+    private void changeCanvas()
+    {
+        Debug.Log("Change Canvas");
+        _timerCanvas.transform.localPosition = new Vector3(1.368f, 1.334f, -0.3299999f);
+    }
+
     private void TimmyReady()
     {
         GameObject.Find("Timmy Tray").tag = "appliance";
@@ -68,10 +103,24 @@ public class Appliance : Item
 
     private void FriesDone()
     {
+        Debug.Log("FriesdDone");
         Locator.Instance.gameController.fryCOOKED = true;
         _timerText.enabled = false;
         Locator.Instance.gameController.ResetPickup();
         gameObject.layer = 0;
+        GameObject.Find("Frier").GetComponent<Appliance>().enabled = false;
+        _cookingTimer = _cookingTime;
     }
+
+    private void burgerDone()
+    {
+        Debug.Log("Burger Done");
+        Locator.Instance.gameController.fryCOOKED = true;
+        _timerText.enabled = false;
+        Locator.Instance.gameController.ResetPickup();
+        //Locator.Instance.gameController.placedIngredient = true;
+        gameObject.layer = 0;
+    }
+
 
 }

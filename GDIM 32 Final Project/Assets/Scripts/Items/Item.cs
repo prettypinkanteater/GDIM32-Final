@@ -26,8 +26,14 @@ public abstract class Item : MonoBehaviour
 
     protected virtual void PutDown()
     {
+        
         transform.parent = null;
-        Debug.Log("transform.parent.gameObject.name");
+        /*if(this.gameObject.name == "Patty")
+        {
+            Debug.Log("Anything, At all(I ahte)");
+            transform.SetParent(GameObject.Find("Griller").transform);
+        }*/
+        //Debug.Log(transform.parent.gameObject.name);
         Locator.Instance.ui.hidePrompt();
         
     }
