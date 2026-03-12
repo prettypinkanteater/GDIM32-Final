@@ -60,6 +60,7 @@ public class Utensil : Item
             Locator.Instance.player.secondCamera.cullingMask = LayerMask.GetMask("Utensil");
             Locator.Instance.player.secondCamera.enabled = true;
         }
+        // if(Locator.Instance.gameController.burgerInProgress )
         
     }
 
@@ -73,6 +74,7 @@ public class Utensil : Item
         transform.parent = null;
         knife.SetActive(false);
         transform.position = new Vector3(258.284f, 4.622559f, -8.625f);
+        transform.GetChild(0).localPosition = new Vector3(0, 0, 0);
         spat.SetActive(true);
         
 
