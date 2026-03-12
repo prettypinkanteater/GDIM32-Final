@@ -3649,6 +3649,13 @@ MonoBehaviour:
   _dialogueUI: {fileID: 170119285}
   _dialogueStartNode: {fileID: 11400000, guid: 1727bfbe9ed86544abfb8f2f4825a173, type: 2}
   _fryCheckInNode: {fileID: 11400000, guid: e4ecde18005229b4581a61c0145310f6, type: 2}
+  _burgerCheckInNode: {fileID: 0}
+  _fryCompleteNode: {fileID: 0}
+  _burgerCompleteNode: {fileID: 0}
+  _currentNode: {fileID: 0}
+  _currentLine: 0
+  _runningDialogue: 0
+  _waitingForPlayerResponse: 0
 --- !u!4 &1075252616
 Transform:
   m_ObjectHideFlags: 0
@@ -7466,7 +7473,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 5574691622797956519, guid: 8ca7bddbe0b8d6345b448ca3a4127348, type: 3}
       propertyPath: m_IsActive
-      value: 1
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 5789372696588212109, guid: 8ca7bddbe0b8d6345b448ca3a4127348, type: 3}
       propertyPath: m_LocalPosition.y
