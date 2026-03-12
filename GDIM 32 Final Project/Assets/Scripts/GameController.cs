@@ -46,7 +46,6 @@ public class GameController : MonoBehaviour
         fryCOOKED = false;
         cutPotato = false;
         placedIngredient = false;
-        burgerInProgress = true;
 
         Locator.Instance.player.mainCamera.cullingMask = LayerMask.GetMask("Default", "TransparentFX", "Ignore Raycast", "Water", "UI", "Manager", "Ingredient", "Utensil", "Appliance");
         Locator.Instance.player.secondCamera.enabled = false;

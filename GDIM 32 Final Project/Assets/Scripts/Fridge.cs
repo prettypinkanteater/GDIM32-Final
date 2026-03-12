@@ -10,7 +10,7 @@ public class Fridge : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-        Locator.Instance.gameController.FryDone += OpenDoors;
+        Locator.Instance.dialogueController.StartBurgerQuest += OpenDoors;
     }
 
     void OpenDoors()
