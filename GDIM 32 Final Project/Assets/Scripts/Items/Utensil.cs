@@ -25,6 +25,19 @@ public class Utensil : Item
 
     void Update()
     {
+        if(Locator.Instance.gameController.fryCOOKED && Locator.Instance.gameController.burgerInProgress)
+        {
+            this.gameObject.GetComponent<Collider>().enabled = true;
+        }
+        if(Locator.Instance.gameController.burgerInProgress && Locator.Instance.gameController.hasItem)
+        {
+            this.gameObject.GetComponent<Collider>().enabled = false;
+        }
+        if (Locator.Instance.gameController.burgerInProgress)
+        {
+            spat.SetActive(true);
+        }
+
         if(chopable == true && Input.GetKey(KeyCode.Mouse0))
         {
             GetComponent<Animator>().ResetTrigger("Stop");
@@ -41,13 +54,14 @@ public class Utensil : Item
 
     protected override void PickUp()
     {
-        if(Locator.Instance.gameController.placedIngredient == true && chopable != true)
+        if((Locator.Instance.gameController.placedIngredient == true) || (Locator.Instance.gameController.fryCOOKED && Locator.Instance.gameController.burgerInProgress))
         {
             Locator.Instance.ui.hidePrompt();
             base.PickUp();
             if(Locator.Instance.gameController.burgerInProgress == true)
             {
                 GetComponent<Animator>().SetTrigger("SpatPosition");
+                this.gameObject.layer = 0;
             }
             else
             {
@@ -68,18 +82,26 @@ public class Utensil : Item
     protected override void PutDown()
     {
         Locator.Instance.ui.hidePrompt();
-        Locator.Instance.gameController.hasItem = false;
+        
 
         Locator.Instance.player.mainCamera.cullingMask = LayerMask.GetMask("Default", "TransparentFX", "Ignore Raycast", "Water", "UI", "Manager", "Ingredient", "Utensil", "Appliance");
         Locator.Instance.player.secondCamera.enabled = false;
-        transform.parent = null;
-        knife.SetActive(false);
-        transform.position = new Vector3(258.284f, 4.622559f, -8.625f);
-        transform.GetChild(0).localPosition = new Vector3(0, 0, 0);
-        spat.SetActive(true);
+        
+        if(Locator.Instance.gameController.fryInProgress)
+        {
+            Locator.Instance.gameController.hasItem = false;
+            transform.parent = null;
+            knife.SetActive(false);
+            transform.position = new Vector3(258.764f, 3.803f, -11.24f);
+            transform.GetChild(0).localPosition = new Vector3(0, 0, 0);
+            //spat.SetActive(true);
+        }
+        
         
 
     }
+
+    //Audrey rememmber to pu animation starting trugger in use method
 
     protected void CutManager()
     {
