@@ -17,6 +17,7 @@ public class Appliance : Item
     {
         _cookingTimer = _cookingTime;
         _timerText = _timerCanvas.GetComponentInChildren<TMP_Text>();
+        //Locator.Instance.player.Chop += TimmyReady;
     }
 
     private void OnEnable()
@@ -32,6 +33,11 @@ public class Appliance : Item
         //{
             //_timerCanvas.enabled = true;
         //}
+        if(Locator.Instance.gameController.burgerInProgress && Locator.Instance.gameController.hasItem && Locator.Instance.gameController.hasIngredient)
+        {
+            GameObject.Find("Timmy Tray").tag = "appliance";
+        }
+
         if(Locator.Instance.gameController.burgerInProgress && Locator.Instance.gameController.hasIngredient && Locator.Instance.gameController.hasItem)
         {
             GameObject.Find("Griller").layer = 0;

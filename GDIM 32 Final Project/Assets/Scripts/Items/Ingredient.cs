@@ -23,6 +23,7 @@ public class Ingredient : Item
         Locator.Instance.player.ItemUsed += PickUp;
         Locator.Instance.player.Chop += changeModel;
         Locator.Instance.player.Chop += chopIngredient;
+        Locator.Instance.gameController.BurgerDone += becomeBurger;
     }
 
     // Update is called once per frame
@@ -44,12 +45,13 @@ public class Ingredient : Item
             cut.SetActive(true);
             cooked.SetActive(false);
         }
-        if (Locator.Instance.gameController.fryCOOKED)
+        if (Locator.Instance.gameController.fryCOOKED && !Locator.Instance.gameController.burgerOnTray)
         {
             potato.SetActive(false);
             cut.SetActive(false);
             cooked.SetActive(true);
         }
+
     }
 
     protected override void PickUp()
@@ -75,6 +77,11 @@ public class Ingredient : Item
     {
         if(Locator.Instance.gameController.hasIngredient == true && Locator.Instance.player.lookingAt.tag == "appliance") 
         {
+            if (Locator.Instance.gameController.burgerInProgress && Locator.Instance.gameController.hasItem && Locator.Instance.gameController.hasIngredient)
+            {
+                Locator.Instance.gameController.burgerOnTray = true;
+                Locator.Instance.gameController.burgerQuestDone();
+            }
             Locator.Instance.gameController.hasIngredient = false;
             //GetComponent<Collider>().enabled = false;
             base.PutDown();
@@ -115,7 +122,7 @@ public class Ingredient : Item
             else
             {
                 base.PutDown();
-                
+
                 this.transform.localPosition = Locator.Instance.player.lookingAt.transform.GetChild(0).position;
                 this.transform.localPosition += new Vector3(0, 0.01f, 0);
             }
@@ -156,5 +163,11 @@ public class Ingredient : Item
         this.gameObject.GetComponent<Collider>().enabled = true;
         
 
+    }
+
+    public void becomeBurger()
+    {
+        cut.SetActive(true);
+        cooked.SetActive(true);
     }
 }

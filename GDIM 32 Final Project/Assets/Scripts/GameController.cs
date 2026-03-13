@@ -17,6 +17,7 @@ public class GameController : MonoBehaviour
     public bool fryDone = false;
 
     public bool burgerInProgress = false;
+    public bool burgerOnTray = false;
     public bool burgerDone = false;
 
     
@@ -26,6 +27,9 @@ public class GameController : MonoBehaviour
 
     public delegate void QuestOneDone();
     public event QuestOneDone FryDone;
+
+    public delegate void QuestTwoDone();
+    public event QuestTwoDone BurgerDone;
 
     // Start is called before the first frame update
     void Start()
@@ -59,6 +63,17 @@ public class GameController : MonoBehaviour
         FryDone.Invoke();
         
         // Call UI update event 
+    }
+
+    public void burgerQuestDone()
+    {
+        burgerDone = true;
+        fryCOOKED = false;
+        Locator.Instance.player.mainCamera.cullingMask = LayerMask.GetMask("Default", "TransparentFX", "Ignore Raycast", "Water", "UI", "Manager", "Ingredient", "Utensil", "Appliance");
+        Locator.Instance.player.secondCamera.enabled = false;
+        GameObject.Find("Timmy Tray").tag = "Untagged";
+
+        BurgerDone.Invoke();
     }
 
     public void ResetPickup()
