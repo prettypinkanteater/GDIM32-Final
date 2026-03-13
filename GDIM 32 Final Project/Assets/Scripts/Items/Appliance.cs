@@ -108,6 +108,7 @@ public class Appliance : Item
         _timerText.enabled = false;
         Locator.Instance.gameController.ResetPickup();
         gameObject.layer = 0;
+        GameObject.Find("Frier").layer = 0;
         GameObject.Find("Frier").GetComponent<Appliance>().enabled = false;
         _cookingTimer = _cookingTime;
     }
