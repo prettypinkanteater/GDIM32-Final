@@ -19,6 +19,11 @@ public class Appliance : Item
         _timerText = _timerCanvas.GetComponentInChildren<TMP_Text>();
     }
 
+    private void OnEnable()
+    {
+        _cookingTimer = _cookingTime;
+    }
+
     // Update is called once per frame
     void Update()
     {
@@ -42,9 +47,9 @@ public class Appliance : Item
             }
             if(Locator.Instance.gameController.fryInProgress)
             {
-                FriesDone();
                 changeCanvas();
                 TimmyReady();
+                FriesDone();
                 //_cookingTimer = _cookingTime;
             }
             
@@ -115,8 +120,9 @@ public class Appliance : Item
         Locator.Instance.gameController.ResetPickup();
         gameObject.layer = 0;
         GameObject.Find("Frier").layer = 0;
-        GameObject.Find("Frier").GetComponent<Appliance>().enabled = false;
         _cookingTimer = _cookingTime;
+        GameObject.Find("Griller").GetComponent<Appliance>().enabled = true;
+        GameObject.Find("Frier").GetComponent<Appliance>().enabled = false;
     }
 
     private void burgerDone()

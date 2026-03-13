@@ -5732,6 +5732,10 @@ PrefabInstance:
       value: Griller
       objectReference: {fileID: 0}
     - target: {fileID: 7468090886786861364, guid: 8f233bb653c30bb4295d0d5dd595b22d, type: 3}
+      propertyPath: m_Enabled
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 7468090886786861364, guid: 8f233bb653c30bb4295d0d5dd595b22d, type: 3}
       propertyPath: _timerCanvas
       value: 
       objectReference: {fileID: 1083974161}
