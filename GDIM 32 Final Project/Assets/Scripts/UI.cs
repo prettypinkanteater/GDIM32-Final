@@ -12,6 +12,9 @@ public class UI : MonoBehaviour
     [SerializeField] GameObject dialoguePrompt;
     [SerializeField] public TMP_Text goals;
 
+    public delegate void FridgeClose();
+    public event FridgeClose CloseFridge;
+
     void Start()
     {
         Locator.Instance.gameController.FryDone += FriesGoalsDone;
@@ -66,6 +69,11 @@ public class UI : MonoBehaviour
     public void hidePrompt()
     {
         prompt.SetActive(false);
+        if (Locator.Instance.gameController.burgerInProgress && Locator.Instance.gameController.hasIngredient)
+        {
+            CloseFridge.Invoke();
+        }
+        
     }
 
     public void hidePrompt2()
