@@ -44,10 +44,11 @@ public class Appliance : Item
             {
                 FriesDone();
                 changeCanvas();
+                TimmyReady();
                 //_cookingTimer = _cookingTime;
             }
             
-            TimmyReady();
+            
 
         }
 
@@ -99,6 +100,11 @@ public class Appliance : Item
     private void TimmyReady()
     {
         GameObject.Find("Timmy Tray").tag = "appliance";
+    }
+
+    private void resetTimmy()
+    {
+        GameObject.Find("Timmy Tray").tag = "Untagged";
     }
 
     private void FriesDone()
