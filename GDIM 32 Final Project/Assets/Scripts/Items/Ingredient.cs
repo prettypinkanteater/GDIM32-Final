@@ -30,6 +30,10 @@ public class Ingredient : Item
         if (Locator.Instance.gameController.fryCOOKED)
         {
             changeModel();
+            if (Locator.Instance.gameController.burgerInProgress)
+                 {
+                        this.gameObject.layer = 0;
+                 }
             //Locator.Instance.gameController.FryQuestDone();
             //Locator.Instance.gameController.burgerInProgress = true;
         }
@@ -78,10 +82,7 @@ public class Ingredient : Item
             {
                 if (Locator.Instance.gameController.fryCOOKED)
                 {
-                    if (Locator.Instance.gameController.burgerInProgress)
-                    {
-                        this.gameObject.layer = 0;
-                    }
+                    
                     transform.position = new Vector3(270.45f, 4.195f, -10.77f);
                     //this.gameObject.tag = "Untagged";
                     //transform.GetChild(0).gameObject.tag = "Untagged";
