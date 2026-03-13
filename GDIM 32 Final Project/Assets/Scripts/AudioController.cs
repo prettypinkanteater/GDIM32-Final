@@ -18,7 +18,10 @@ public class AudioController : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        
+        if(Locator.Instance.gameController.cutPotato && Locator.Instance.gameController.fryInProgress)
+        {
+            ChopSound();
+        }
     }
 
     private void ChopSound()
