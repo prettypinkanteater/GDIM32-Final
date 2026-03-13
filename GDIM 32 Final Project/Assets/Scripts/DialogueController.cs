@@ -35,8 +35,9 @@ public class DialogueController : MonoBehaviour
 
     private void Update()
     {
-            if (!_waitingForPlayerResponse && _runningDialogue && ((Input.GetKeyDown(KeyCode.Space) || Input.GetKeyDown(KeyCode.Mouse0))))
+            if (!_waitingForPlayerResponse && _runningDialogue && (Input.GetKeyDown(KeyCode.Space) || Input.GetKeyDown(KeyCode.Mouse0)))
             {
+            Debug.Log("Advanced");
                     AdvanceDialogue();
             }
             else if (!_runningDialogue && Input.GetKeyDown(KeyCode.E))
@@ -95,10 +96,13 @@ public class DialogueController : MonoBehaviour
             StartFryQuest.Invoke();
             _currentNode = _fryCheckInNode;
         }
+        else if (Locator.Instance.gameController.fryInProgress && !Locator.Instance.gameController.fryDone) {
+            _currentNode = _fryCheckInNode;
+        }
         else if (!Locator.Instance.gameController.burgerInProgress && Locator.Instance.gameController.fryDone)
         {
             Locator.Instance.gameController.burgerInProgress = true;
-            StartBurgerQuest.Invoke(); 
+            StartBurgerQuest.Invoke();
             _currentNode = _burgerCheckInNode;
         }
         else if (Locator.Instance.gameController.burgerDone)

@@ -17,5 +17,6 @@ MonoBehaviour:
   - 'The potato is a vegetable is it not? '
   - "You\u2019ve worked here long enough to know the vegetables are always on the
     shelf by the fridge. "
+  - Cut it, then put the fries in the fryer.
   _playerReplyOptions: []
   _npcReplies: []

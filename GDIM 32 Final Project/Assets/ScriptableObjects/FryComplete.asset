@@ -15,7 +15,7 @@ MonoBehaviour:
   _lines:
   - "It\u2019s only fries, nothing to celebrate."
   - Have you forgotten how to read?
-  - Your order ticket, Fryday.
+  - Check your order ticket, Fryday. You aren't done.
   _playerReplyOptions:
   - 'Got it. '
   _npcReplies:
