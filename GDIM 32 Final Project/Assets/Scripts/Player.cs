@@ -77,7 +77,7 @@ public class Player : MonoBehaviour
                 {
                     string colliderTag = collider.collider.gameObject.tag;
                     lookingAt = collider.collider.gameObject;
-                //Debug.Log(lookingAt.name);
+                Debug.Log(lookingAt.name);
 
                     switch (colliderTag)
                     {
@@ -89,8 +89,10 @@ public class Player : MonoBehaviour
                                 promptOn = true;
 
                             }
-                            else if ((Locator.Instance.gameController.hasItem && Locator.Instance.gameController.placedIngredient))
+                            else if (((Locator.Instance.gameController.hasItem && Locator.Instance.gameController.placedIngredient)) || 
+                                    (Locator.Instance.gameController.burgerInProgress && Locator.Instance.gameController.hasItem && Locator.Instance.gameController.fryCOOKED))
                             {
+                                //Debug.Log("prompt2");
                                 Locator.Instance.ui.showPrompt2();
                                 prompt2on = true;
 
@@ -98,7 +100,7 @@ public class Player : MonoBehaviour
                             Locator.Instance.ui.hideDialoguePrompt();
                             break;
                         case ("utensil"):
-                            if (Locator.Instance.gameController.placedIngredient)
+                            if ((Locator.Instance.gameController.placedIngredient) || (Locator.Instance.gameController.fryCOOKED && Locator.Instance.gameController.burgerInProgress))
                             {
                                 Locator.Instance.ui.showPrompt();
                                 promptOn = true;

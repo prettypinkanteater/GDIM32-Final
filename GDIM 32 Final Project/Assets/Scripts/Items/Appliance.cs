@@ -32,7 +32,10 @@ public class Appliance : Item
         //{
             //_timerCanvas.enabled = true;
         //}
-        
+        if(Locator.Instance.gameController.burgerInProgress && Locator.Instance.gameController.hasIngredient && Locator.Instance.gameController.hasItem)
+        {
+            GameObject.Find("Griller").layer = 0;
+        }
         if (_cookingTimer <= 0f && Locator.Instance.gameController.placedIngredient)
         {
             
@@ -79,7 +82,7 @@ public class Appliance : Item
         {
             gameObject.tag = "Untagged";
         }
-        if(this.gameObject.name == "Griller" && Locator.Instance.gameController.hasIngredient && Locator.Instance.gameController.burgerInProgress)
+        if(this.gameObject.name == "Griller" && Locator.Instance.gameController.hasIngredient && Locator.Instance.gameController.burgerInProgress && !Locator.Instance.gameController.hasItem)
         {
             this.gameObject.layer = 8;
         }
@@ -132,7 +135,7 @@ public class Appliance : Item
         _timerText.enabled = false;
         Locator.Instance.gameController.ResetPickup();
         //Locator.Instance.gameController.placedIngredient = true;
-        gameObject.layer = 0;
+        //gameObject.layer = 0;
     }
 
 

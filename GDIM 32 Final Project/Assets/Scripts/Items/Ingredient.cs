@@ -22,6 +22,7 @@ public class Ingredient : Item
         Locator.Instance.player.putDownEvent += PutDown;
         Locator.Instance.player.ItemUsed += PickUp;
         Locator.Instance.player.Chop += changeModel;
+        Locator.Instance.player.Chop += chopIngredient;
     }
 
     // Update is called once per frame
@@ -131,9 +132,19 @@ public class Ingredient : Item
         }*/
     }
 
+    protected void chopIngredient()
+    {
+        if(Locator.Instance.gameController.burgerInProgress)
+        {
+            transform.parent = GameObject.Find("Utensils").transform.GetChild(2).transform;
+            transform.position = GameObject.Find("Utensils").transform.GetChild(2).transform.position;
+            Locator.Instance.gameController.hasIngredient = true;
+        }
+    }
+
     protected void changeModel()
     {
-        Locator.Instance.ui.hidePrompt2();
+        //Locator.Instance.ui.hidePrompt2();
         if (Locator.Instance.gameController.fryInProgress)
         {
             Locator.Instance.gameController.cutPotato = true;
