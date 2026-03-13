@@ -53,6 +53,7 @@ public class Utensil : Item
             {
                 GetComponent<Animator>().SetTrigger("Position");
             }
+
             chopable = true;
             Locator.Instance.gameController.hasItem = true;
 
