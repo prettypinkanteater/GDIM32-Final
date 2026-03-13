@@ -49,6 +49,7 @@ MonoBehaviour:
   _fryCheckInNode: {fileID: 11400000, guid: e4ecde18005229b4581a61c0145310f6, type: 2}
   _burgerCheckInNode: {fileID: 11400000, guid: 7afb1e5a5ecba444aa377dbf0dba158e, type: 2}
   _fryCompleteNode: {fileID: 11400000, guid: 35c2ae6f21f469f4d833bc71787d4d33, type: 2}
+  _burgerCompleteNode: {fileID: 11400000, guid: 8dd83fa86909f48418c32b65079f94e2, type: 2}
   _currentNode: {fileID: 0}
   _currentLine: 0
   _runningDialogue: 0
