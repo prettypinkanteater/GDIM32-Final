@@ -7434,6 +7434,18 @@ PrefabInstance:
       value: Utensils
       objectReference: {fileID: 0}
     - target: {fileID: 624492490678604447, guid: 8ca7bddbe0b8d6345b448ca3a4127348, type: 3}
+      propertyPath: m_LocalScale.x
+      value: 4
+      objectReference: {fileID: 0}
+    - target: {fileID: 624492490678604447, guid: 8ca7bddbe0b8d6345b448ca3a4127348, type: 3}
+      propertyPath: m_LocalScale.y
+      value: 4
+      objectReference: {fileID: 0}
+    - target: {fileID: 624492490678604447, guid: 8ca7bddbe0b8d6345b448ca3a4127348, type: 3}
+      propertyPath: m_LocalScale.z
+      value: 4
+      objectReference: {fileID: 0}
+    - target: {fileID: 624492490678604447, guid: 8ca7bddbe0b8d6345b448ca3a4127348, type: 3}
       propertyPath: m_LocalPosition.x
       value: 258.866
       objectReference: {fileID: 0}
