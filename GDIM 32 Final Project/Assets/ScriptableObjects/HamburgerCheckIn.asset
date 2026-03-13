@@ -21,3 +21,4 @@ MonoBehaviour:
   _npcReplies:
   - {fileID: 11400000, guid: ab793d5231b90dd47b46e2c72e428b6a, type: 2}
   - {fileID: 11400000, guid: 772249e68fa042e4395d9490272b73e9, type: 2}
+  - {fileID: 11400000, guid: 3e8ee8ad3bbe2c34d9b8d4f4dac64e0c, type: 2}
