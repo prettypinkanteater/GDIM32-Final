@@ -1440,6 +1440,7 @@ MonoBehaviour:
   fryCOOKED: 0
   fryDone: 0
   burgerInProgress: 0
+  burgerOnTray: 0
   burgerDone: 0
 --- !u!4 &372549730
 Transform:
