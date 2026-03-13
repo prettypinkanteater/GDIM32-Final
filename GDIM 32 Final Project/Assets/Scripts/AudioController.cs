@@ -20,7 +20,9 @@ public class AudioController : MonoBehaviour
     {
         if(Locator.Instance.gameController.cutPotato && Locator.Instance.gameController.fryInProgress)
         {
+            Debug.Log("Chop Chop");
             ChopSound();
+            
         }
     }
 
