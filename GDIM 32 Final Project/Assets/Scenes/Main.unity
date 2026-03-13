@@ -1471,10 +1471,6 @@ PrefabInstance:
       propertyPath: m_Name
       value: Spring in my Step
       objectReference: {fileID: 0}
-    - target: {fileID: 7535379657074742055, guid: 49623d250c3ae91468d20797e30e06a8, type: 3}
-      propertyPath: m_Volume
-      value: 0.173
-      objectReference: {fileID: 0}
     - target: {fileID: 8874650160481712057, guid: 49623d250c3ae91468d20797e30e06a8, type: 3}
       propertyPath: m_LocalPosition.x
       value: 251
@@ -6003,10 +5999,6 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 3111042180023561157, guid: a72efe3289e3c2648800dc5ed6ba2cbc, type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 7966969063533472304, guid: a72efe3289e3c2648800dc5ed6ba2cbc, type: 3}
-      propertyPath: m_PlayOnAwake
       value: 0
       objectReference: {fileID: 0}
     m_RemovedComponents: []
