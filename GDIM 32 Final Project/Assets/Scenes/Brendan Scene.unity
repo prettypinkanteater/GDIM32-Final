@@ -3601,16 +3601,9 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
-    - target: {fileID: 5574691622797956519, guid: 8ca7bddbe0b8d6345b448ca3a4127348, type: 3}
-      propertyPath: m_IsActive
-      value: 0
-      objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
-    m_AddedGameObjects:
-    - targetCorrespondingSourceObject: {fileID: 624492490678604447, guid: 8ca7bddbe0b8d6345b448ca3a4127348, type: 3}
-      insertIndex: -1
-      addedObject: {fileID: 1480406244}
+    m_AddedGameObjects: []
     m_AddedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 8ca7bddbe0b8d6345b448ca3a4127348, type: 3}
 --- !u!1001 &1068775390
@@ -5049,37 +5042,6 @@ Transform:
   m_CorrespondingSourceObject: {fileID: 6475594417537069114, guid: cdb54e10ab7b2a4468a427e39cc38716, type: 3}
   m_PrefabInstance: {fileID: 1450010223}
   m_PrefabAsset: {fileID: 0}
---- !u!1 &1480406243
-GameObject:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  serializedVersion: 6
-  m_Component:
-  - component: {fileID: 1480406244}
-  m_Layer: 9
-  m_Name: PattyPosition
-  m_TagString: Untagged
-  m_Icon: {fileID: 0}
-  m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
-  m_IsActive: 1
---- !u!4 &1480406244
-Transform:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1480406243}
-  serializedVersion: 2
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -0.2885, y: 0.0175, z: 0}
-  m_LocalScale: {x: 1, y: 1, z: 1}
-  m_ConstrainProportionsScale: 0
-  m_Children: []
-  m_Father: {fileID: 1790341997}
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1001 &1494191923
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -5616,22 +5578,6 @@ PrefabInstance:
       propertyPath: m_Name
       value: Timmy Plate
       objectReference: {fileID: 0}
-    - target: {fileID: 6981037562058695331, guid: b6d9e26087c61114485b9b1554439ad8, type: 3}
-      propertyPath: m_Layer
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 7758136455156381721, guid: b6d9e26087c61114485b9b1554439ad8, type: 3}
-      propertyPath: m_LocalScale.x
-      value: 3
-      objectReference: {fileID: 0}
-    - target: {fileID: 7758136455156381721, guid: b6d9e26087c61114485b9b1554439ad8, type: 3}
-      propertyPath: m_LocalScale.y
-      value: 3
-      objectReference: {fileID: 0}
-    - target: {fileID: 7758136455156381721, guid: b6d9e26087c61114485b9b1554439ad8, type: 3}
-      propertyPath: m_LocalScale.z
-      value: 3
-      objectReference: {fileID: 0}
     - target: {fileID: 7758136455156381721, guid: b6d9e26087c61114485b9b1554439ad8, type: 3}
       propertyPath: m_LocalPosition.x
       value: 271.205
@@ -5896,10 +5842,6 @@ PrefabInstance:
       value: Griller
       objectReference: {fileID: 0}
     - target: {fileID: 7468090886786861364, guid: 8f233bb653c30bb4295d0d5dd595b22d, type: 3}
-      propertyPath: m_Enabled
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 7468090886786861364, guid: 8f233bb653c30bb4295d0d5dd595b22d, type: 3}
       propertyPath: _timerCanvas
       value: 
       objectReference: {fileID: 1083974161}
@@ -5908,11 +5850,6 @@ PrefabInstance:
     m_AddedGameObjects: []
     m_AddedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 8f233bb653c30bb4295d0d5dd595b22d, type: 3}
---- !u!4 &1790341997 stripped
-Transform:
-  m_CorrespondingSourceObject: {fileID: 624492490678604447, guid: 8ca7bddbe0b8d6345b448ca3a4127348, type: 3}
-  m_PrefabInstance: {fileID: 1055546985}
-  m_PrefabAsset: {fileID: 0}
 --- !u!1001 &1796222352
 PrefabInstance:
   m_ObjectHideFlags: 0
