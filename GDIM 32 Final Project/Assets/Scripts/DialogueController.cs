@@ -105,6 +105,10 @@ public class DialogueController : MonoBehaviour
             StartBurgerQuest.Invoke();
             _currentNode = _burgerCheckInNode;
         }
+        else if (Locator.Instance.gameController.burgerInProgress && Locator.Instance.gameController.fryDone)
+        {
+            _currentNode = _burgerCheckInNode;
+        }
         else if (Locator.Instance.gameController.burgerDone)
         {
             EndBurgerQuest.Invoke();
