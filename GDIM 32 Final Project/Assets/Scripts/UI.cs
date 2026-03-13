@@ -38,19 +38,19 @@ public class UI : MonoBehaviour
     
     void StartGoalDone()
     {
-        goals.text = "Goals: \n - Make the fries \n - Give Timmy the fries \n - (Optional) Talk to the manager for help";
+        goals.text = "Objectives: \n - Make the fries \n - Give Timmy the fries \n - (Optional) Talk to the manager for help";
     }
     void FriesGoalsDone()
     {
-        goals.text = "Goals: \n - Talk to the manager";
+        goals.text = "Objectives: \n - Talk to the manager";
     }
     void ShowBurgerGoals()
     {
-        goals.text = "Goals: \n - Grill the patty \n - Give Timmy the patty \n - (Optional) Talk to the manager for help";
+        goals.text = "Objectives: \n - Grill the patty \n - Give Timmy the patty \n - (Optional) Talk to the manager for help";
     }
     void ShowEndGoals()
     {
-        goals.text = "Goals: \n - Give the tray to the customer";
+        goals.text = "Objectives: \n - Give the tray to the customer";
     }
 
     public void showPrompt()
