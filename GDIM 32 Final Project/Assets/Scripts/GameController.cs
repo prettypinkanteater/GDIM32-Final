@@ -54,7 +54,7 @@ public class GameController : MonoBehaviour
         Locator.Instance.player.mainCamera.cullingMask = LayerMask.GetMask("Default", "TransparentFX", "Ignore Raycast", "Water", "UI", "Manager", "Ingredient", "Utensil", "Appliance");
         Locator.Instance.player.secondCamera.enabled = false;
 
-        //GameObject.Find("FryStates").GetComponent<Ingredient>().enabled = false;
+        GameObject.Find("FryStates").layer = 6;
 
         GameObject.Find("Timmy Tray").tag = "Untagged";
 
@@ -72,6 +72,9 @@ public class GameController : MonoBehaviour
         Locator.Instance.player.mainCamera.cullingMask = LayerMask.GetMask("Default", "TransparentFX", "Ignore Raycast", "Water", "UI", "Manager", "Ingredient", "Utensil", "Appliance");
         Locator.Instance.player.secondCamera.enabled = false;
         GameObject.Find("Timmy Tray").tag = "Untagged";
+        GameObject.Find("BottomBun").SetActive(false);
+        GameObject.Find("TopBun").SetActive(false);
+        GameObject.Find("Cheese").SetActive(false);
 
         BurgerDone.Invoke();
     }

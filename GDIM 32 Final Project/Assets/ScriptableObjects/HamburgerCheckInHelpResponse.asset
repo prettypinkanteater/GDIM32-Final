@@ -19,6 +19,7 @@ MonoBehaviour:
   - 'Did you really graduate? '
   - The grill is where you cook it, Fryday.
   - 'You must know what a plate looks like by now. '
-  - Cook it, place it there, and little Timmy will finish the rest.
+  - Cook it, use the spatula to place it there, and little Timmy will finish the
+    rest.
   _playerReplyOptions: []
   _npcReplies: []
