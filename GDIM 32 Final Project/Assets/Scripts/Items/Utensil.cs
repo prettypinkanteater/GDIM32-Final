@@ -26,6 +26,10 @@ public class Utensil : Item
 
     void Update()
     {
+        if(Locator.Instance.gameController.burgerDone)
+        {
+            spat.SetActive(false);
+        }
         if(Locator.Instance.gameController.fryCOOKED && Locator.Instance.gameController.burgerInProgress)
         {
             this.gameObject.GetComponent<Collider>().enabled = true;
@@ -88,6 +92,12 @@ public class Utensil : Item
 
         Locator.Instance.player.mainCamera.cullingMask = LayerMask.GetMask("Default", "TransparentFX", "Ignore Raycast", "Water", "UI", "Manager", "Ingredient", "Utensil", "Appliance");
         Locator.Instance.player.secondCamera.enabled = false;
+
+        if(Locator.Instance.gameController.fryCOOKED && Locator.Instance.gameController.hasIngredient && Locator.Instance.gameController.hasIngredient)
+        {
+            Locator.Instance.player.secondCamera.enabled = true;
+            Locator.Instance.player.secondCamera.cullingMask = LayerMask.GetMask("Utensil", "Ingredient");
+        }
         
         if(Locator.Instance.gameController.fryInProgress)
         {
