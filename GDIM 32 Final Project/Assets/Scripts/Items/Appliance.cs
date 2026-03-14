@@ -138,6 +138,7 @@ public class Appliance : Item
     {
         Debug.Log("Burger Done");
         Locator.Instance.gameController.fryCOOKED = true;
+        Locator.Instance.gameController.burgerFlipped = true;
         _timerText.enabled = false;
         Locator.Instance.gameController.ResetPickup();
         //Locator.Instance.gameController.placedIngredient = true;

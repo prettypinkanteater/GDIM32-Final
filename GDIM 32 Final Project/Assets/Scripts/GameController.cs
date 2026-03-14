@@ -17,6 +17,7 @@ public class GameController : MonoBehaviour
     public bool fryDone = false;
 
     public bool burgerInProgress = false;
+    public bool burgerFlipped = false;
     public bool burgerOnTray = false;
     public bool burgerDone = false;
 

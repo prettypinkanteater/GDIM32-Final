@@ -20,7 +20,7 @@ public class Ingredient : Item
     void Start()
     {
         Locator.Instance.player.putDownEvent += PutDown;
-        Locator.Instance.player.ItemUsed += PickUp;
+        Locator.Instance.player.IngredientUsed += PickUp;
         Locator.Instance.player.Chop += changeModel;
         Locator.Instance.player.Chop += chopIngredient;
         Locator.Instance.gameController.BurgerDone += becomeBurger;
@@ -56,7 +56,7 @@ public class Ingredient : Item
 
     protected override void PickUp()
     {
-        if(Locator.Instance.gameController.hasItem == false && Locator.Instance.gameController.placedIngredient == false)
+        if((Locator.Instance.gameController.hasItem == false && Locator.Instance.gameController.placedIngredient == false) || Locator.Instance.gameController.burgerInProgress && Locator.Instance.gameController.fryCOOKED && Locator.Instance.gameController.hasItem && !Locator.Instance.gameController.burgerFlipped)
         {
             base.PickUp();
             Locator.Instance.gameController.hasIngredient = true;

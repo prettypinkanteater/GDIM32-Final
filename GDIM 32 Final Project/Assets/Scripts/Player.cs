@@ -26,6 +26,9 @@ public class Player : MonoBehaviour
     public delegate void UseItem();
     public event UseItem ItemUsed;
 
+    public delegate void UseIngredient();
+    public event UseIngredient IngredientUsed;
+
     public delegate void drop();
     public event drop putDownEvent;
 
@@ -162,7 +165,18 @@ public class Player : MonoBehaviour
             else
             {
                 Debug.Log("Pick up event");
-                ItemUsed.Invoke();
+                if (Locator.Instance.gameController.burgerInProgress && Locator.Instance.gameController.fryCOOKED)
+                {
+                    Debug.Log("Spatula Picked Up");
+                    ItemUsed.Invoke();
+                    Locator.Instance.gameController.burgerFlipped = false;
+
+                }
+                else
+                {
+                    Debug.Log("Any other item picked up");
+                    IngredientUsed.Invoke();
+                }
             }
 
         }

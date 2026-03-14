@@ -17,7 +17,8 @@ public class Utensil : Item
 
     void Start()
     {
-        Locator.Instance.player.ItemUsed += CutManager;
+        //Locator.Instance.player.ItemUsed += CutManager;
+        Locator.Instance.player.IngredientUsed += PickUp;
         Locator.Instance.player.ItemUsed += PickUp;
         Locator.Instance.player.Chop += PutDown;
         
@@ -54,7 +55,7 @@ public class Utensil : Item
 
     protected override void PickUp()
     {
-        if((Locator.Instance.gameController.placedIngredient == true) || (Locator.Instance.gameController.fryCOOKED && Locator.Instance.gameController.burgerInProgress))
+        if((Locator.Instance.gameController.placedIngredient == true) || (Locator.Instance.gameController.fryCOOKED && Locator.Instance.gameController.burgerInProgress && Locator.Instance.gameController.burgerFlipped))
         {
             Locator.Instance.ui.hidePrompt();
             base.PickUp();
@@ -81,6 +82,7 @@ public class Utensil : Item
 
     protected override void PutDown()
     {
+        Debug.Log("Utensil put down");
         Locator.Instance.ui.hidePrompt();
         
 
