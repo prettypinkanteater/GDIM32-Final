@@ -32,7 +32,7 @@ public class Ingredient : Item
         if (Locator.Instance.gameController.fryCOOKED)
         {
             changeModel();
-            if (Locator.Instance.gameController.burgerInProgress)
+            if (Locator.Instance.gameController.hasIngredient)
                  {
                         this.gameObject.layer = 0;
                  }

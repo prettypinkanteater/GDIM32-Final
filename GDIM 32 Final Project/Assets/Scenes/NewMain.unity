@@ -1453,6 +1453,7 @@ MonoBehaviour:
   fryCOOKED: 0
   fryDone: 0
   burgerInProgress: 0
+  burgerOnTray: 0
   burgerDone: 0
 --- !u!4 &372549730
 Transform:
@@ -4988,7 +4989,7 @@ PrefabInstance:
     m_Modifications:
     - target: {fileID: 302116531988806050, guid: 363955a43b263b04db87c074f8c0e964, type: 3}
       propertyPath: m_Name
-      value: cheddarCheeseSlice
+      value: Cheese
       objectReference: {fileID: 0}
     - target: {fileID: 5976269007280776136, guid: 363955a43b263b04db87c074f8c0e964, type: 3}
       propertyPath: m_LocalScale.x
@@ -5061,7 +5062,7 @@ PrefabInstance:
     m_Modifications:
     - target: {fileID: 4388043220188942857, guid: 7e1981e7585dae14f96b91844f507d9c, type: 3}
       propertyPath: m_Name
-      value: burgerBun_Bottom
+      value: BottomBun
       objectReference: {fileID: 0}
     - target: {fileID: 7944761435324941689, guid: 7e1981e7585dae14f96b91844f507d9c, type: 3}
       propertyPath: m_LocalScale.x
@@ -6776,7 +6777,7 @@ PrefabInstance:
     m_Modifications:
     - target: {fileID: 1314658923573279028, guid: 179492d8c412ebe4099522390658489e, type: 3}
       propertyPath: m_Name
-      value: burgerBun_Sesame_Top
+      value: TopBun
       objectReference: {fileID: 0}
     - target: {fileID: 8313390964102106192, guid: 179492d8c412ebe4099522390658489e, type: 3}
       propertyPath: m_LocalScale.x
