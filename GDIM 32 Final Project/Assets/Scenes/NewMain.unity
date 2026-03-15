@@ -2564,6 +2564,10 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 3750915730955259719, guid: 55fe8288ed2cb5d4d8bdc4db5b57e206, type: 3}
+      propertyPath: m_Enabled
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 6783736992809490509, guid: 55fe8288ed2cb5d4d8bdc4db5b57e206, type: 3}
       propertyPath: m_Name
       value: Whally Placement

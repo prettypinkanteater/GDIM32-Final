@@ -18,9 +18,10 @@ public class UI : MonoBehaviour
     void Start()
     {
         Locator.Instance.gameController.FryDone += FriesGoalsDone;
-        Locator.Instance.gameController.BurgerDone += ShowEndGoals;
+        Locator.Instance.gameController.BurgerDone += FriesGoalsDone;
         Locator.Instance.dialogueController.StartFryQuest += StartGoalDone;
         Locator.Instance.dialogueController.StartBurgerQuest += ShowBurgerGoals;
+        Locator.Instance.dialogueController.EndBurgerQuest += ShowEndGoals;
     }
 
     // Update is called once per frame

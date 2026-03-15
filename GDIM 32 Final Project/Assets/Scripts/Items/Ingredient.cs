@@ -85,11 +85,10 @@ public class Ingredient : Item
     {
         if(Locator.Instance.gameController.hasIngredient == true && Locator.Instance.player.lookingAt.tag == "appliance") 
         {
-            if (Locator.Instance.gameController.burgerInProgress && Locator.Instance.gameController.hasItem && Locator.Instance.gameController.hasIngredient && !Locator.Instance.gameController.WhallyTime)
+            if (Locator.Instance.gameController.burgerInProgress && Locator.Instance.gameController.hasItem && Locator.Instance.gameController.hasIngredient && !Locator.Instance.gameController.WhallyTime && !Locator.Instance.gameController.burgerDone)
             {
                 Locator.Instance.gameController.burgerOnTray = true;
                 Locator.Instance.gameController.burgerQuestDone();
-                Locator.Instance.gameController.WhallyTime = true;
             }
             Locator.Instance.gameController.hasIngredient = false;
             //GetComponent<Collider>().enabled = false;

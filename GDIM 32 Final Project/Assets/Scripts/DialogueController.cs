@@ -25,6 +25,9 @@ public class DialogueController : MonoBehaviour
     public delegate void TalkedToManager2();
     public event TalkedToManager2 StartBurgerQuest;
 
+    public delegate void TalkedToManager3();
+    public event TalkedToManager3 EndBurgerQuest;
+
     private void Start()
     {
         _currentNode = _dialogueStartNode;
@@ -102,11 +105,17 @@ public class DialogueController : MonoBehaviour
             StartBurgerQuest.Invoke();
             _currentNode = _burgerCheckInNode;
         }
+        else if (Locator.Instance.gameController.burgerDone)
+        {
+            EndBurgerQuest.Invoke();
+            Locator.Instance.gameController.WhallyTime = true;
+            GameObject.Find("Whally Placement").GetComponent<Collider>().enabled = true;
+        }
+
         else if (Locator.Instance.gameController.burgerInProgress && Locator.Instance.gameController.fryDone)
         {
             _currentNode = _burgerCheckInNode;
         }
-  
     }
 
     public void SelectedOption(int option)

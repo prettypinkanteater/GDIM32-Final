@@ -31,7 +31,7 @@ public class TimmyTray : Item
 
     protected override void PutDown()
     {
-        if (Locator.Instance.gameController.burgerDone)
+        if (Locator.Instance.gameController.burgerDone && Locator.Instance.gameController.WhallyTime)
         {
             base.PutDown();
             this.transform.localPosition = Locator.Instance.player.lookingAt.transform.GetChild(0).position;
