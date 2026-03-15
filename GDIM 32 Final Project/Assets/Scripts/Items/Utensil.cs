@@ -7,7 +7,7 @@ using UnityEngine.UIElements;
 
 public class Utensil : Item
 {
-    bool chopable;
+    
     public bool chopping;
     bool cutManager;
     Vector3 rotation;
