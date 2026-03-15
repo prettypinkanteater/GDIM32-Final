@@ -359,6 +359,10 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 472678751711222148, guid: d559d29fea9897d48a4184bc66c18828, type: 3}
+      propertyPath: Priority
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 862962740843067773, guid: d559d29fea9897d48a4184bc66c18828, type: 3}
       propertyPath: m_LocalPosition.x
       value: 257.08786
@@ -6418,13 +6422,13 @@ AudioSource:
   OutputAudioMixerGroup: {fileID: 0}
   m_audioClip: {fileID: 8300000, guid: 87e64f0ab86e18c4b97158d3bc0a52f7, type: 3}
   m_PlayOnAwake: 1
-  m_Volume: 0.182
+  m_Volume: 0.106
   m_Pitch: 1
   Loop: 1
   Mute: 0
   Spatialize: 0
   SpatializePostEffects: 0
-  Priority: 72
+  Priority: 175
   DopplerLevel: 1
   MinDistance: 1
   MaxDistance: 500
