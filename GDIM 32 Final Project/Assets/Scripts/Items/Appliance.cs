@@ -84,7 +84,12 @@ public class Appliance : Item
             _cookingTimer -= Time.deltaTime;
             int _cookingTimerInt = (int)_cookingTimer;
 
-                this._timerText.text = _cookingTimerInt.ToString();
+            this._timerText.text = _cookingTimerInt.ToString();
+
+            if(_timerText.enabled == true && _cookingTimer <= 9)
+            {
+                Locator.Instance._audio.SizzleSound();
+            }
 
             
         }

@@ -13,7 +13,7 @@ public class AudioController : MonoBehaviour
     void Start()
     {
         Locator.Instance.player.ChopAnim += ChopSound;
-        Locator.Instance.player.IngredientUsed += SmackSound;
+        Locator.Instance.player.putDownEvent += SmackSound;
     }
 
     // Update is called once per frame
@@ -22,6 +22,11 @@ public class AudioController : MonoBehaviour
         if (Locator.Instance.gameController.cutPotato || (Locator.Instance.gameController.burgerInProgress && Locator.Instance.gameController.fryCOOKED && Locator.Instance.gameController.hasIngredient))
         {
             _knifeChop.Stop();
+        }
+
+        if(Locator.Instance.gameController.fryCOOKED && Locator.Instance.gameController.fryInProgress && Locator.Instance.gameController.hasIngredient)
+        {
+            _sizzle.Stop();
         }
 
         if (Locator.Instance.gameController.WhallyTime)
