@@ -12,18 +12,14 @@ public class AudioController : MonoBehaviour
 
     void Start()
     {
-        
+        Locator.Instance.player.ChopAnim += ChopSound;
+        Locator.Instance.player.IngredientUsed += SmackSound;
     }
 
     // Update is called once per frame
     void Update()
     {
-        if(Locator.Instance.gameController.cutPotato && Locator.Instance.gameController.fryInProgress)
-        {
-            Debug.Log("Chop Chop");
-            ChopSound();
-            
-        }
+        
     }
 
     private void ChopSound()

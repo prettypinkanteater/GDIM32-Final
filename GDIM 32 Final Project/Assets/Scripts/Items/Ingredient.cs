@@ -153,7 +153,6 @@ public class Ingredient : Item
 
     protected void changeModel()
     {
-        Debug.Log("AAAAAAAAAAAAA");
         //Locator.Instance.ui.hidePrompt2();
         if (Locator.Instance.gameController.fryInProgress)
         {
