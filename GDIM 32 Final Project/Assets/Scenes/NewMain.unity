@@ -915,6 +915,10 @@ PrefabInstance:
       value: 
       objectReference: {fileID: 941797243}
     - target: {fileID: 6349961660947815123, guid: 609a0ac71f3b9c542bfd80b900f5e2a4, type: 3}
+      propertyPath: _smack
+      value: 
+      objectReference: {fileID: 1237823649}
+    - target: {fileID: 6349961660947815123, guid: 609a0ac71f3b9c542bfd80b900f5e2a4, type: 3}
       propertyPath: _sizzle
       value: 
       objectReference: {fileID: 832910969}
@@ -4244,6 +4248,11 @@ Transform:
 Transform:
   m_CorrespondingSourceObject: {fileID: -8679921383154817045, guid: 7b2c0c337bd93944b8fd8c5f34152274, type: 3}
   m_PrefabInstance: {fileID: 406309042}
+  m_PrefabAsset: {fileID: 0}
+--- !u!82 &1237823649 stripped
+AudioSource:
+  m_CorrespondingSourceObject: {fileID: 7966969063533472304, guid: a72efe3289e3c2648800dc5ed6ba2cbc, type: 3}
+  m_PrefabInstance: {fileID: 393819729}
   m_PrefabAsset: {fileID: 0}
 --- !u!1 &1254464598
 GameObject:
