@@ -2,6 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using System;
 using UnityEngine;
+using System.Threading.Tasks;
 
 public class Player : MonoBehaviour
 {
@@ -35,6 +36,9 @@ public class Player : MonoBehaviour
     public delegate void chop();
     public event chop Chop;
 
+    public delegate void chopAnim();
+    public event chopAnim ChopAnim;
+
 
     private void Awake()
     {
@@ -48,6 +52,7 @@ public class Player : MonoBehaviour
 
     void Update()
     {
+      
         //Makes it so the player can only move and look while not in dialogue
         if (!Locator.Instance.gameController.inDialogue)
         {
@@ -80,7 +85,7 @@ public class Player : MonoBehaviour
                 {
                     string colliderTag = collider.collider.gameObject.tag;
                     lookingAt = collider.collider.gameObject;
-                Debug.Log(lookingAt.name);
+                //Debug.Log(lookingAt.name);
 
                     switch (colliderTag)
                     {
@@ -183,7 +188,8 @@ public class Player : MonoBehaviour
         if (Input.GetMouseButtonDown(0) && prompt2on)
         {
             Debug.Log("chop");
-            Chop.Invoke();
+            ChopAnim.Invoke();
+            //Chop.Invoke();
         }
     }
 
@@ -218,4 +224,10 @@ public class Player : MonoBehaviour
         cameraTransform.localRotation = Quaternion.Euler(-look.y, 0, 0);
         transform.localRotation = Quaternion.Euler(0, look.x, 0);
     }
+
+    public void ChopInvoke()
+    {
+        Chop.Invoke();
+    }
+
 }

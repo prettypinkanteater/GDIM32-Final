@@ -87,6 +87,7 @@ public class Ingredient : Item
             //GetComponent<Collider>().enabled = false;
             base.PutDown();
             Locator.Instance.gameController.placedIngredient = true;
+            
             if(Locator.Instance.gameController.cutPotato)
             {
                 if (Locator.Instance.gameController.fryCOOKED)
@@ -152,6 +153,7 @@ public class Ingredient : Item
 
     protected void changeModel()
     {
+        Debug.Log("AAAAAAAAAAAAA");
         //Locator.Instance.ui.hidePrompt2();
         if (Locator.Instance.gameController.fryInProgress)
         {

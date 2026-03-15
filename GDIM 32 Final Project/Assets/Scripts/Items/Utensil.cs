@@ -8,12 +8,14 @@ using UnityEngine.UIElements;
 public class Utensil : Item
 {
     bool chopable;
-    bool chopping;
+    public bool chopping;
     bool cutManager;
     Vector3 rotation;
 
     [SerializeField] GameObject knife;
     [SerializeField] GameObject spat;
+
+
 
     void Start()
     {
@@ -21,6 +23,8 @@ public class Utensil : Item
         Locator.Instance.player.IngredientUsed += PickUp;
         Locator.Instance.player.ItemUsed += PickUp;
         Locator.Instance.player.Chop += PutDown;
+        Locator.Instance.player.ChopAnim += utensilAnimation;
+
         
     }
 
@@ -41,9 +45,10 @@ public class Utensil : Item
         if (Locator.Instance.gameController.burgerInProgress)
         {
             spat.SetActive(true);
+            stopAnim();
         }
 
-        if(chopable == true && Input.GetKey(KeyCode.Mouse0))
+        /*if(chopable == true && Input.GetKey(KeyCode.Mouse0))
         {
             GetComponent<Animator>().ResetTrigger("Stop");
             GetComponent<Animator>().SetTrigger("Use");
@@ -54,11 +59,12 @@ public class Utensil : Item
             GetComponent<Animator>().ResetTrigger("Use");
             GetComponent<Animator>().SetTrigger("Stop");
             chopping = false;
-        }
+        }*/
     }
 
     protected override void PickUp()
     {
+
         if((Locator.Instance.gameController.placedIngredient == true) || (Locator.Instance.gameController.fryCOOKED && Locator.Instance.gameController.burgerInProgress && Locator.Instance.gameController.burgerFlipped))
         {
             Locator.Instance.ui.hidePrompt();
@@ -86,7 +92,7 @@ public class Utensil : Item
 
     protected override void PutDown()
     {
-        Debug.Log("Utensil put down");
+        //Debug.Log("Utensil put down");
         Locator.Instance.ui.hidePrompt();
         
 
@@ -114,6 +120,48 @@ public class Utensil : Item
     }
 
     //Audrey rememmber to pu animation starting trugger in use method
+
+    protected void utensilAnimation()
+    {
+        Debug.Log("Utensil use animation");
+        GetComponent<Animator>().ResetTrigger("Stop");
+        GetComponent<Animator>().SetTrigger("Use");
+
+        if (Locator.Instance.gameController.burgerInProgress)
+        {
+            GetComponent<Animator>().SetTrigger("UseSpat");
+        }
+    }
+
+    protected void stopAnim()
+    {
+        GetComponent<Animator>().ResetTrigger("Use");
+        GetComponent<Animator>().SetTrigger("Stop");
+
+        /*if (Locator.Instance.gameController.burgerInProgress)
+        {
+            GetComponent<Animator>().ResetTrigger("UseSpat");
+            GetComponent<Animator>().SetTrigger("StopSpat");
+        }*/
+    
+    }
+
+    protected void stopSpatAnim()
+    {
+        GetComponent<Animator>().ResetTrigger("UseSpat");
+        GetComponent<Animator>().SetTrigger("StopSpat");
+    }
+
+    public void utensilInvokeChop()
+    {
+        //Debug.Log("I'm being evil and looping");
+        stopAnim();
+        if (Locator.Instance.gameController.burgerInProgress)
+        {
+            stopSpatAnim();
+        }
+        GameObject.Find("Player").GetComponent<Player>().ChopInvoke();
+    }
 
     protected void CutManager()
     {

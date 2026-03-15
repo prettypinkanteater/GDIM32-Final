@@ -101,6 +101,7 @@ public class GameController : MonoBehaviour
 
     public void ResetPickup()
     {
+        Debug.Log("Reset Pickup");
         placedIngredient = false;
         hasIngredient = false;
         hasItem = false;
