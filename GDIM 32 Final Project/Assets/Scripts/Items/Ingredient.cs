@@ -83,7 +83,7 @@ public class Ingredient : Item
 
     protected override void PutDown()
     {
-        if(Locator.Instance.gameController.hasIngredient == true && Locator.Instance.player.lookingAt.tag == "appliance") 
+        if (Locator.Instance.gameController.hasIngredient == true && Locator.Instance.player.lookingAt.tag == "appliance")
         {
             if (Locator.Instance.gameController.burgerInProgress && Locator.Instance.gameController.hasItem && Locator.Instance.gameController.hasIngredient && !Locator.Instance.gameController.WhallyTime && !Locator.Instance.gameController.burgerDone)
             {
@@ -94,12 +94,18 @@ public class Ingredient : Item
             //GetComponent<Collider>().enabled = false;
             base.PutDown();
             Locator.Instance.gameController.placedIngredient = true;
-            
-            if(Locator.Instance.gameController.cutPotato)
+
+            if ((Locator.Instance.gameController.cutPotato && Locator.Instance.gameController.fryInProgress && Locator.Instance.gameController.placedIngredient)
+                || (Locator.Instance.gameController.burgerInProgress && Locator.Instance.gameController.placedIngredient))
+            {
+                Locator.Instance._audio.SizzleSound();
+            }
+
+            if (Locator.Instance.gameController.cutPotato)
             {
                 if (Locator.Instance.gameController.fryCOOKED)
                 {
-                    
+
                     transform.position = new Vector3(270.45f, 4.195f, -10.77f);
                     //this.gameObject.tag = "Untagged";
                     //transform.GetChild(0).gameObject.tag = "Untagged";
@@ -127,7 +133,7 @@ public class Ingredient : Item
                 {
                     transform.position = new Vector3(262.77f, 3.082f, -10.92f);
                 }
-            } 
+            }
             else
             {
                 base.PutDown();
