@@ -39,10 +39,10 @@ public class Ingredient : Item
             if (Locator.Instance.gameController.burgerFlipped)
             {
                 this.gameObject.layer = 0;
-            } else if(!Locator.Instance.gameController.burgerFlipped)
+            }/* else if(!Locator.Instance.gameController.burgerFlipped && Locator.Instance.gameController.burgerInProgress)
             {
                 this.gameObject.layer = 6;
-            }
+            }*/
             
             //Locator.Instance.gameController.FryQuestDone();
             //Locator.Instance.gameController.burgerInProgress = true;
