@@ -32,7 +32,11 @@ public class AudioController : MonoBehaviour
 
     private void ChopSound()
     {
-        _knifeChop.Play();
+        if (Locator.Instance.gameController.fryInProgress)
+        {
+            _knifeChop.Play();
+        }
+    
     }
 
     public void SizzleSound()
