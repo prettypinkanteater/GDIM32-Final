@@ -47,7 +47,7 @@ public class UI : MonoBehaviour
     }
     void ShowBurgerGoals()
     {
-        goals.text = "Objectives: \n - Grill the patty \n - Give Timmy the patty \n - (Optional) Talk to the manager for help";
+        goals.text = "Objectives: \n - Grill the patty \n - Give Timmy the patty with the spatula \n - (Optional) Talk to the manager for help";
     }
     void ShowEndGoals()
     {
