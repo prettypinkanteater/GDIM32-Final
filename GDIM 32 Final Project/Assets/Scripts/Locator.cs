@@ -10,13 +10,9 @@ public class Locator : MonoBehaviour
 
     public AudioController _audio { get; private set; }
 
-    public AudioController audioController { get; private set; }
-
     public GameController gameController { get; private set; }
 
     public DialogueController dialogueController { get; private set; }
-
-    public Customer customer { get; private set; }
     // change player class name as needed, eg class is actually not named player lol
     private void Awake()
     {
@@ -39,12 +35,8 @@ public class Locator : MonoBehaviour
         GameObject dialogueControllerObject = GameObject.Find("Dialogue Controller");
         dialogueController = dialogueControllerObject.GetComponent<DialogueController>();
 
-        GameObject customerObject = GameObject.Find("Customer");
-        customer = customerObject.GetComponent<Customer>();
-
-        // GameObject audioControllerObject = GameObject.Find("AudioController");
-        // _audio = audioControllerObject.GetComponent
-        // add audio game object when main scene is not occupied
+        _audio = GameObject.Find("AudioController").GetComponent<AudioController>();
+        
 
     }
 

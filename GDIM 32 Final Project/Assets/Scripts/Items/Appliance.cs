@@ -28,6 +28,7 @@ public class Appliance : Item
     // Update is called once per frame
     void Update()
     {
+        
 
         //if(Locator.Instance.gameController.burgerInProgress && this.gameObject.name == "Griller")
         //{
@@ -73,14 +74,18 @@ public class Appliance : Item
             ((Locator.Instance.gameController.placedIngredient && Locator.Instance.gameController.fryInProgress && Locator.Instance.gameController.cutPotato) || 
             (Locator.Instance.gameController.placedIngredient && Locator.Instance.gameController.burgerInProgress)))
         {
+            
+
             if(Locator.Instance.gameController.burgerInProgress)
             {
                 _timerText.enabled = true;
             }
+
             _cookingTimer -= Time.deltaTime;
             int _cookingTimerInt = (int)_cookingTimer;
 
                 this._timerText.text = _cookingTimerInt.ToString();
+
             
         }
         if (this.gameObject.name == "Cutting Board" && Locator.Instance.gameController.cutPotato)         

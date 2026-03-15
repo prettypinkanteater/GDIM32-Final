@@ -161,6 +161,7 @@ public class Ingredient : Item
 
     protected void changeModel()
     {
+
         //Locator.Instance.ui.hidePrompt2();
         if (Locator.Instance.gameController.fryInProgress)
         {
