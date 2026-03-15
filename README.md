@@ -87,7 +87,9 @@ Put your individual final Devlog here.
 ### Team Member Brenden Johnston
 Put your individual final Devlog here.
 ### Team Member Nolan Burns
-Put your individual final Devlog here.
+I implemented the manager's dialogue, including the scriptableobjects and related scripts. 
+I implemented the Timmy NPC and his animations. I created the fridge animations and the script that controls it. I implemented the customer's animations. 
+I used events and our Locator singleton to update the Objectives text when certain parts of the quests are completed. 
 
 ## Open-Source Assets
 
