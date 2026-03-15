@@ -1453,6 +1453,7 @@ MonoBehaviour:
   fryCOOKED: 0
   fryDone: 0
   burgerInProgress: 0
+  burgerFlipped: 0
   burgerOnTray: 0
   burgerDone: 0
 --- !u!4 &372549730
@@ -7637,8 +7638,16 @@ PrefabInstance:
       value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 5574691622797956519, guid: 8ca7bddbe0b8d6345b448ca3a4127348, type: 3}
+      propertyPath: m_Layer
+      value: 9
+      objectReference: {fileID: 0}
+    - target: {fileID: 5574691622797956519, guid: 8ca7bddbe0b8d6345b448ca3a4127348, type: 3}
       propertyPath: m_IsActive
       value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 6565170081784663351, guid: 8ca7bddbe0b8d6345b448ca3a4127348, type: 3}
+      propertyPath: m_Layer
+      value: 9
       objectReference: {fileID: 0}
     - target: {fileID: 6565170081784663351, guid: 8ca7bddbe0b8d6345b448ca3a4127348, type: 3}
       propertyPath: m_IsActive
