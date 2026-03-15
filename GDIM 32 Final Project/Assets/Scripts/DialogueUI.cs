@@ -33,8 +33,6 @@ public class DialogueUI : MonoBehaviour
         _playerOptions.SetActive(true);
     }
 
-    // note: this only works for up to 3 dialogue options at a time currently
-    // if you want to make more possible, you may have to get crafty with the UI... :)
     public void ShowPlayerOptions(string[] options)
     {
         Cursor.lockState = CursorLockMode.None;

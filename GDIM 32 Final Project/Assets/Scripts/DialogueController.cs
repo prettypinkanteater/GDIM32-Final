@@ -1,6 +1,4 @@
-
 using TMPro;
-
 using UnityEngine;
 using UnityEngine.UI;
 using UnityEngine.Assertions;
@@ -37,8 +35,7 @@ public class DialogueController : MonoBehaviour
     {
             if (!_waitingForPlayerResponse && _runningDialogue && (Input.GetKeyDown(KeyCode.Space) || Input.GetKeyDown(KeyCode.Mouse0)))
             {
-            Debug.Log("Advanced");
-                    AdvanceDialogue();
+                AdvanceDialogue();
             }
             else if (!_runningDialogue && Input.GetKeyDown(KeyCode.E))
             {
@@ -65,20 +62,16 @@ public class DialogueController : MonoBehaviour
 
         if (_currentLine < _currentNode._lines.Length)
         {
-            // if we still have NPC lines left, keep playing NPC lines
             _dialogueUI.ShowDialogue(_currentNode._lines[_currentLine]);
             _currentLine++;
         }
         else if (_currentNode._playerReplyOptions != null && _currentNode._playerReplyOptions.Length > 0)
         {
-            Debug.Log("Waiting for player");
-            // show player dialogue options, if there are any
             _waitingForPlayerResponse = true;
             _dialogueUI.ShowPlayerOptions(_currentNode._playerReplyOptions);
         }
         else
         {
-            // if there are no NPC or player lines left, close dialogue UI
             EndDialogue();
         }
     }
