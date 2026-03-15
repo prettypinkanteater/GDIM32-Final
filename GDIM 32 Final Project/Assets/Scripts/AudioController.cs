@@ -39,7 +39,12 @@ public class AudioController : MonoBehaviour
 
     public void SizzleSound()
     {
-        _sizzle.Play();
+        //Debug.Log("Sizzling");
+        if(Locator.Instance.gameController.fryCOOKED == false)
+        {
+           _sizzle.Play();
+        }
+        
     }
 
     private void SmackSound()
