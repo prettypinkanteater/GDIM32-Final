@@ -6,7 +6,6 @@ public class AudioController : MonoBehaviour
 {
     [SerializeField] AudioSource _smack;
     [SerializeField] AudioSource _yay;
-    [SerializeField] AudioSource _sadViolin;
     [SerializeField] public AudioSource _sizzle;
     [SerializeField] AudioSource _knifeChop;
 
@@ -52,10 +51,6 @@ public class AudioController : MonoBehaviour
         _smack.Play();
     }
 
-    private void TimmySound()
-    {
-        _sadViolin.Play();
-    }
 
     public void Yay()
     {
