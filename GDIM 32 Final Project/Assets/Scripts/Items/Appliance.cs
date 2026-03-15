@@ -35,7 +35,10 @@ public class Appliance : Item
         //}
         if(Locator.Instance.gameController.burgerInProgress && Locator.Instance.gameController.hasItem && Locator.Instance.gameController.hasIngredient)
         {
-            GameObject.Find("Timmy Tray").tag = "appliance";
+            if(GameObject.Find("Timmy Tray") != null)
+            {
+                GameObject.Find("Timmy Tray").tag = "appliance";
+            }
         }
 
         if(Locator.Instance.gameController.burgerInProgress && Locator.Instance.gameController.hasIngredient && Locator.Instance.gameController.hasItem)
