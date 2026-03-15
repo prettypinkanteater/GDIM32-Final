@@ -33,8 +33,12 @@ public class Utensil : Item
         if(Locator.Instance.gameController.burgerDone)
         {
             spat.SetActive(false);
+        } else if(Locator.Instance.gameController.burgerInProgress)
+        {
+            spat.SetActive(true);
+            stopAnim();
         }
-        if(Locator.Instance.gameController.fryCOOKED && Locator.Instance.gameController.burgerInProgress)
+        if (Locator.Instance.gameController.fryCOOKED && Locator.Instance.gameController.burgerInProgress)
         {
             this.gameObject.GetComponent<Collider>().enabled = true;
         }
@@ -42,11 +46,7 @@ public class Utensil : Item
         {
             this.gameObject.GetComponent<Collider>().enabled = false;
         }
-        if (Locator.Instance.gameController.burgerInProgress)
-        {
-            spat.SetActive(true);
-            stopAnim();
-        }
+        
 
         /*if(chopable == true && Input.GetKey(KeyCode.Mouse0))
         {
