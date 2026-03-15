@@ -910,6 +910,22 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 6349961660947815123, guid: 609a0ac71f3b9c542bfd80b900f5e2a4, type: 3}
+      propertyPath: _yay
+      value: 
+      objectReference: {fileID: 941797243}
+    - target: {fileID: 6349961660947815123, guid: 609a0ac71f3b9c542bfd80b900f5e2a4, type: 3}
+      propertyPath: _sizzle
+      value: 
+      objectReference: {fileID: 832910969}
+    - target: {fileID: 6349961660947815123, guid: 609a0ac71f3b9c542bfd80b900f5e2a4, type: 3}
+      propertyPath: _knifeChop
+      value: 
+      objectReference: {fileID: 1837339377}
+    - target: {fileID: 6349961660947815123, guid: 609a0ac71f3b9c542bfd80b900f5e2a4, type: 3}
+      propertyPath: _sadViolin
+      value: 
+      objectReference: {fileID: 2142055002}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
@@ -2989,6 +3005,11 @@ Transform:
   m_Children: []
   m_Father: {fileID: 396155418}
   m_LocalEulerAnglesHint: {x: -332.8, y: 0, z: 0}
+--- !u!82 &832910969 stripped
+AudioSource:
+  m_CorrespondingSourceObject: {fileID: 472678751711222148, guid: d559d29fea9897d48a4184bc66c18828, type: 3}
+  m_PrefabInstance: {fileID: 37940702}
+  m_PrefabAsset: {fileID: 0}
 --- !u!4 &841574243 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 8313390964102106192, guid: 179492d8c412ebe4099522390658489e, type: 3}
@@ -3639,6 +3660,11 @@ PrefabInstance:
       addedObject: {fileID: 1254464599}
     m_AddedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 7b2c0c337bd93944b8fd8c5f34152274, type: 3}
+--- !u!82 &941797243 stripped
+AudioSource:
+  m_CorrespondingSourceObject: {fileID: 5005362941589995857, guid: ea6e0ef36f90bd04d84254045f8be853, type: 3}
+  m_PrefabInstance: {fileID: 1910232670}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1001 &969451762
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -6541,6 +6567,11 @@ Transform:
   - {fileID: 841574243}
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!82 &1837339377 stripped
+AudioSource:
+  m_CorrespondingSourceObject: {fileID: 5412300921917459591, guid: 330b9dda1eac2f84b846f71ed17e1aa9, type: 3}
+  m_PrefabInstance: {fileID: 1928496854}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1001 &1839003287
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -7914,6 +7945,11 @@ PrefabInstance:
     m_AddedGameObjects: []
     m_AddedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 4b737fcde0466504da3e43ad72cb9fed, type: 3}
+--- !u!82 &2142055002 stripped
+AudioSource:
+  m_CorrespondingSourceObject: {fileID: 2674274603384928214, guid: dc19e27b3030a0246ba4e4ed132fa250, type: 3}
+  m_PrefabInstance: {fileID: 1464079244}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1001 &2147408199
 PrefabInstance:
   m_ObjectHideFlags: 0
