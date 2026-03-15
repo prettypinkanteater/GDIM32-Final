@@ -25,9 +25,6 @@ public class DialogueController : MonoBehaviour
     public delegate void TalkedToManager2();
     public event TalkedToManager2 StartBurgerQuest;
 
-    public delegate void TalkedToManager3();
-    public event TalkedToManager3 EndBurgerQuest;
-
     private void Start()
     {
         _currentNode = _dialogueStartNode;
@@ -109,10 +106,7 @@ public class DialogueController : MonoBehaviour
         {
             _currentNode = _burgerCheckInNode;
         }
-        else if (Locator.Instance.gameController.burgerDone)
-        {
-            EndBurgerQuest.Invoke();
-        }
+  
     }
 
     public void SelectedOption(int option)

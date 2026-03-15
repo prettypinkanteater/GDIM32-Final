@@ -39,6 +39,7 @@ public class TimmyTray : Item
             Locator.Instance.player.mainCamera.cullingMask = LayerMask.GetMask("Default", "TransparentFX", "Ignore Raycast", "Water", "UI", "Manager", "Ingredient", "Utensil", "Appliance");
             Locator.Instance.player.secondCamera.enabled = false;
             Locator.Instance.customer.Animate();
+            Locator.Instance.player.enabled = false;
         }
     }
 }
