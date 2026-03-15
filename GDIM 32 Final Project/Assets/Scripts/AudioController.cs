@@ -19,7 +19,15 @@ public class AudioController : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        
+        if (Locator.Instance.gameController.cutPotato || (Locator.Instance.gameController.burgerInProgress && Locator.Instance.gameController.fryCOOKED && Locator.Instance.gameController.hasIngredient))
+        {
+            _knifeChop.Stop();
+        }
+
+        if (Locator.Instance.gameController.WhallyTime)
+        {
+            Yay();
+        }
     }
 
     private void ChopSound()
@@ -27,7 +35,7 @@ public class AudioController : MonoBehaviour
         _knifeChop.Play();
     }
 
-    private void SizzleSound()
+    public void SizzleSound()
     {
         _sizzle.Play();
     }
@@ -40,5 +48,10 @@ public class AudioController : MonoBehaviour
     private void TimmySound()
     {
         _sadViolin.Play();
+    }
+
+    private void Yay()
+    {
+        _yay.Play();
     }
 }

@@ -85,7 +85,7 @@ public class Player : MonoBehaviour
                 {
                     string colliderTag = collider.collider.gameObject.tag;
                     lookingAt = collider.collider.gameObject;
-                //Debug.Log(lookingAt.name);
+                Debug.Log(lookingAt.name);
 
                     switch (colliderTag)
                     {

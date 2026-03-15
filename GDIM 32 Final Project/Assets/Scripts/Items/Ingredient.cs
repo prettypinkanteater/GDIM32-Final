@@ -36,6 +36,14 @@ public class Ingredient : Item
                  {
                         this.gameObject.layer = 0;
                  }
+            if (Locator.Instance.gameController.burgerFlipped)
+            {
+                this.gameObject.layer = 0;
+            } else if(!Locator.Instance.gameController.burgerFlipped)
+            {
+                this.gameObject.layer = 6;
+            }
+            
             //Locator.Instance.gameController.FryQuestDone();
             //Locator.Instance.gameController.burgerInProgress = true;
         }
@@ -153,6 +161,7 @@ public class Ingredient : Item
 
     protected void changeModel()
     {
+
         //Locator.Instance.ui.hidePrompt2();
         if (Locator.Instance.gameController.fryInProgress)
         {
