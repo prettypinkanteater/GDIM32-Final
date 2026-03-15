@@ -38,7 +38,9 @@ public class TimmyTray : Item
             this.transform.localPosition += new Vector3(0, 0.01f, 0);
             Locator.Instance.player.mainCamera.cullingMask = LayerMask.GetMask("Default", "TransparentFX", "Ignore Raycast", "Water", "UI", "Manager", "Ingredient", "Utensil", "Appliance");
             Locator.Instance.player.secondCamera.enabled = false;
+            Locator.Instance._audio.Yay();
             Locator.Instance.customer.Animate();
+            
         }
     }
 }

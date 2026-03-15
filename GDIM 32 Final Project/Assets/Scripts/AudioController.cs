@@ -14,6 +14,7 @@ public class AudioController : MonoBehaviour
     {
         Locator.Instance.player.ChopAnim += ChopSound;
         Locator.Instance.player.putDownEvent += SmackSound;
+
     }
 
     // Update is called once per frame
@@ -24,15 +25,7 @@ public class AudioController : MonoBehaviour
             _knifeChop.Stop();
         }
 
-        if (Locator.Instance.gameController.cutPotato && Locator.Instance.gameController.placedIngredient)
-        {
-            SizzleSound();
-        }
 
-        if (Locator.Instance.gameController.WhallyTime)
-        {
-            Yay();
-        }
     }
 
     private void ChopSound()
@@ -59,7 +52,7 @@ public class AudioController : MonoBehaviour
         _sadViolin.Play();
     }
 
-    private void Yay()
+    public void Yay()
     {
         _yay.Play();
     }
