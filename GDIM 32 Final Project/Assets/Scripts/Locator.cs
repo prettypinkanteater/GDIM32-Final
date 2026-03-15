@@ -10,8 +10,6 @@ public class Locator : MonoBehaviour
 
     public AudioController _audio { get; private set; }
 
-    public AudioController audioController { get; private set; }
-
     public GameController gameController { get; private set; }
 
     public DialogueController dialogueController { get; private set; }
@@ -37,9 +35,8 @@ public class Locator : MonoBehaviour
         GameObject dialogueControllerObject = GameObject.Find("Dialogue Controller");
         dialogueController = dialogueControllerObject.GetComponent<DialogueController>();
 
-        // GameObject audioControllerObject = GameObject.Find("AudioController");
-        // _audio = audioControllerObject.GetComponent
-        // add audio game object when main scene is not occupied
+        _audio = GameObject.Find("AudioController").GetComponent<AudioController>();
+        
 
     }
 
