@@ -2038,6 +2038,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: Fridge
       objectReference: {fileID: 0}
+    - target: {fileID: 7634364495402187122, guid: ba9199147aa40894ca7f66b182e48c40, type: 3}
+      propertyPath: fridgeLight
+      value: 
+      objectReference: {fileID: 1807719451}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []

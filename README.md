@@ -111,3 +111,6 @@ Put your individual final Devlog here.
 - [Toony Kitchen & Ingredients Model](https://assetstore.unity.com/packages/3d/props/toony-kitchen-ingredients-model-free-301805) - bun model
 - [Diner Lamp](https://sketchfab.com/3d-models/diner-lamp-9f0d6acab78e4a84904e4f8ba573118e) - hanging lamp model
 - [Ceiling Light Round](https://sketchfab.com/3d-models/ceiling-light-round-5508e18e61e84346b8d51ed73e0f5411) - ceiling light model
+- [Crawfish](https://poly.pizza/m/ct4Z0kUIHdT) - Timmy/crawfish model
+- [Hamstercage](https://assetstore.unity.com/packages/3d/props/hamstercage-110028) - Timmy cage
+- [Cartoon Whale low poly](https://assetstore.unity.com/packages/3d/characters/animals/fish/cartoon-whale-low-poly-197919) - Whale customer model
