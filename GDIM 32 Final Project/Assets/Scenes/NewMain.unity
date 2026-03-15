@@ -933,7 +933,7 @@ PrefabInstance:
     - target: {fileID: 6349961660947815123, guid: 609a0ac71f3b9c542bfd80b900f5e2a4, type: 3}
       propertyPath: _sadViolin
       value: 
-      objectReference: {fileID: 2142055002}
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
@@ -5476,63 +5476,6 @@ PrefabInstance:
     m_AddedGameObjects: []
     m_AddedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 7e1981e7585dae14f96b91844f507d9c, type: 3}
---- !u!1001 &1464079244
-PrefabInstance:
-  m_ObjectHideFlags: 0
-  serializedVersion: 2
-  m_Modification:
-    serializedVersion: 3
-    m_TransformParent: {fileID: 0}
-    m_Modifications:
-    - target: {fileID: 2387324422576955316, guid: dc19e27b3030a0246ba4e4ed132fa250, type: 3}
-      propertyPath: m_LocalPosition.x
-      value: 257.08786
-      objectReference: {fileID: 0}
-    - target: {fileID: 2387324422576955316, guid: dc19e27b3030a0246ba4e4ed132fa250, type: 3}
-      propertyPath: m_LocalPosition.y
-      value: -0.0000009536743
-      objectReference: {fileID: 0}
-    - target: {fileID: 2387324422576955316, guid: dc19e27b3030a0246ba4e4ed132fa250, type: 3}
-      propertyPath: m_LocalPosition.z
-      value: -5.8720446
-      objectReference: {fileID: 0}
-    - target: {fileID: 2387324422576955316, guid: dc19e27b3030a0246ba4e4ed132fa250, type: 3}
-      propertyPath: m_LocalRotation.w
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 2387324422576955316, guid: dc19e27b3030a0246ba4e4ed132fa250, type: 3}
-      propertyPath: m_LocalRotation.x
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 2387324422576955316, guid: dc19e27b3030a0246ba4e4ed132fa250, type: 3}
-      propertyPath: m_LocalRotation.y
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 2387324422576955316, guid: dc19e27b3030a0246ba4e4ed132fa250, type: 3}
-      propertyPath: m_LocalRotation.z
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 2387324422576955316, guid: dc19e27b3030a0246ba4e4ed132fa250, type: 3}
-      propertyPath: m_LocalEulerAnglesHint.x
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 2387324422576955316, guid: dc19e27b3030a0246ba4e4ed132fa250, type: 3}
-      propertyPath: m_LocalEulerAnglesHint.y
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 2387324422576955316, guid: dc19e27b3030a0246ba4e4ed132fa250, type: 3}
-      propertyPath: m_LocalEulerAnglesHint.z
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 7076710709360284025, guid: dc19e27b3030a0246ba4e4ed132fa250, type: 3}
-      propertyPath: m_Name
-      value: Sad Violin
-      objectReference: {fileID: 0}
-    m_RemovedComponents: []
-    m_RemovedGameObjects: []
-    m_AddedGameObjects: []
-    m_AddedComponents: []
-  m_SourcePrefab: {fileID: 100100000, guid: dc19e27b3030a0246ba4e4ed132fa250, type: 3}
 --- !u!1001 &1494191923
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -7962,11 +7905,6 @@ PrefabInstance:
     m_AddedGameObjects: []
     m_AddedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 4b737fcde0466504da3e43ad72cb9fed, type: 3}
---- !u!82 &2142055002 stripped
-AudioSource:
-  m_CorrespondingSourceObject: {fileID: 2674274603384928214, guid: dc19e27b3030a0246ba4e4ed132fa250, type: 3}
-  m_PrefabInstance: {fileID: 1464079244}
-  m_PrefabAsset: {fileID: 0}
 --- !u!1001 &2147408199
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -8267,5 +8205,4 @@ SceneRoots:
   - {fileID: 1910232670}
   - {fileID: 393819729}
   - {fileID: 37940702}
-  - {fileID: 1464079244}
   - {fileID: 1928496854}
