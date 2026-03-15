@@ -7,7 +7,7 @@ public class AudioController : MonoBehaviour
     [SerializeField] AudioSource _smack;
     [SerializeField] AudioSource _yay;
     [SerializeField] AudioSource _sadViolin;
-    [SerializeField] AudioSource _sizzle;
+    [SerializeField] public AudioSource _sizzle;
     [SerializeField] AudioSource _knifeChop;
 
     void Start()
@@ -24,9 +24,9 @@ public class AudioController : MonoBehaviour
             _knifeChop.Stop();
         }
 
-        if(Locator.Instance.gameController.fryCOOKED && Locator.Instance.gameController.fryInProgress && Locator.Instance.gameController.hasIngredient)
+        if (Locator.Instance.gameController.cutPotato && Locator.Instance.gameController.placedIngredient)
         {
-            _sizzle.Stop();
+            SizzleSound();
         }
 
         if (Locator.Instance.gameController.WhallyTime)

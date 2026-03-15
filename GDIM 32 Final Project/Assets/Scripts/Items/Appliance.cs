@@ -48,7 +48,7 @@ public class Appliance : Item
         }
         if (_cookingTimer <= 0f && Locator.Instance.gameController.placedIngredient)
         {
-            
+            Locator.Instance._audio._sizzle.Stop();
             //_cookingTimer = _cookingTime;
             if (Locator.Instance.gameController.burgerInProgress)
             {
@@ -86,10 +86,7 @@ public class Appliance : Item
 
             this._timerText.text = _cookingTimerInt.ToString();
 
-            if(_timerText.enabled == true && _cookingTimer <= 9)
-            {
-                Locator.Instance._audio.SizzleSound();
-            }
+         
 
             
         }
