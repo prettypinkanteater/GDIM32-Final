@@ -7,6 +7,8 @@ public class Fridge : MonoBehaviour
     [SerializeField] Animator leftAnimatorController;
     [SerializeField] Animator rightAnimatorController;
     [SerializeField] GameObject fridgeLight;
+
+    bool fridgeOpen = false;
     // Start is called before the first frame update
     void Start()
     {
@@ -19,13 +21,19 @@ public class Fridge : MonoBehaviour
         leftAnimatorController.SetBool("FridgeOpen", true);
         rightAnimatorController.SetBool("FridgeOpen", true);
         fridgeLight.SetActive(true);
+        fridgeOpen = true;
     }
     void CloseDoors()
     {
-        Locator.Instance._audio.Door();
-        leftAnimatorController.SetBool("FridgeOpen", false);
-        rightAnimatorController.SetBool("FridgeOpen", false);
-        fridgeLight.SetActive(false);
+        if (fridgeOpen)
+        {
+            Locator.Instance._audio.Door();
+            leftAnimatorController.SetBool("FridgeOpen", false);
+            rightAnimatorController.SetBool("FridgeOpen", false);
+            fridgeLight.SetActive(false);
+            fridgeOpen = false;
+        }
+        
     }
     // Update is called once per frame
     void Update()
