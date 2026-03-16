@@ -22,6 +22,7 @@ public class Fridge : MonoBehaviour
     }
     void CloseDoors()
     {
+        Locator.Instance._audio.Door();
         leftAnimatorController.SetBool("FridgeOpen", false);
         rightAnimatorController.SetBool("FridgeOpen", false);
         fridgeLight.SetActive(false);

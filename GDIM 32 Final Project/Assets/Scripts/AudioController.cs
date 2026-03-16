@@ -8,11 +8,14 @@ public class AudioController : MonoBehaviour
     [SerializeField] AudioSource _yay;
     [SerializeField] public AudioSource _sizzle;
     [SerializeField] AudioSource _knifeChop;
+    [SerializeField] AudioSource _angelic;
+    [SerializeField] AudioSource _door;
 
     void Start()
     {
         Locator.Instance.player.ChopAnim += ChopSound;
         Locator.Instance.player.putDownEvent += SmackSound;
+        
 
     }
 
@@ -55,5 +58,16 @@ public class AudioController : MonoBehaviour
     public void Yay()
     {
         _yay.Play();
+    }
+
+    public void Door()
+    {
+        Debug.Log("Slam");
+        _door.Play();
+    }
+
+    public void Angelic()
+    {
+        _angelic.Play();
     }
 }
