@@ -1,4 +1,4 @@
-# GDIM32-Final
+Ôªø# GDIM32-Final
 ## Check-In
 ### Group Devlog: Prompt B
 
@@ -26,11 +26,11 @@ for a case are met, then the method showing the interaction prompt UI is called.
 ### Team Member: Audrey Hu
 
 I wrote the Item parent abstract class containing the PickUp() and PutDown() methods. I also primarily wrote the Utensil and 
-Ingredient child classes that contain polymorphic unique additions to the parent classís PickUp() and PutDown() methods. For 
+Ingredient child classes that contain polymorphic unique additions to the parent class‚Äôs PickUp() and PutDown() methods. For 
 example, the potato gameObject with the ingredient script attached would have its position parented to the cutting board when 
 put down while the knife gameObject with the utensil script attached would not do this. I also created the Locator class with 
 the player reference before the other controller script references(s) were added. In terms of things built in Unity, I set up 
-the knifeís gameObject, animation controller, and the cutting animation clip. I also implemented audio (audio listeners and 
+the knife‚Äôs gameObject, animation controller, and the cutting animation clip. I also implemented audio (audio listeners and 
 sources) for the background music required for this stage and to prepare for the next stage involving sound effects.
 
 The Proposal has been significantly helpful because of our level of detail. The break-down has not been helpful as i
@@ -38,23 +38,23 @@ t is literally a visual reflection of what our proposal describes and I do not p
 hand, with its sequential and distinctly separated order, is more intuitive and logically organized as a blueprint for building 
 (i.e. item -> item actions). My team then used Trello to divide and assign the tasks that would align with this blueprint. The 
 clarity of our Proposal definitely helped us identify and simplify the tasks easily. Afterwards, and because I became familiar 
-with our gameís mechanics and content, I did not need to look at the Proposal frequently. The only time I did reference it 
+with our game‚Äôs mechanics and content, I did not need to look at the Proposal frequently. The only time I did reference it 
 actively was while trying to download the exact sound effects planned for early on in the build process.
 
 
 ### Team Member: Brendan Johnston
 
-I created the UI script as well as set up the canvas with the ìE to interact textî. Along with this I set up the player class, 
+I created the UI script as well as set up the canvas with the ‚ÄúE to interact text‚Äù. Along with this I set up the player class, 
 player movement, and the first person camera. Using this and a spherecast we all had a hand in creating, I set up the code for a 
 showprompt() and hideprompt() method in the UI script to use when the player is looking at an object. I also created the gameController 
 class and object and identified the required booleans to be able to only pick up certain items based on quest progress. Then I 
 created the framework for using those booleans within the switch statement in the spherecast if statement to only showPrompt() 
 on ingredients, utensils, or appliances based on what has already been done to ensure the correct order in the quest. I created 
 the system for the object you are holding to be rendered over everything else using a second camera on the player so that those 
-items donít clip through objects in the space. 
+items don‚Äôt clip through objects in the space. 
 
 Our proposal was highly detailed which made it very easy to understand what our concept was and what features we wanted in the project. 
-However, the breakdown has not been very useful. I have never particularly liked or used the breakdowns weíve made in the past and this 
+However, the breakdown has not been very useful. I have never particularly liked or used the breakdowns we‚Äôve made in the past and this 
 time is no different. The proposal was laid out brilliantly in order for us to create a concrete idea then move on to other systems 
 like Trello once everything was set in stone. 
 
@@ -63,7 +63,7 @@ like Trello once everything was set in stone.
 ### Team Member: Nolan Burns
 I sourced and implemented most of the assets present in the scene, including the restaurant, pufferfish manager, and the various appliances. 
 I was responsible for decorating it and added the various sources of lighting and the skybox. This meant I also created and tuned most of the colliders. 
-I created the manager GameObject and his Manager class, utilizing the Locator singleton to reference the playerís location. 
+I created the manager GameObject and his Manager class, utilizing the Locator singleton to reference the player‚Äôs location. 
 I also implemented his animations, though most of the animation work was eventually scrapped in favor of a more effective method. 
 I also created the goals UI element and updated it through the Utensil and Ingredient classes using the Locator singleton. 
 I used the architecture concept of the Model-View-Controller pattern with the ItemUsed event within the Utensil child class to implement cutting the manager. 
@@ -117,7 +117,18 @@ like signaling the end of a quest based on finished item use, in child cases tha
 
 
 ### Team Member Audrey Hu
-Put your individual final Devlog here.
+I wrote the AudioController script/class containing the methods relevant to playing specific sound effects. 
+I set up the cookingTimer and cookingTime variables as well as the base timer functionality in the Appliance class.
+I worked a little bit alone in the Ingredient class to address the PutDown() method but frequently pair programmed 
+(even triple programmed üòõ) with Brendan for quest completion logic in basically all the Item classes, the 
+GameController class, and the player class. You will see my atrocious commentary highlighted by the name of one of 
+his commits.
+
+I created/fine-tuned the spatula flipping and proper positioning animation clips as well as updated the Utensils 
+animation controller to accommodate for it. I also fixed the knife positioning and chopping clips.
+I fixed and implemented waiting for the knife chopping clip to finish with animation events and by shifting player 
+event subscriptions around in the ingredient and utensil classes. I created Bouffi and Timmy‚Äôs nametags in Unity as well.
+
 ### Team Member Brenden Johnston
 Put your individual final Devlog here.
 ### Team Member Nolan Burns
