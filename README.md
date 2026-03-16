@@ -79,7 +79,41 @@ We have used Trello to keep track of our progress and remind ourselves of the ta
 
 ## Final Submission
 ### Group Devlog
-Put your group Devlog here.
+The Model-View-Controller design pattern is mostly evident with how the 
+DialogueController script, the controller/logic, manages the advancement and 
+branching of the dialogue data/model that is separate but referenced for use. The 
+data is stored in the DialogueNode based ScriptableObjects, each 
+containing specific dialogue strings. The controller then imparts this, like which 
+line to display, to the UI gameobjects/components that make up the game view 
+using the DialogueUI class. The UI is also separate and accessed via references.
+
+This is useful/helpful because otherwise there would be immense coupling and a
+massive reference list that would consequently make it difficult to edit one part of 
+the system, like data, without having to accommodate for changing or working 
+around other parts, like programmed logic. If we wanted to add more dialogue to 
+existing dialogue, we would not need to edit the DialogueUI script to ensure that 
+the Advance() method continued to the new last line.
+
+The singleton Locator class helped various systems easily access, without references, 
+the overarching quest progress via the GameController script and subscribe to Player 
+interaction events. In this way, the player picking up/putting down or using items makes 
+it so that the entire game, made up of the various systems, can easily cohesively react. 
+For example, when the player puts down an item, the Player class invokes the PutDown event, 
+which the AudioController class and Ingredient class are subscribed to using the Locator. 
+The result is that the right sound effect is played and the ingredient being put down game 
+logic runs. The Ingredient class can subsequently and likewise access the Locator class 
+reference to the GameController script and change the value of the placedIngredient bool 
+to true and hasIngredient to false. This simplification of access decouples scripts while 
+also enabling interaction between them.
+
+Inheritance further helped us decouple code by not forcing us to repeatedly implement and
+rewrite shared methods for shared item interaction capability regardless of item type 
+because the child classes, Utensil, Ingredient, Appliance, and WhallyPlacement, have 
+definitions implemented by the Item class parent they inherited from. Namely, the Item 
+class has PickUp() and PutDown() base methods that are utilized by both the ingredients 
+and utensils. Polymorphism enhanced this by allowing us to override the base parent 
+defined methods, like appliances that were not to be picked up, and add/edit methods, 
+like signaling the end of a quest based on finished item use, in child cases that were unique. 
 
 
 ### Team Member Audrey Hu
