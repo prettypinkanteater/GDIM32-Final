@@ -97,7 +97,8 @@ I used events and our Locator singleton to update the Objectives text when certa
 - [Sizzle Frying Pan](https://gamesounds.xyz/?search=sizzle) - fry cooking sizzle sound effect
 - [Punch Smack Lettuce](https://gamesounds.xyz/?search=smack) - item assembly/use sound effect
 - [Children saying Yay - Praise and Worship Jesus](https://pixabay.com/sound-effects/people-children-saying-yay-praise-and-worship-jesus-299607/) - yay sound effect
-- [Sad Violin (the meme one)](https://www.myinstants.com/en/instant/sad-violin-the-meme-one/) - sad violin sound effect
+- [Angelic Choir](https://pixabay.com/sound-effects/musical-angel-choir-463220/)
+- [Door Slamming](https://pixabay.com/sound-effects/film-special-effects-door-slam-478362/)
 - [Knife Cut Veggies Foley 4](https://pixabay.com/sound-effects/household-knife-cut-veggies-foley-4-211705/) - knife cutting sound effect
 - [Underwater Ambience](https://pixabay.com/sound-effects/nature-underwater-ambiencewav-14428/) - underwater ambience background music
 - [Spring in My Step Background Music](https://pixabay.com/music/happy-childrens-tunes-spring-in-my-step-copyright-free-music-for-youtube-320726/) - spring in my step background music
