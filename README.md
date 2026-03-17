@@ -82,21 +82,23 @@ We have used Trello to keep track of our progress and remind ourselves of the ta
 The Model-View-Controller design pattern is mostly evident with how the 
 DialogueController script, the controller/logic, manages the advancement and 
 branching of the dialogue data/model that is separate but referenced for use. The 
-data is stored in the DialogueNode based ScriptableObjects, each 
+data is stored in the DialogueNode-based ScriptableObjects, each 
 containing specific dialogue strings. The controller then imparts this, like which 
 line to display, to the UI gameobjects/components that make up the game view 
-using the DialogueUI class. The UI is also separate and accessed via references.
+using the DialogueUI class. The UI is also separate and accessed via references. 
+The UI class uses events to update the objectives text, which allows it to be decoupled 
+and work well when other methods need to be tied to a specific action.
 
 This is useful/helpful because otherwise there would be immense coupling and a
 massive reference list that would consequently make it difficult to edit one part of 
 the system, like data, without having to accommodate for changing or working 
-around other parts, like programmed logic. If we wanted to add more dialogue to 
+around other parts, like programmed logic. If we wanted to add more lines to 
 existing dialogue, we would not need to edit the DialogueUI script to ensure that 
 the Advance() method continued to the new last line.
 
-The singleton Locator class helped various systems easily access, without references, 
+The Locator singleton class helped various systems easily access 
 the overarching quest progress via the GameController script and subscribe to Player 
-interaction events. In this way, the player picking up/putting down or using items makes 
+interaction events without needing direct references. In this way, the player picking up/putting down or using items makes 
 it so that the entire game, made up of the various systems, can easily cohesively react. 
 For example, when the player puts down an item, the Player class invokes the PutDown event, 
 which the AudioController class and Ingredient class are subscribed to using the Locator. 
@@ -145,9 +147,11 @@ event subscriptions around in the ingredient and utensil classes. I created Bouf
 	- Created a new script for the tray, inherited from Item abstract class, and placed it onto the new tray object
 
 ### Team Member Nolan Burns
-I implemented the manager's dialogue, including the scriptableobjects and related scripts. 
-I implemented the Timmy NPC and his animations. I created the fridge animations and the script that controls it. I implemented the customer's animations. 
+I implemented the dialogue system, including the ScriptableObjects for the responses and the related scripts, namely the UI, DialogueUI, and DialogueController classes. 
+I tied certain quest booleans into the dialogue system to ensure you had to talk to the NPC for the quest to update.
+I also helped with bugfixing to make other interactions only work when the conditions were correct.
 I used events and our Locator singleton to update the Objectives text when certain parts of the quests are completed. 
+I implemented the Timmy NPC and his animation. I created the fridge animations along with the customer and his animations and the scripts that control them. 
 
 ## Open-Source Assets
 
