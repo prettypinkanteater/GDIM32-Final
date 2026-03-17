@@ -118,7 +118,7 @@ defined methods, like appliances that were not to be picked up, and add/edit met
 like signaling the end of a quest based on finished item use, in child cases that were unique. 
 
 
-### Team Member Audrey Hu
+### Team Member: Audrey Hu
 I wrote the AudioController script/class containing the methods relevant to playing specific sound effects. 
 I set up the cookingTimer and cookingTime variables as well as the base timer functionality in the Appliance class.
 I worked a little bit alone in the Ingredient class to address the PutDown() method but frequently pair programmed 
@@ -131,7 +131,7 @@ animation controller to accommodate for it. I also fixed the knife positioning a
 I fixed and implemented waiting for the knife chopping clip to finish with animation events and by shifting player 
 event subscriptions around in the ingredient and utensil classes. I created Bouffi and Timmy’s nametags in Unity as well.
 
-### Team Member Brenden Johnston
+### Team Member: Brendan Johnston
 - Managing camera layering when adding new systems
 - Controlled the player sensitivity
 - If statements into the ingredient class to dynamically change its layer / interactivity via the gamecontroller quest booleans
@@ -146,7 +146,7 @@ event subscriptions around in the ingredient and utensil classes. I created Bouf
 	- Created a copy of the completed food tray game object to be picked up by the player as if it was an ingredient
 	- Created a new script for the tray, inherited from Item abstract class, and placed it onto the new tray object
 
-### Team Member Nolan Burns
+### Team Member: Nolan Burns
 I implemented the dialogue system, including the ScriptableObjects for the responses and the related scripts, namely the UI, DialogueUI, and DialogueController classes. I created the related UI elements and made sure they worked properly with the Itch resolution.
 I tied certain quest booleans into the dialogue system to ensure you had to talk to the NPC for the quest to update.
 I also helped with bugfixing to make other interactions only work when the conditions were correct.
