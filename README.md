@@ -130,7 +130,20 @@ I fixed and implemented waiting for the knife chopping clip to finish with anima
 event subscriptions around in the ingredient and utensil classes. I created Bouffi and Timmy’s nametags in Unity as well.
 
 ### Team Member Brenden Johnston
-Put your individual final Devlog here.
+- Managing camera layering when adding new systems
+- Controlled the player sensitivity
+- If statements into the ingredient class to dynamically change its layer / interactivity via the gamecontroller quest booleans
+- Utensil and ingredient code (and setting up their gameobjects) for switching the models from knife to spatula and the two foods from the raw, 
+  cooked or cut, and finished states
+- Created an insults script and textbox for Bouffi so he cycles through random insults from a list displayed in worldspace every 10 seconds
+- Created the functionality to pick up the burger onto the spatula, placing it onto Timmy’s tray, having it turn into a completed burger, 
+  picking up the tray, and placing it onto the counter for Whally
+	- Created the method and event from gamecontroller to be invoked when the burger gets completed with a method subscribed to it from the ingredient 
+      class which changes the model to a burger
+	- Created an empty gameobject to parent to on the spatula and on the counter for perfect placement
+	- Created a copy of the completed food tray game object to be picked up by the player as if it was an ingredient
+	- Created a new script for the tray, inherited from Item abstract class, and placed it onto the new tray object
+
 ### Team Member Nolan Burns
 I implemented the manager's dialogue, including the scriptableobjects and related scripts. 
 I implemented the Timmy NPC and his animations. I created the fridge animations and the script that controls it. I implemented the customer's animations. 
