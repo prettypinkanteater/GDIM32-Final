@@ -148,10 +148,10 @@ event subscriptions around in the ingredient and utensil classes. I created Bouf
 
 ### Team Member: Nolan Burns
 I implemented the dialogue system, including the ScriptableObjects for the responses and the related scripts, namely the UI, DialogueUI, and DialogueController classes. I created the related UI elements and made sure they worked properly with the Itch resolution.
-I tied certain quest booleans into the dialogue system to ensure you had to talk to the NPC for the quest to update.
+I tied certain quest booleans into the dialogue system to ensure you have to talk to the NPC for the quest to update.
 I also helped with bugfixing to make other interactions only work when the conditions were correct.
 I used events and our Locator singleton to update the Objectives text when certain parts of the quests are completed. 
-I implemented the Timmy NPC and his animation along with some additional decorations. I created the fridge animations along with the customer and his animations and the scripts that control them. 
+I implemented the Timmy NPC and his animation along with some additional decorations. I created the fridge animations along with the customer and his animations and the scripts (Customer and Fridge) that control them. 
 
 ## Open-Source Assets
 
