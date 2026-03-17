@@ -147,11 +147,11 @@ event subscriptions around in the ingredient and utensil classes. I created Bouf
 	- Created a new script for the tray, inherited from Item abstract class, and placed it onto the new tray object
 
 ### Team Member Nolan Burns
-I implemented the dialogue system, including the ScriptableObjects for the responses and the related scripts, namely the UI, DialogueUI, and DialogueController classes. 
+I implemented the dialogue system, including the ScriptableObjects for the responses and the related scripts, namely the UI, DialogueUI, and DialogueController classes. I created the related UI elements and made sure they worked properly with the Itch resolution.
 I tied certain quest booleans into the dialogue system to ensure you had to talk to the NPC for the quest to update.
 I also helped with bugfixing to make other interactions only work when the conditions were correct.
 I used events and our Locator singleton to update the Objectives text when certain parts of the quests are completed. 
-I implemented the Timmy NPC and his animation. I created the fridge animations along with the customer and his animations and the scripts that control them. 
+I implemented the Timmy NPC and his animation along with some additional decorations. I created the fridge animations along with the customer and his animations and the scripts that control them. 
 
 ## Open-Source Assets
 
@@ -159,8 +159,8 @@ I implemented the Timmy NPC and his animation. I created the fridge animations a
 - [Sizzle Frying Pan](https://gamesounds.xyz/?search=sizzle) - fry cooking sizzle sound effect
 - [Punch Smack Lettuce](https://gamesounds.xyz/?search=smack) - item assembly/use sound effect
 - [Children saying Yay - Praise and Worship Jesus](https://pixabay.com/sound-effects/people-children-saying-yay-praise-and-worship-jesus-299607/) - yay sound effect
-- [Angelic Choir](https://pixabay.com/sound-effects/musical-angel-choir-463220/)
-- [Door Slamming](https://pixabay.com/sound-effects/film-special-effects-door-slam-478362/)
+- [Angel Choir](https://pixabay.com/sound-effects/musical-angel-choir-463220/) - angelic choir sound effect
+- [Door Slam](https://pixabay.com/sound-effects/film-special-effects-door-slam-478362/) - fridge door slamming sound effect
 - [Knife Cut Veggies Foley 4](https://pixabay.com/sound-effects/household-knife-cut-veggies-foley-4-211705/) - knife cutting sound effect
 - [Underwater Ambience](https://pixabay.com/sound-effects/nature-underwater-ambiencewav-14428/) - underwater ambience background music
 - [Spring in My Step Background Music](https://pixabay.com/music/happy-childrens-tunes-spring-in-my-step-copyright-free-music-for-youtube-320726/) - spring in my step background music
@@ -172,10 +172,10 @@ I implemented the Timmy NPC and his animation. I created the fridge animations a
 - [Pandazole - Kitchen Food low poly pack](https://assetstore.unity.com/packages/3d/props/food/pandazole-kitchen-food-low-poly-pack-204525) - low poly food and appliance models
 - [Fugu](https://sketchfab.com/3d-models/fugu-3a60acfbd68243c8a9afadc179afc92b) - pufferfish model
 - [Casual Vegetable Pack](https://assetstore.unity.com/packages/3d/props/food/casual-vegetable-pack-created-with-fastmesh-asset-293783) - low poly vegetable and fruit models
-- [Low Poly Food Pack](https://opengameart.org/content/low-poly-food-pack) - burger model
-- [Toony Kitchen & Ingredients Model](https://assetstore.unity.com/packages/3d/props/toony-kitchen-ingredients-model-free-301805) - bun model
+- [Low Poly Food Pack](https://opengameart.org/content/low-poly-food-pack) - burger and patty models
+- [Toony Kitchen & Ingredients Model](https://assetstore.unity.com/packages/3d/props/toony-kitchen-ingredients-model-free-301805) - bun and cheese models
 - [Diner Lamp](https://sketchfab.com/3d-models/diner-lamp-9f0d6acab78e4a84904e4f8ba573118e) - hanging lamp model
-- [Ceiling Light Round](https://sketchfab.com/3d-models/ceiling-light-round-5508e18e61e84346b8d51ed73e0f5411) - ceiling light model
+- [Ceiling Light Round](https://sketchfab.com/3d-models/ceiling-light-round-5508e18e61e84346b8d51ed73e0f5411) - round ceiling light model
 - [Crawfish](https://poly.pizza/m/ct4Z0kUIHdT) - Timmy/crawfish model
-- [Hamstercage](https://assetstore.unity.com/packages/3d/props/hamstercage-110028) - Timmy cage
-- [Cartoon Whale low poly](https://assetstore.unity.com/packages/3d/characters/animals/fish/cartoon-whale-low-poly-197919) - Whale customer model
+- [Hamstercage](https://assetstore.unity.com/packages/3d/props/hamstercage-110028) - Timmy cage model
+- [Cartoon Whale low poly](https://assetstore.unity.com/packages/3d/characters/animals/fish/cartoon-whale-low-poly-197919) - whale customer model
